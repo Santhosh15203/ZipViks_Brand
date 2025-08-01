@@ -1,0 +1,52 @@
+[
+  {
+    "name": "UrbanEdge Classic Tee",
+    "description": "Minimalist streetwear meets comfort – perfect for daily hustle.",
+    "ratings": "4.6",
+    "fixedprice": "1,299",
+    "discount": "60",
+    "quantity": "23",
+    "soldby": "Amazon",
+    "image": "/userproduct/tshirt1.jpg"
+  },
+  {
+    "name": "NoirWear Premium Fit",
+    "description": "A bold statement in black – smooth fabric with tailored edges.",
+    "ratings": "4.7",
+    "fixedprice": "1,499",
+    "discount": "60",
+    "quantity": "5",
+    "soldby": "Flipkart",
+    "image": "/userproduct/tshirt2.jpg"
+  },
+  {
+    "name": "VelvetCode Tee",
+    "description": "Soft-touch cotton, modern design – engineered for creators.",
+    "ratings": "4.5",
+    "fixedprice": "1,199",
+    "discount": "63",
+    "quantity": "0",
+    "soldby": "Myntra",
+    "image": "/userproduct/tshirt3.jpg"
+  },
+  {
+    "name": "DripCulture Oversized",
+    "description": "Unisex oversized T-shirt – high fashion meets daily comfort.",
+    "ratings": "4.8",
+    "fixedprice": "1,799",
+    "discount": "61",
+    "quantity": "18",
+    "soldby": "Amazon",
+    "image": "/userproduct/tshirt4.jpg"
+  },
+  {
+    "name": "ZenMode Cotton Tee",
+    "description": "Breathe easy with ultra-soft cotton – simple, subtle, serene.",
+    "ratings": "4.4",
+    "fixedprice": "999",
+    "discount": "86",
+    "quantity": "9",
+    "soldby": "Flipkart",
+    "image": "/userproduct/tshirt5.jpg"
+  }
+]

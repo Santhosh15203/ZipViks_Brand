@@ -1,0 +1,42 @@
+.search::placeholder{
+  font-size: 13.5px;
+  padding: 5px;
+}
+.spin {
+  animation: spintimeline 1s linear infinite;
+  transform-origin: center;  
+}
+
+@keyframes spintimeline {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.display-container{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.display{
+  animation: display 35s linear infinite;
+  font-size: smaller;
+}
+.display:hover {
+  animation-play-state: paused;
+}
+@keyframes display{
+    0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.small-placeholder::placeholder{
+    font-size: 14px;
+}
+
+.small-select{
+  font-size: 14px;
+}
