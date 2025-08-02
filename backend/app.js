@@ -19,6 +19,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 
 app.listen(process.env.PORT,()=>{     //to change port :i dotenv,dotenv.config({path})
-    console.log(`server running in port ${process.env.PORT}`);   
+    console.log(`server running in port http://localhost:${process.env.PORT}`);   
     
 })
