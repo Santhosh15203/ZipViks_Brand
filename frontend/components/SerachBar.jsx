@@ -28,7 +28,7 @@ export default function SearchBar(){
                   }}
                 />
         <div className="input-group-append">
-          <button onClick={handleSearchBar} type="button" className="btn btn-danger" >
+          <button onClick={handleSearchBar} type="button" className="btn bg-danger text-white" >
             <i className="bi bi-search"></i>
           </button>
         </div>

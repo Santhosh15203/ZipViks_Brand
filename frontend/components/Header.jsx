@@ -12,13 +12,14 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
     <div className="d-flex flex-column">
        <nav className="navbar navbar-expand-lg d-flex flex-column border-shadow border mb-0 bg-dark " style={{ fontFamily: "'Nunito Rounded', sans-serif" }}>
         <div className="container d-flex justify-content-around align-items-center p-0">
-          <div className="text-center">              {/*Logo link */}
+          <div className="text-center d-flex  gap-3">              {/*Logo link */}
+            <img src="public/logo/white-logo.png" alt="" style={{width:"60px"}} />
             <Link to={"/"} className="text-decoration-none">
               <h3 className="text-white mb-0">
-                <strong style={{ fontFamily: "'Arial', 'Helvetica', sans-serif" }}>ZipViks</strong>
+                <strong style={{ fontFamily: "'Arial', 'Helvetica', sans-serif" }}>ZipVikz</strong>
               </h3>
               <p className="text-white small mb-0">
-                <strong className="text-danger">🛩️Xplore</strong> with us
+                <strong className="text-danger">Xplore</strong> with us
               </p>
             </Link>
           </div>
