@@ -7,7 +7,9 @@
     "discount": "60",
     "quantity": "23",
     "soldby": "Amazon",
-    "image": "/userproduct/tshirt1.jpg"
+    "image": "/userproduct/tshirt1.jpg",
+    "size_M":"4",
+    "size-S":"6"
   },
   {
     "name": "NoirWear Premium Fit",
@@ -31,7 +33,7 @@
   },
   {
     "name": "DripCulture Oversized",
-    "description": "Unisex oversized T-shirt – high fashion meets daily comfort.",
+    "description": "Unisex oversized Tshirt – high fashion meets daily comfort.",
     "ratings": "4.8",
     "fixedprice": "1,799",
     "discount": "61",

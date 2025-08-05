@@ -47,27 +47,10 @@ export default function PlaceOrder({cardItems,setCardItems,loggedInUser}){
     function handlePlaceOrderItems(loggedInUser){
         if(!loggedInUser){
             toast.error("User must be login !")
-            setCardItems([])
             navigate("/")
-            return
+            return 
         }
-        else {
-
-        //     fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/order`,
-        // {
-        //     method:"POST",
-        //     headers:{'Content-Type':'application/json'},
-        //     body:JSON.stringify({cardIte
-        // ms,user:loggedInUser})
-        // })
-        // .then(()=>{
-        //     // setCardItems([]);
-        //     // setComplete(true);
-        //     // toast.success("Order Success!")
-        //     navigate("/payment")
-        // })
-        }
-            navigate("/payment")
+        else  navigate("/payment")
 
         
     }

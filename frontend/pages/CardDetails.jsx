@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { toast } from 'react-toastify';
+import StarDisplay from "../components/StarDisplay";
 
 
 export default function CardDetails({cardItems,setCardItems}) {
+  const [maximumQuantityReached,setMaximumQuantityReached]=useState("")
+  const [userSelectSize,setUserSelectSize]=useState("Please select a size")
+  const [selectsize,setSelectsize]=useState("")
+  const sizes=["S","M","L","XL","2XL","3XL"]
   const {id}=useParams()
   const[product,setProduct]=useState(null)
   const [custumQuantity,setCustumQuantity]=useState(1)
+  const navigate=useNavigate()
+  
+  
+  
   
 
   useEffect(()=>{
@@ -25,57 +34,109 @@ export default function CardDetails({cardItems,setCardItems}) {
   const fixedprice=Number(String(product.fixedprice).replace(/,/g,""))
   const discount=Number(product.discount)
   const sellingprice=Number(fixedprice-(fixedprice*discount/100)).toFixed(0)
-
+   const TotalNumberOfQuantityInAllSize=sizes.reduce((acc,size)=>acc+Number(product[size]),0)
+   
   function handleIncrementQuantity(){
-    if(product.quantity==custumQuantity) return
-    else setCustumQuantity((state)=>state+1)
+    const TotalSizeQuantity=product[selectsize]
+    if(TotalSizeQuantity==custumQuantity){
+      setMaximumQuantityReached("Maximum item reached !")
+    }
+       
+    else { setCustumQuantity((state)=>state+1); setMaximumQuantityReached(""); }
+          
   }
   function handleDecrementQuantity(){
-    if(custumQuantity>1) setCustumQuantity((state)=>state-1)
+    setCustumQuantity((state) => state - 1);
+    setMaximumQuantityReached(""); 
+  }
+function handleAddToCart() {
+  if (!selectsize) {
+    toast.error("Please select a size");
+    return;
   }
 
-  function handleAddToCart(){
-   const aldreadyIdExists= cardItems.find((item)=>(
-      item.product._id===product._id
-   ))
-    if(!aldreadyIdExists){
-    const newItems={product,custumQuantity}
-    setCardItems((state)=>[...state,newItems])
-    toast.success("Successfully added to cart!")
+  const itemExists = cardItems.some(
+    (item) =>
+      item.product._id === product._id && item.selectedSize === selectsize
+  );
+
+
+
+  if (itemExists) {
+    toast.error("Item with this size is already in the cart!");
+  } else {
+    const newItems = { product, custumQuantity, selectedSize: selectsize };
+    setCardItems((state) => [...state, newItems]);
+    toast.success("Successfully added to cart!");
+    navigate("/");
   }
-  else{
-    toast.error("Item is already in the cart!")
-  }
-  }
- 
+}
+
   return (
     <>
-       <div className=" p-2 mt-2 mb-2 d-flex gap-3">
+       <div className=" mb-2 d-flex gap-3">
+        
         <div>
           <img src={product.image} alt="image"  style={{width:"850px",objectFit:"cover",height:"555px"}}/>
         </div>
         <div className=" d-flex flex-column text-center align-items-center" style={{width:"520px"}}>
-          <div className="mt-5 d-flex flex-column justify-content-center">
+          <div className="mt-1 d-flex flex-column justify-content-center">
             <h3 className="mb-1"><strong> {product.name}</strong></h3>
             <p><small>product id : #<span className="text-danger">{product._id}</span></small></p>
+             <p className="fw-bold"> <StarDisplay rating={product.ratings} /></p>
+            
           </div>
-          <p><strong>Rating : </strong> {product.ratings}</p>
+        
           <div className="d-flex gap-2 ">
-            <p> <strong>₹{sellingprice}</strong> </p>
-            <p className="text-decoration-line-through text-muted">₹{fixedprice}</p>
-            <p className="text-danger">{discount}% off</p>
+            <p> <strong><span className="text-success fs-6">₹{sellingprice}.00</span> </strong> </p>
+            <p className="text-decoration-line-through text-muted small">₹{fixedprice}.00</p>
+            <p className="text-danger fw-bold small">({discount}% off )</p>
           </div>
-          <div >
-            <ul className="list-unstyled d-flex gap-3">
-              <li><button className="btn btn-danger" onClick={handleDecrementQuantity} disabled={custumQuantity <=1}>-</button></li>
-              <li><p className="mt-1"><strong>{custumQuantity}</strong></p></li>
-              <li><button className="btn btn-primary" onClick={handleIncrementQuantity} disabled={custumQuantity > product.quantity}>+</button></li>
+
+   
+
+          <div className="required">                                                                    
+            <ul className="list-unstyled d-flex  gap-2">
+              {sizes.map((size) => (
+                <li key={size}>
+                  <button className={`btn ${selectsize===size?"border bg-dark text-white ":"border border-dark"}`} onClick={()=>{setSelectsize(size); setCustumQuantity(1); setMaximumQuantityReached("") }} disabled={Number(product[size])===0} >
+                    {size}
+                  </button>
+                </li>
+              ))}
             </ul>
+            {!selectsize && (<p className="text-danger text-start">{TotalNumberOfQuantityInAllSize==0?!userSelectSize:userSelectSize}</p> )}
           </div>
-            <button onClick={handleAddToCart} className="btn btn-success ps-5 pe-5 mt-3" disabled={product.quantity==0}>Add to cart</button>
-            <hr />
+          {selectsize && ( <>
+             <div className="">
+                <p><strong>Available Stocks :</strong> <span className="text-danger fw-bold">{product[selectsize]}</span></p>
+              </div>
+          </>)}
+
+          <div className=" d-flex flex-column">
+            <div className="">
+                 <ul className="list-unstyled d-flex gap-3 justify-content-center  m-0">
+                  <li><button className="btn border border-dark" onClick={handleDecrementQuantity} disabled={custumQuantity <=1||TotalNumberOfQuantityInAllSize==0}>-</button></li>
+                  <li><p className="mt-1" disabled={TotalNumberOfQuantityInAllSize==0}><strong>{TotalNumberOfQuantityInAllSize==0?"0":custumQuantity}</strong></p></li>
+                  <li><button className="btn border border-dark" onClick={handleIncrementQuantity} disabled={custumQuantity > product[selectsize]  || TotalNumberOfQuantityInAllSize==0}>+</button></li>
+                </ul>
+                
+            </div>
             <div>
-              <p><strong>Status : </strong><span className={product.quantity>0?"text-success":"text-danger"} > <strong>{product.quantity>0 ?"' In Stock '":"' Out Of Stock '"}</strong> </span> </p>
+               {maximumQuantityReached && (<p className="text-danger">{maximumQuantityReached}</p> )}
+            </div>
+          
+          </div>
+          
+            <button onClick={handleAddToCart} className="btn btn-success ps-5 pe-5 mt-3" disabled={TotalNumberOfQuantityInAllSize==0}>Add to cart</button>
+
+
+            <hr />
+            {
+              product.reduce
+            }
+            <div>
+              <p><strong>Status : </strong><span className={TotalNumberOfQuantityInAllSize>=1?"text-success":"text-danger"} > <strong>{TotalNumberOfQuantityInAllSize>=1 ?"' In Stock '":"' Out Of Stock '"}</strong> </span> </p>
             </div>
             <div className=" ms-0 descripton " style={{width:"450px",wordBreak: "break-word"}}>
               <p className="lh-md"><strong >Description : </strong> {product.description}</p>  

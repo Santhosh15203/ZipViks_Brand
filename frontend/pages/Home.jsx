@@ -12,10 +12,13 @@ export default function Home() {
     setLoading(true);
     fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product?${searchparams.toString()}`)
       .then((res) => res.json())
-      .then((res) => setProducts(res.userproducts))
-        setTimeout(() => {
+      .then((res) =>{
+        setProducts(res.userproducts);
+         setTimeout(() => {
           setLoading(false);
-        }, 1); 
+        }, 500); 
+      })
+       
   }, [searchparams]);
 
   return (
@@ -30,7 +33,7 @@ export default function Home() {
           </div>
         ) : products.length > 0 ? (
           <>
-          <div id="demo" className="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div id="demo" className="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
              <div className="carousel-indicators">
               <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>

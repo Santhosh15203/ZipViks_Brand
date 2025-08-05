@@ -13,13 +13,13 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
        <nav className="navbar navbar-expand-lg d-flex flex-column border-shadow border mb-0 bg-dark " style={{ fontFamily: "'Nunito Rounded', sans-serif" }}>
         <div className="container d-flex justify-content-around align-items-center p-0">
           <div className="text-center d-flex  gap-3">              {/*Logo link */}
-            <img src="public/logo/white-logo.png" alt="" style={{width:"60px"}} />
-            <Link to={"/"} className="text-decoration-none">
+            <img src="/logo/white-logo.png" alt="brand-logo" className=" mt-2" style={{width:"50px",height:"45px",objectFit:"cover"}} />
+            <Link to={"/"} className="text-decoration-none ">
               <h3 className="text-white mb-0">
-                <strong style={{ fontFamily: "'Arial', 'Helvetica', sans-serif" }}>ZipVikz</strong>
+                <strong style={{ fontFamily: "'Open Sans', Arial, Helvetica, sans-serif" }}>zїpѵїКz</strong>
               </h3>
               <p className="text-white small mb-0">
-                <strong className="text-danger">Xplore</strong> with us
+                <strong className="text-danger">Glow</strong> with Us
               </p>
             </Link>
           </div>

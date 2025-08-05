@@ -70,14 +70,14 @@ export default function Footer() {
               
                 <ul className="list-unstyled text-center small align-items-center d-flex justify-content-around ">
                   <li>
-                    <div > <a href="#" className="text-decoration-none gap-2 d-flex text-white">
-                         <img src="public/logo/white-logo.png" alt="" style={{width:"25px",height:"25px"}} />
+                    <div > <a href="#" className="text-decoration-none gap-2 d-flex mt-2 text-white">
+                         <img src="/logo/white-logo.png" alt="brand-logo" style={{width:"25px",height:"25px"}} />
                         <p className="small mt-2">Seller Hub</p> </a>
                     </div> </li>
                   <li>&copy; 2026 ZipViks. All Rights Reserved. Developed by <span ><Link to={"https://santhosh15203.github.io/Portfolio/"} className="text-danger "><strong>Santhosh Moorthi</strong> </Link></span></li>
 
                   <li>
-                    <div  className="d-flex gap-2"> 
+                    <div  className="d-flex gap-2 "> 
                       <a href="#" className="text-decoration-none  text-white"> Privacy Policy</a>
                       <a href="#" className="text-decoration-none text-white">Terms of Use</a>
                     </div>

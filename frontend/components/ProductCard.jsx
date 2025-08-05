@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import StarDisplay from "./StarDisplay"
 
 export default function ProductCard({product}){
     const fixedprice=Number(String(product.fixedprice).replace(/,/g,""))
@@ -14,9 +15,9 @@ export default function ProductCard({product}){
                     <h6>{product.name}
                     </h6>
                     <p className="small mb-0">{product.description}</p>
-                    <p className="mb-0">{product.ratings}⭐️⭐️⭐️⭐️⭐️</p>
+                    <p className="mb-0">{product.ratings} <StarDisplay rating={product.ratings} /></p>
                     <div className="d-flex gap-2 mt-2 mb-0 ">
-                        <p className="fw-bold">₹{sellingprice} </p>
+                        <p className="fw-bold">₹{sellingprice}.00</p>
                         <p className="small text-decoration-line-through">₹{product.fixedprice}</p>
                         <p className="text-danger"><span>{product.discount}</span>% off
                         </p>
