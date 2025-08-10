@@ -9,9 +9,7 @@ const registerformschema=new mongoose.Schema({
     city:String,
     state:String,
     zipcode:String,
-    country:String},
-{
-    strict: true 
+    country:String
   }
 )
 
