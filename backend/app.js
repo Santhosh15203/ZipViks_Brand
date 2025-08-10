@@ -10,9 +10,11 @@ const { dbconnection } = require('./config/dbconnection')
 dotenv.config({path:path.join(__dirname,'config','config.env')})
 
 app.use(cors())
+
 app.use(express.json())      //get data from req to save mongodb in json method
-dbconnection()
 app.use(express.urlencoded({ extended: true }));
+
+dbconnection()
 app.use(router)
 app.use('/public',express.static(path.join(__dirname,'public')))
 
