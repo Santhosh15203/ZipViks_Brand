@@ -9,7 +9,10 @@
     "soldby": "Amazon",
     "image": "/userproduct/tshirt1.jpg",
     "size_M":"4",
-    "size-S":"6"
+    "size-S":"6",
+    "size-XL":"5",
+    "size-2XL":"9",
+    "size-3XL":"2"
   },
   {
     "name": "NoirWear Premium Fit",

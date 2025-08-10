@@ -12,9 +12,7 @@ export default function RegisterForm(){
         const hideModal = bootstrap.Modal.getInstance(fromEle) || new bootstrap.Modal(fromEle);
         const showModal = bootstrap.Modal.getInstance(toEle) || new bootstrap.Modal(toEle);
         hideModal.hide();
-        setTimeout(() => {
-          showModal.show()
-        }, 300);
+        showModal.show();
         }
       }    
 
@@ -24,8 +22,6 @@ export default function RegisterForm(){
         setMobile("");
         setEmail("");
         setPassword("");
-        setProfile("");
-        setGender("");
         setAddress("");
         setCity("");
         setState("Tamil Nadu")
@@ -36,20 +32,15 @@ export default function RegisterForm(){
       
     const navigate=useNavigate()
     const [agree, setAgree] = useState(false);
-
-    
     const [firstname,setFirstname]=useState("")
     const [mobile,setMobile]=useState("")
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
-    const [profile,setProfile]=useState(null)
-    const [gender,setGender]=useState("")
     const [address,setAddress]=useState("")
     const [city,setCity]=useState("")
     const [state,setState]=useState("Tamil Nadu")
     const [zipcode,setZipcode]=useState("")
     const [country,setCountry]=useState("India")
-
     const [showPassword, setShowPassword] = useState(false);
 
     function handleSubmitRegisterForm(e){
@@ -60,8 +51,6 @@ export default function RegisterForm(){
             formData.append("mobile", mobile);
             formData.append("email", email);
             formData.append("password", password);
-            formData.append("profile", profile); 
-            formData.append("gender", gender);
             formData.append("address", address);
             formData.append("city", city);
             formData.append("state", state);
@@ -127,22 +116,7 @@ export default function RegisterForm(){
                                 <span className="input-group-text" onClick={()=>{setShowPassword(!showPassword)}} style={{cursor:"pointer"}}><i className={`bi ${showPassword?"bi-eye":"bi-eye-slash"}`}></i> </span>
                         </div>
                       </div>
-                      <div className="d-flex mt-2 mb-2 justify-content-between ms-1  gap-3 text-start">
-                         <div className="w-100">
-                          {/* <label className="">Last name :</label> */}
-                          <input type="file" className="form-control snall-placeholder" accept="image/*" name="profile" onChange={(e)=>{setProfile(e.target.files[0])}} required/>
-                         
-                        </div>
-                        <div className="w-75">
-                          {/* <label className="ms-4">Gender :</label> */}
-                          <select name="gender" id="gender"  className="btn border p-2 mt-1 w-75 mx-auto small-select" value={gender} onChange={(e)=>{setGender(e.target.value)}} required>
-                            <option value="">select gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Trans">Transgender</option>
-                          </select>
-                        </div>
-                      </div>
+                      
                       <div className="text-start">
                           {/* <label className="">Address :</label> */}
                         <textarea  id="address" placeholder="address..*" name="address" className="form-control" value={address} onChange={(e)=>{setAddress(e.target.value)}}></textarea>

@@ -13,11 +13,6 @@ export default function CardDetails({cardItems,setCardItems}) {
   const[product,setProduct]=useState(null)
   const [custumQuantity,setCustumQuantity]=useState(1)
   const navigate=useNavigate()
-  
-  
-  
-  
-
   useEffect(()=>{
     fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product/${id}`)
     .then(res=>res.json())
@@ -54,18 +49,14 @@ function handleAddToCart() {
     toast.error("Please select a size");
     return;
   }
-
   const itemExists = cardItems.some(
     (item) =>
-      item.product._id === product._id && item.selectedSize === selectsize
+      item.product._id === product._id && item.selectsize === selectsize
   );
-
-
-
   if (itemExists) {
     toast.error("Item with this size is already in the cart!");
   } else {
-    const newItems = { product, custumQuantity, selectedSize: selectsize };
+    const newItems = { product, custumQuantity, selectsize };
     setCardItems((state) => [...state, newItems]);
     toast.success("Successfully added to cart!");
     navigate("/");
@@ -83,7 +74,7 @@ function handleAddToCart() {
           <div className="mt-1 d-flex flex-column justify-content-center">
             <h3 className="mb-1"><strong> {product.name}</strong></h3>
             <p><small>product id : #<span className="text-danger">{product._id}</span></small></p>
-             <p className="fw-bold"> <StarDisplay rating={product.ratings} /></p>
+             <div className="fw-bold"> <StarDisplay rating={product.ratings} /></div>
             
           </div>
         
@@ -93,18 +84,31 @@ function handleAddToCart() {
             <p className="text-danger fw-bold small">({discount}% off )</p>
           </div>
 
-   
 
           <div className="required">                                                                    
-            <ul className="list-unstyled d-flex  gap-2">
-              {sizes.map((size) => (
-                <li key={size}>
-                  <button className={`btn ${selectsize===size?"border bg-dark text-white ":"border border-dark"}`} onClick={()=>{setSelectsize(size); setCustumQuantity(1); setMaximumQuantityReached("") }} disabled={Number(product[size])===0} >
-                    {size}
-                  </button>
-                </li>
-              ))}
+            <ul className="list-unstyled d-flex gap-2">
+              {sizes.map((size) => {
+                const isOutOfStock = Number(product[size]) === 0;
+                const isSelected = selectsize === size;
+
+                return (
+                  <li key={size}>
+                    <button
+                      className={`btn border ${isSelected ? "bg-dark text-white" : "border-dark"} ${isOutOfStock ? "text-decoration-line-through" : ""}`}
+                      onClick={() => {
+                        setSelectsize(size);
+                        setCustumQuantity(1);
+                        setMaximumQuantityReached("");
+                      }}
+                      disabled={isOutOfStock}
+                    >
+                      {size}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
+
             {!selectsize && (<p className="text-danger text-start">{TotalNumberOfQuantityInAllSize==0?!userSelectSize:userSelectSize}</p> )}
           </div>
           {selectsize && ( <>
@@ -132,9 +136,7 @@ function handleAddToCart() {
 
 
             <hr />
-            {
-              product.reduce
-            }
+           
             <div>
               <p><strong>Status : </strong><span className={TotalNumberOfQuantityInAllSize>=1?"text-success":"text-danger"} > <strong>{TotalNumberOfQuantityInAllSize>=1 ?"' In Stock '":"' Out Of Stock '"}</strong> </span> </p>
             </div>

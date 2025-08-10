@@ -3,25 +3,20 @@ const registerformodal = require("../models/registerform")
 exports.registerformControllerUpdate=async(req,res,next)=>{
     try{
         const {id}=req.params
-        const {firstname,mobile,email,password,gender,address,city,state,zipcode,country} = req.body
-        const profile=req.file?.filename||""
+        const {firstname,mobile,email,password,address,city,state,zipcode,country} = req.body
          const updateData = {
                     firstname,
                     mobile,
                     email,
                     password,
-                    gender,
                     address,
                     city,
                     state,
                     zipcode,
                     country,
                     };
-        if(profile){
-            updateData.profile=profile
-        }
-
-        const updateUser=await registerformodal.findByIdAndUpdate(id,updateData,{new:true})
+       
+        const updateUser=await registerformodal.findByIdAndUpdate(id,updateData)
         
         res.json({
             message:"updated successfull",

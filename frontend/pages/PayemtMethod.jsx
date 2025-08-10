@@ -53,7 +53,6 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser })
                 <label className="fw-bold small">Address : </label>
                 <input className="form-control p-4" style={{ cursor: "none" }} value={address} readOnly />
               </div>
-
               <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
                 <div>
                   <label className="fw-bold small">City : </label>

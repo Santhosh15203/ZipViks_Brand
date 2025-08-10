@@ -4,7 +4,7 @@ export default function StarDisplay({ rating }) {
 
   return (
     <div style={{ position: "relative", display: "inline-block", fontSize: "24px", lineHeight: "1" }}>
-      <div style={{ color: "#ccc" }}>★★★★★</div>
+      <span style={{ color: "#ccc" }}>★★★★★</span>
       <div style={{
         position: "absolute",
         top: 0,

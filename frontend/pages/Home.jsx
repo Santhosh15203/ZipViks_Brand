@@ -14,9 +14,8 @@ export default function Home() {
       .then((res) => res.json())
       .then((res) =>{
         setProducts(res.userproducts);
-         setTimeout(() => {
-          setLoading(false);
-        }, 500); 
+         setLoading(false);
+         
       })
        
   }, [searchparams]);

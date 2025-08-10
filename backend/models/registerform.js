@@ -5,15 +5,15 @@ const registerformschema=new mongoose.Schema({
     mobile:String,
     email:String,
     password:String,
-    profile:String,
-    gender:String,
     address:String,
     city:String,
     state:String,
     zipcode:String,
-    country:String
-
-})
+    country:String},
+{
+    strict: true 
+  }
+)
 
 const registerformodal=mongoose.model('registerform',registerformschema)
 module.exports=registerformodal
