@@ -56,7 +56,7 @@ export default function RegisterForm(){
             formData.append("zipcode", zipcode);
             formData.append("country", country);
 
-            fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerform`, {
+            fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/register`, {
               method: "POST",
               body: formData, // no need for headers here
             })

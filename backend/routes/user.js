@@ -8,7 +8,7 @@ const router=express.Router()
 router.get('/product',allproduct)
 router.get('/product/:id',singleproduct)
 router.post('/order',userorders)
-router.post('/registerform',registerformController)
+router.post('/register',registerformController)
 router.put('/registerform/:id',registerformControllerUpdate)
 router.get('/userlogin',userloginController)
 module.exports=router

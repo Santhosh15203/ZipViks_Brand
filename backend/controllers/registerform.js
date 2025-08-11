@@ -1,6 +1,6 @@
 const registerformodal = require("../models/registerform");
 
-exports.registerformController = async (req, res) => {
+exports.registerformController = async (req, res,next) => {
     try {
         console.log("Incoming request body:", req.body); // debug log
 

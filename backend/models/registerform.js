@@ -13,5 +13,5 @@ const registerformschema=new mongoose.Schema({
   }
 )
 
-const registerformodal=mongoose.model('registerform',registerformschema)
+const registerformodal=mongoose.model('registerforms',registerformschema)
 module.exports=registerformodal
