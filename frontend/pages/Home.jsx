@@ -9,8 +9,12 @@ export default function Home() {
   const [searchparams] = useSearchParams();
 
   useEffect(() => {
-    setLoading(true);
-    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product?${searchparams.toString()}`)
+  const controller = new AbortController();
+  const signal = controller.signal;
+
+  setLoading(true);
+
+  fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product?${searchparams.toString()}`, { signal })
       .then((res) => res.json())
       .then((res) =>{
         setProducts(res.userproducts);

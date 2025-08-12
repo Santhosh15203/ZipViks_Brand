@@ -6,6 +6,7 @@ import LoginForm from "./LoginForm";
 import EmailForm from "./EmailForm";
 import { toast } from "react-toastify";
 import UpdateRegisterModal from "./UpdateRegisterModal";
+import MobileRegisterForm from "./MobileRegisterForm";
 export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInUser}) {
   return (
     <>
@@ -13,11 +14,11 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
        <nav className="navbar navbar-expand-lg d-flex flex-column border-shadow border mb-0 bg-dark " style={{ fontFamily: "'Nunito Rounded', sans-serif" }}>
         <div className="container d-flex justify-content-around align-items-center p-0">
           <div className="text-center d-flex  gap-3">              {/*Logo link */}
-            <img src="/logo/white-logo.png" alt="brand-logo" className=" mt-2" style={{width:"50px",height:"45px",objectFit:"cover"}} />
+            <img src="/logo/zipVikz-brand-logo.png" alt="brand-logo" className="" style={{width:"60px",height:"55px",objectFit:"cover"}} />
             <Link to={"/"} className="text-decoration-none ">
-              <h3 className="text-white mb-0">
-                <strong style={{ fontFamily: "'Open Sans', Arial, Helvetica, sans-serif" }}>zїpѵїКz</strong>
-              </h3>
+              <h4 className="text-white mb-0 mt-1">
+                <strong style={{ fontFamily: "'Open Sans', Arial, Helvetica, sans-serif" }}>ZїpѵїКz</strong>
+              </h4>
               <p className="text-white small mb-0">
                 <strong className="text-danger">Glow</strong> with Us
               </p>
@@ -48,7 +49,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
              <div className="text-white text-decoration-none lh-sm d-flex align-items-center gap-0">
               <div className="gap-3 d-flex dropdown text-decoration-none" style={{cursor:"pointer"}}>
                  <div className="small" data-bs-toggle="dropdown">
-                  <img src={`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/uploads/${loggedInUser.profile }`} className="rounded-circle" style={{ width: "25px", height: "25px", objectFit: "cover" }} />
+                  <img src="/logo/zipVikz-brand-logo.png" className="rounded-circle" style={{ width: "25px", height: "25px", objectFit: "cover" }} />
                   <p className="text-white mt-1">Hi, {loggedInUser.firstname}</p>
                 </div>
                 <ul className="dropdown-menu p-0 rounded mt-2 gap-3"  style={{minWidth:"130px"}} >
@@ -68,7 +69,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                     <p className="text-white mb-0 small dropdown-toggle " data-bs-toggle="dropdown">User </p>
                     <ul className="dropdown-menu p-0 rounded mt-2" style={{minWidth:"100px"}} >
                       <li className="dropdown-item border-bottom small p-2" data-bs-toggle="modal" data-bs-target="#loginModal" >Login</li>
-                      <li className="dropdown-item  p-2 small" data-bs-toggle="modal" data-bs-target="#registerModal" >Sign Up</li>
+                      <li className="dropdown-item border-bottom small p-2" data-bs-toggle="modal" data-bs-target="#registerMobile" >Register</li>
                     </ul>
                   </div>
                 </div> 
@@ -78,6 +79,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
              
             <LoginForm  setLoggedInUser={setLoggedInUser}/>
             <EmailForm  setLoggedInUser={setLoggedInUser}/>
+            <MobileRegisterForm/>
             <RegisterForm/>
             <UpdateRegisterModal loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>
           </div>

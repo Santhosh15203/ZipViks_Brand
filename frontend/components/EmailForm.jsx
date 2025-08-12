@@ -68,7 +68,7 @@ export default function EmailForm({setLoggedInUser}){
 
     return(
         <>
-          <div className="modal fade" id="emailModal" >
+          <div className="modal fade" id="emailModal" aria-hidden="true">
               <div className="modal-dialog p-5 pt-0">
                 <div className="modal-content " >
                     <form onSubmit={handleCheckEmailPassword}>

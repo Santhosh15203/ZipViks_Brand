@@ -54,7 +54,7 @@ export default function  LoginForm({setLoggedInUser}){
 
     return(
         <>
-          <div className="modal fade" id="loginModal" >
+          <div className="modal fade" id="loginModal" aria-hidden="true">
               <div className="modal-dialog p-5 pt-0">
                 <div className="modal-content ">
 

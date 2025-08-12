@@ -79,7 +79,7 @@ export default function RegisterForm(){
 
     return(
         <>
-          <div className="modal fade" id="registerModal">
+          <div className="modal fade" id="registerModal" aria-hidden="true">
               <div className="modal-dialog">
                 <div className="modal-content "style={{width:"100%"}}>
                   <div className="modal-header">
