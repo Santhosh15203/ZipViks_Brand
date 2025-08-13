@@ -1,6 +1,7 @@
 const express=require('express')
 const app=express()
 
+
 const path=require('path')
 const cors=require('cors')
 
@@ -10,7 +11,6 @@ const { dbconnection } = require('./config/dbconnection')
 dotenv.config({path:path.join(__dirname,'config','config.env')})
 const multer = require('multer');
 const upload = multer(); // no file storage, just parse text fields
-
 
 app.use(cors())
 

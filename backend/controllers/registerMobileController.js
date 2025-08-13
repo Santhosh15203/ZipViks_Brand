@@ -34,15 +34,10 @@ exports.registerMobileController = async (req, res, next) => {
         'Content-Type':"application/json"
       }
     });
-
-    if (response.data.return) {
       res.json({
         message: "OTP sent successfully",
         MobileRegister
       });
-    } else {
-      res.status(500).json({ message: "Failed to send OTP" });
-    }
 
   } catch (error) {
     console.error("Mobile Register error", error.response?.data || error.message);
