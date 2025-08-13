@@ -1,5 +1,4 @@
-const express=require('express')
-
+const express=require("express")
 const { allproduct, singleproduct } = require('../controllers/userproducts')
 const { userorders } = require('../controllers/userorders')
 const { registerformController } = require('../controllers/registerform')

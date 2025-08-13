@@ -28,7 +28,7 @@ exports.registerMobileController = async (req, res, next) => {
     }
 
     // Send OTP using GET
-    const response = await axios.post("https://www.fast2sms.com/dev/bulkV2",smsData, {
+    await axios.get("https://www.fast2sms.com/dev/bulkV2",smsData, {
       headers: {
         authorization: FAST2SMS_API_KEY,
         'Content-Type':"application/json"
