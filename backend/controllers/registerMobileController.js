@@ -5,9 +5,9 @@ let storeOTP = {};
 
 exports.registerMobileController = async (req, res, next) => {
      console.log("📩 Request received:", req.body);
+     console.log("API Key present locally?", !!process.env.FAST2SMS_API_KEY);
   try {
     const { mobile } = req.body;
-
     if (!mobile || mobile.length !== 10) {
       return res.status(400).json({ message: "Invalid mobile number" });
     }
