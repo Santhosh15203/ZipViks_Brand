@@ -4,6 +4,7 @@ const axios = require("axios");
 let storeOTP = {};
 
 exports.registerMobileController = async (req, res, next) => {
+     console.log("📩 Request received:", req.body);
   try {
     const { mobile } = req.body;
 
