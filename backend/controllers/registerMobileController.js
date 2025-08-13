@@ -22,6 +22,7 @@ exports.registerMobileController = async (req, res, next) => {
         
         try {
             // Send OTP via Fast2SMS
+            // @ts-ignore
            const fast2sms = require("fast-two-sms");
 
             const response=await fast2sms.sendMessage({
