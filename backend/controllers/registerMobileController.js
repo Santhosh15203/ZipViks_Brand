@@ -22,15 +22,18 @@ exports.registerMobileController = async (req, res, next) => {
         
         try {
             // Send OTP via Fast2SMS
-           const fast2sms = require('fast-two-sms');
+           const fast2sms = require("fast-two-sms");
 
-            await fast2sms.sendMessage({
+            const response=await fast2sms.sendMessage({
             authorization: FAST2SMS_API_KEY,
             message: `Welcome to zipvikz! ${otp} is your OTP for logging into https://zipvikzin.vercel.app/ Thank You - zipvikz Brand`,
             numbers: [mobile],
-            route: 'q' // or 'dlt' if DLT-approved
+            route: 'otp', // or 'dlt' if DLT-approved
+            language: 'english'
             });
+            console.log("📩 Fast2SMS Response:", response);
 
+            console.log("OTP send")
             res.json({
                 message: "OTP sent successfully",
                 MobileRegister
