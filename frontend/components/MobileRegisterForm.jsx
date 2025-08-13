@@ -23,7 +23,7 @@ export default function MobileRegisterForm(){
 
     function sendOTP(e){
       e.preventDefault();
-      fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOtp`,{
+      fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`,{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({mobile})
