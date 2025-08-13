@@ -19,23 +19,16 @@ exports.registerMobileController = async (req, res, next) => {
         // Generate OTP
         const otp = Math.floor(100000 + Math.random() * 900000);
         storeOTP[mobile] = { otp, expires: Date.now() + 5 * 60 * 1000 };
-
-        // Prepare SMS payload
-        const smsMessage = `Welcome to zipvikz! ${otp} is your OTP for logging into https://zipvikzin.vercel.app/ Thank You - zipvikz Brand`;
-
+        
         try {
             // Send OTP via Fast2SMS
-            await axios.get("https://www.fast2sms.com/dev/bulkV2", {
-                params: {
-                    message: smsMessage,
-                    language: "english",
-                    route: "otp", // Use "dlt" for production if IP restricted
-                    numbers: mobile
-                },
-                headers: {
-                    authorization: FAST2SMS_API_KEY,
-                    'Content-Type': "application/json"
-                }
+           const fast2sms = require('fast-two-sms');
+
+            await fast2sms.sendMessage({
+            authorization: FAST2SMS_API_KEY,
+            message: `Welcome to zipvikz! ${otp} is your OTP for logging into https://zipvikzin.vercel.app/ Thank You - zipvikz Brand`,
+            numbers: [mobile],
+            route: 'q' // or 'dlt' if DLT-approved
             });
 
             res.json({
