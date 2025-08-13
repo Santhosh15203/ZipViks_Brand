@@ -23,7 +23,7 @@ exports.registerMobileController = async (req, res, next) => {
     const smsData={
         message: `Welcome to zipvikz! ${otp} is your OTP for logging into https://zipvikzin.vercel.app/ Thank You - zipvikz Brand`,
         language:"english",
-        route:"q",
+        route:"otp",
         numbers:mobile
     }
 
