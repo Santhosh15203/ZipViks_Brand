@@ -1,5 +1,6 @@
 const userRegisterMobileModal = require("../models/registerMobile");
 exports.registerMobileController = async (req, res, next) => {
+     console.log("Incoming request body:", req.body); // debug log
 
     try {
         const { mobile } = req.body
