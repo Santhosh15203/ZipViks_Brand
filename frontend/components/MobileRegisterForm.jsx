@@ -51,6 +51,7 @@ function verifyOTP(e) {
           navigate("/");
         } else {
           toast.error(data.message || "Failed to register");
+          console.error("Error:", data);
         }
       })
       .catch(err => {
