@@ -31,7 +31,6 @@ export default function MobileRegisterForm(){
       })
       .then(res=>res.json())
       .then(()=>{
-        toast.success("OTP Sent to  your phone!")
         resetForm()
       })
       setStep(2)
