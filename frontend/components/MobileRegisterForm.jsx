@@ -8,7 +8,7 @@ export default function MobileRegisterForm(){
     const [step,setStep]=useState(1)
     const[userOtp,setUserOtp]=useState("")
     const[otp,setOtp]=useState("")
-    const navigate=useNavigate()
+    const[userAldreadyFound,setUserAldreadyFound]=useState("")
 
 
      function switchModal(fromId, toId) {
@@ -34,24 +34,31 @@ export default function MobileRegisterForm(){
    
 function verifyOTP(e) {
   e.preventDefault();
-  console.log("otp", otp);
-  console.log("userotp", userOtp);
+  fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerform`)
+      .then(res=>res.json())
+      .then((res)=>{
+        const userdetails=res.mobileUser
+        const userFound=userdetails.find(userOtp.mobile!=mobile)
+        if(userFound){
+           if (String(otp) === String(userOtp)) {
+            fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ mobile })
+            })
+              toast.success("Successfully Registered!");
+            const modal = bootstrap.Modal.getInstance(document.getElementById('registerMobile'));
+            modal?.hide();
 
-  if (String(otp) === String(userOtp)) {
-    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mobile })
-    })
-      toast.success("Successfully Registered!");
-     const modal = bootstrap.Modal.getInstance(document.getElementById('registerMobile'));
-    modal?.hide();
-  
-         
-  } else {
-    toast.error("OTP wrong!");
-    setUserOtp("")
-  }
+          } else {
+            toast.error("OTP wrong!");
+            setUserOtp("")
+          }
+        }
+        else setUserAldreadyFound("User already exist!")
+        
+      })
+ 
 }
 
     
@@ -79,7 +86,10 @@ function verifyOTP(e) {
                             <form onSubmit={sendOTP}>
                                <div className="input-group mt-2">
                                 <span  className="input-group-text"><img src="/form/indianFlag.png" alt="flag" style={{width:"33px"}} />+91</span>
-                                <input type="tel" placeholder="Enter Phone Number" maxLength={10} name="mobile" className="form-control " value={mobile} onChange={(e)=>{setMobile(e.target.value)}} required/>                                                                                                                                                                   
+                                <input type="tel" placeholder="Enter Phone Number" maxLength={10} name="mobile" className="form-control " value={mobile} onChange={(e)=>{setMobile(e.target.value)}} required/>       
+                                {userAldreadyFound && <>
+                                    <p className="text-danger">{userAldreadyFound}</p>
+                                </>}                                                                                                                                                            
                             </div>
                             <button className="btn btn-danger fs-7 mb-3 w-100 mt-3" type="submit">Send OTP</button>
 
