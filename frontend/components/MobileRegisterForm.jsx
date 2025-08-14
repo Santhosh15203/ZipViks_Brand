@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
 import { toast } from "react-toastify";
 
 export default function MobileRegisterForm(){
     const [mobile,setMobile]=useState("")
     const [step,setStep]=useState(1)
+    const[userOtp,setUserOtp]=useState("")
     const[otp,setOtp]=useState("")
 
 
@@ -20,31 +20,28 @@ export default function MobileRegisterForm(){
         showModal.show();
         }
       }    
+    
 
     function sendOTP(e){
       e.preventDefault();
-      fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`,{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({mobile})
-
-      })
-      .then(res=>res.json())
-      .then(()=>{
-        resetForm()
-      })
+       const generatedOtp = Math.floor(1000 + Math.random() * 9000); // random 4-digit OTP
+       setOtp(generatedOtp); // set OTP in state
+       toast.success(`Your OTP is ${generatedOtp}`)
       setStep(2)
-
-    }
+    } 
    
 function verifyOTP(e) {
   e.preventDefault();
-  // Call backend to verify OTP
-  fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/verifyOtp`, {
+    console.log("otp",otp)
+  console.log("userotp",userOtp)
+  
+if (String(otp) === String(userOtp)){
+    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ mobile, otp })
+    body: JSON.stringify({ mobile })
   })
+
     .then(res => res.json())
     .then(data => {
       if (data.success) {
@@ -54,6 +51,8 @@ function verifyOTP(e) {
         toast.error("Invalid OTP!");
       }
     });
+  }
+  else toast.error("OTP wrong!")
 }
 
     function resetForm(){
@@ -95,10 +94,10 @@ function verifyOTP(e) {
                                     <input
                                       type="tel"
                                       placeholder="Enter OTP"
-                                      maxLength={6}
+                                      maxLength={4}
                                       className="form-control"
-                                      value={otp}
-                                      onChange={(e) => setOtp(e.target.value)}
+                                      value={userOtp}
+                                      onChange={(e) => setUserOtp(e.target.value)}
                                       required
                                     />
                                   </div>
@@ -106,14 +105,12 @@ function verifyOTP(e) {
                                     Verify OTP
                                   </button>
                                 </form>
+                                <div className="d-flex justify-content-between">
+                                  <p  className="mt-0 text-decoration-underline small " style={{ cursor: "pointer"}} onClick={sendOTP}>Resend Code</p>
+                                  <p  className="mt-0 text-decoration-underline small " style={{ cursor: "pointer"}} onClick={() => setStep(1)}>Back</p>
+                                 
 
-                                <p
-                                  className="mt-0 text-decoration-underline small d-inline-block ms-auto"
-                                  style={{ cursor: "pointer", width: "30px" }}
-                                  onClick={() => setStep(1)} // just switch step, no form submit
-                                >
-                                  Back
-                                </p>
+                                </div>
                               </>
                             )}
 
