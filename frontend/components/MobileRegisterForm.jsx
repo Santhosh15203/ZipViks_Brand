@@ -43,21 +43,9 @@ function verifyOTP(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ mobile })
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          toast.success("Mobile registered!");
-          setStep(1);
-          navigate("/");
-        } else {
-          toast.error(data.message || "Failed to register");
-          console.error("Error:", data);
-        }
-      })
-      .catch(err => {
-        console.error("Error:", err);
-        toast.error("Something went wrong!");
-      });
+     navigate("/")
+    toast.success("Successfully Registered!");
+         
   } else {
     toast.error("OTP wrong!");
   }
