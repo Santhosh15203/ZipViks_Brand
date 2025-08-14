@@ -1,12 +1,14 @@
 import { useState } from "react"
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
 
 export default function MobileRegisterForm(){
     const [mobile,setMobile]=useState("")
     const [step,setStep]=useState(1)
     const[userOtp,setUserOtp]=useState("")
     const[otp,setOtp]=useState("")
-
+    const navigate=useNavigate()
 
 
      function switchModal(fromId, toId) {
@@ -32,27 +34,32 @@ export default function MobileRegisterForm(){
    
 function verifyOTP(e) {
   e.preventDefault();
-    console.log("otp",otp)
-  console.log("userotp",userOtp)
-  
-if (String(otp) === String(userOtp)){
-    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ mobile })
-  })
+  console.log("otp", otp);
+  console.log("userotp", userOtp);
 
-    .then(res => res.json())
-    .then(data => {
-      if (data.success) {
-        toast.success("OTP verified!");
-        setStep(1); // Reset to first step
-      } else {
-        toast.error("Invalid OTP!");
-      }
-    });
+  if (String(otp) === String(userOtp)) {
+    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mobile })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          toast.success("Mobile registered!");
+          setStep(1);
+          navigate("/");
+        } else {
+          toast.error(data.message || "Failed to register");
+        }
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        toast.error("Something went wrong!");
+      });
+  } else {
+    toast.error("OTP wrong!");
   }
-  else toast.error("OTP wrong!")
 }
 
     function resetForm(){
