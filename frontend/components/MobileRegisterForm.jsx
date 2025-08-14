@@ -43,16 +43,21 @@ function verifyOTP(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ mobile })
     })
-     navigate("/")
-    toast.success("Successfully Registered!");
+      toast.success("Successfully Registered!");
+     const modal = bootstrap.Modal.getInstance(document.getElementById('registerMobile'));
+    modal?.hide();
+  
          
   } else {
     toast.error("OTP wrong!");
+    setUserOtp("")
   }
 }
 
-    function resetForm(){
-        setMobile("")
+    
+    function resetOtp(){
+        setUserOtp("")
+        verifyOTP()
     }
     return(
         <>                                                                  
