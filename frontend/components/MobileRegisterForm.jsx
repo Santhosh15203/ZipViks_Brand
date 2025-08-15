@@ -1,16 +1,15 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-
-export default function MobileRegisterForm(){
+export default function MobileRegisterForm({setUserMobileRegsiterData}){
+  const navigate=useNavigate()
     const [mobile,setMobile]=useState("")
     const [step,setStep]=useState(1)
     const[userOtp,setUserOtp]=useState("")
     const[wrongOtp,setWrongOtp]=useState("")
     const[otp,setOtp]=useState("")
     const[userAldreadyFound,setUserAldreadyFound]=useState("")
-
-
      function switchModal(fromId, toId) {
         const fromEle = document.getElementById(fromId);
         const toEle = document.getElementById(toId);
@@ -25,28 +24,28 @@ export default function MobileRegisterForm(){
     
 
    function sendOTP(e) {
-  e.preventDefault();
-  fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
-    .then(res => res.json())
-    .then((res) => {
-      const userdetails = res.userlogindata;
-      const userFound = userdetails.find(user => user.mobile === mobile);
+      e.preventDefault();
+      fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
+        .then(res => res.json())
+        .then((res) => {
+          const userdetails = res.userlogindata;
+          const userFound = userdetails.find(user => user.mobile === mobile);
 
-      if (mobile.length !== 10) {
-        setUserAldreadyFound("Invalid Input!");
-      } 
-      else if (!userFound) {
-        const generatedOtp = Math.floor(1000 + Math.random() * 9000); 
-        setOtp(generatedOtp);
-        toast.success(`Your OTP is ${generatedOtp}`);
-        setStep(2);
-      } 
-      else {
-        setUserAldreadyFound("User already exists!");
-        setMobile("");
-      }
-    });
-}
+          if (mobile.length !== 10) {
+            setUserAldreadyFound("Invalid Input!");
+          } 
+          else if (!userFound) {
+            const generatedOtp = Math.floor(1000 + Math.random() * 9000); 
+            setOtp(generatedOtp);
+            toast.success(`Your OTP is ${generatedOtp}`);
+            setStep(2);
+          } 
+          else {
+            setUserAldreadyFound("User already exists!");
+            setMobile("");
+          }
+        });
+    }
 
    
 function verifyOTP(e) {
@@ -59,19 +58,31 @@ function verifyOTP(e) {
     })
     .then(res => res.json())
     .then(() => {
-      toast.success("Successfully Registered!");
+      
       const modal = bootstrap.Modal.getInstance(document.getElementById('registerMobile'));
       modal?.hide();
+
+      fetch(` ${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`)
+      .then(res=>res.json())
+      .then((res)=>{
+        const storeData=res.registerMobileData
+        const registerMobileData=storeData.find(user=>user.mobile===mobile)
+        setUserMobileRegsiterData(registerMobileData)
+        console.log("regis data",registerMobileData)
+        
+      })
+      toast.success("Successfully Registered!");
+      
     })
-    .catch(() => {
+    .catch((error) => {
       toast.error("Registration failed. Please try again.");
+      console.log(error.message())
     });
   } else {
     setWrongOtp("Invalid OTP!");
     setUserOtp("");
   }
 }
-
 
     function resetCode(){
       const generatedOtp = Math.floor(1000 + Math.random() * 9000); 

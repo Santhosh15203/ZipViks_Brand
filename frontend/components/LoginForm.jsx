@@ -26,7 +26,7 @@ export default function  LoginForm({setLoggedInUser}){
        try{
         fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
        .then(res=>res.json())
-       .then((res)=>{
+       .then((res)=>{ 
         const userdetails=res.userlogindata
         const userFound=userdetails.find(user=>user.mobile==currentmobile)
        if(userFound) {
