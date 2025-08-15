@@ -30,8 +30,8 @@ export default function MobileRegisterForm(){
       .then(res=>res.json())
       .then((res)=>{
         const userdetails=res.registerFormMobileUser
-        const userFound=userdetails.find(user=>user.mobile!=mobile)
-        if(userFound){
+        const userFound=userdetails.find(user=>user.mobile===mobile)
+        if(!userFound){
           const generatedOtp = Math.floor(1000 + Math.random() * 9000); // random 4-digit OTP
                 setOtp(generatedOtp); // set OTP in state
                 toast.success(`Your OTP is ${generatedOtp}`)
