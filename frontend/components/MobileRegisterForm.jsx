@@ -24,47 +24,54 @@ export default function MobileRegisterForm(){
       }    
     
 
-    function sendOTP(e){
-      e.preventDefault();
-       fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
-      .then(res=>res.json())
-      .then((res)=>{
-        const userdetails=res.userlogindata
-        const userFound=userdetails.find(user=>user.mobile===mobile)
-        if(mobile.length!==10){
-          setUserAldreadyFound("Invalid Input!")
-        }
-        else if(!userFound ){
-          const generatedOtp = Math.floor(1000 + Math.random() * 9000); // random 4-digit OTP
-                setOtp(generatedOtp); // set OTP in state
-                toast.success(`Your OTP is ${generatedOtp}`)
-                setStep(2)
-        }
-        else setUserAldreadyFound("User already exists!"); setMobile("");
-        
-      })
+   function sendOTP(e) {
+  e.preventDefault();
+  fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
+    .then(res => res.json())
+    .then((res) => {
+      const userdetails = res.userlogindata;
+      const userFound = userdetails.find(user => user.mobile === mobile);
 
-       
-    } 
+      if (mobile.length !== 10) {
+        setUserAldreadyFound("Invalid Input!");
+      } 
+      else if (!userFound) {
+        const generatedOtp = Math.floor(1000 + Math.random() * 9000); 
+        setOtp(generatedOtp);
+        toast.success(`Your OTP is ${generatedOtp}`);
+        setStep(2);
+      } 
+      else {
+        setUserAldreadyFound("User already exists!");
+        setMobile("");
+      }
+    });
+}
+
    
 function verifyOTP(e) {
   e.preventDefault();
-   if (String(otp) === String(userOtp)) {
-            fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerMobile`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ mobile })
-            })
-              toast.success("Successfully Registered!");
-            const modal = bootstrap.Modal.getInstance(document.getElementById('registerMobile'));
-            modal?.hide();
-
-          } else {
-            setWrongOtp("Invalid OTP!")
-            setUserOtp("")
-          }
- 
+  if (String(otp) === String(userOtp)) {
+    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registermobile`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mobile }) // mobile will now have the value
+    })
+    .then(res => res.json())
+    .then(() => {
+      toast.success("Successfully Registered!");
+      const modal = bootstrap.Modal.getInstance(document.getElementById('registerMobile'));
+      modal?.hide();
+    })
+    .catch(() => {
+      toast.error("Registration failed. Please try again.");
+    });
+  } else {
+    setWrongOtp("Invalid OTP!");
+    setUserOtp("");
+  }
 }
+
 
     function resetCode(){
       const generatedOtp = Math.floor(1000 + Math.random() * 9000); 

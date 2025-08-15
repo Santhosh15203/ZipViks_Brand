@@ -2,7 +2,7 @@ const userRegisterMobileModal = require("../models/registerMobile");
 exports.registerMobileController = async (req, res, next) => {
 
     try {
-        const { mobile } = req.body
+        const {mobile}  = req.body
              const MobileRegister = await userRegisterMobileModal.create({ mobile })
                 res.json({
                     MobileRegister
