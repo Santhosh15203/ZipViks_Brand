@@ -7,6 +7,7 @@ export default function MobileRegisterForm(){
     const [mobile,setMobile]=useState("")
     const [step,setStep]=useState(1)
     const[userOtp,setUserOtp]=useState("")
+    const[wrongOtp,setWrongOtp]=useState("")
     const[otp,setOtp]=useState("")
     const[userAldreadyFound,setUserAldreadyFound]=useState("")
 
@@ -26,19 +27,22 @@ export default function MobileRegisterForm(){
 
     function sendOTP(e){
       e.preventDefault();
-       fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerFormMobileFinder`)
+       fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
       .then(res=>res.json())
       .then((res)=>{
-        const userdetails=res.registerFormMobileUser
+        const userdetails=res.userlogindata
         const userFound=userdetails.find(user=>user.mobile===mobile)
-        if(!userFound){
+        if(mobile.length!==10){
+          setUserAldreadyFound("Invalid Input!")
+
+        }
+        else if(!userFound ){
           const generatedOtp = Math.floor(1000 + Math.random() * 9000); // random 4-digit OTP
                 setOtp(generatedOtp); // set OTP in state
                 toast.success(`Your OTP is ${generatedOtp}`)
                 setStep(2)
-          
         }
-        else setUserAldreadyFound("User already exist!")
+        else setUserAldreadyFound("User already exists!"); setMobile("");
         
       })
 
@@ -48,7 +52,7 @@ export default function MobileRegisterForm(){
 function verifyOTP(e) {
   e.preventDefault();
    if (String(otp) === String(userOtp)) {
-            fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`, {
+            fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerMobile`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ mobile })
@@ -58,16 +62,20 @@ function verifyOTP(e) {
             modal?.hide();
 
           } else {
-            toast.error("OTP wrong!");
+            setWrongOtp("Invalid OTP!")
             setUserOtp("")
           }
  
 }
 
-    
-    function resetOtp(){
+    function resetCode(){
+      const generatedOtp = Math.floor(1000 + Math.random() * 9000); 
+                setOtp(generatedOtp);
+                toast.success(`Your OTP is ${generatedOtp}`)
+
+    }
+    function resetForm(){
         setUserOtp("")
-        verifyOTP()
     }
     return(
         <>                                                                  
@@ -90,11 +98,14 @@ function verifyOTP(e) {
                                <div className="input-group mt-2">
                                 <span  className="input-group-text"><img src="/form/indianFlag.png" alt="flag" style={{width:"33px"}} />+91</span>
                                 <input type="tel" placeholder="Enter Phone Number" maxLength={10} name="mobile" className="form-control " value={mobile} onChange={(e)=>{setMobile(e.target.value)}} required/>       
-                                {userAldreadyFound && <>
-                                    <p className="text-danger">{userAldreadyFound}</p>
-                                </>}                                                                                                                                                            
+                                                
+                                                                                                           
                             </div>
-                            <button className="btn btn-danger fs-7 mb-3 w-100 mt-3" type="submit">Send OTP</button>
+                               {userAldreadyFound && <>
+                                    <p className="text-danger mt-1 mb-0 small">{userAldreadyFound}</p>
+                                </>}
+                        
+                            <button className="btn btn-danger fs-7 mb-2 w-100 mt-3" type="submit">Send OTP</button>
 
                             </form>
                             
@@ -115,12 +126,16 @@ function verifyOTP(e) {
                                       required
                                     />
                                   </div>
+                                  {wrongOtp && <>
+                                  <p className="text-danger mb-0 small mt-2">{wrongOtp}</p>
+                                      
+                                  </>}
                                   <button className="btn btn-success small mt-3 w-100" type="submit">
                                     Verify OTP
                                   </button>
                                 </form>
                                 <div className="d-flex justify-content-between">
-                                  <p  className="mt-0 text-decoration-underline small " style={{ cursor: "pointer"}} onClick={sendOTP}>Resend Code</p>
+                                  <p  className="mt-0 text-decoration-underline small " style={{ cursor: "pointer"}} onClick={resetCode}>Resend Code</p>
                                   <p  className="mt-0 text-decoration-underline small " style={{ cursor: "pointer"}} onClick={() => setStep(1)}>Back</p>
                                  
 
