@@ -66,7 +66,7 @@ function verifyOTP(e) {
       .then(res=>res.json())
       .then((res)=>{
         const storeData=res.registerMobileData
-        const registerMobileData=storeData.find(user=>user.mobile===mobile)
+        const registerMobileData=storeData.find(user=>user.mobile==mobile)
         setUserMobileRegsiterData(registerMobileData)
         console.log("regis data",registerMobileData)
         
