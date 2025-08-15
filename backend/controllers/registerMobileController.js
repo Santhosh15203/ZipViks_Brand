@@ -3,7 +3,7 @@ exports.registerMobileController = async (req, res, next) => {
 
     try {
         const { mobile } = req.body
-             const MobileRegister = await userRegisterMobileModal.create({ mobile });
+             const MobileRegister = await userRegisterMobileModal.create({ mobile })
                 res.json({
                     MobileRegister
                 })                 

@@ -11,7 +11,7 @@ router.get('/product',allproduct)
 router.get('/product/:id',singleproduct)
 router.post('/order',userorders)
 router.post('/registerform',registerformController)
-router.post('/registerMobile',registerMobileController)
+router.post('/registermobile',registerMobileController)
 router.put('/registerform/:id',registerformControllerUpdate)
 router.get('/userlogin',userloginController)
 
