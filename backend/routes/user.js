@@ -12,8 +12,9 @@ router.get('/product',allproduct)
 router.get('/product/:id',singleproduct)
 router.post('/order',userorders)
 router.post('/registerform',registerformController)
-router.get('/registerform',registerMobileFinder)
+router.get('/registerFormMobileFinder',registerMobileFinder)
 router.post('/sendOTP',registerMobileController)
 router.put('/registerform/:id',registerformControllerUpdate)
 router.get('/userlogin',userloginController)
+
 module.exports=router

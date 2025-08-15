@@ -1,10 +1,10 @@
-const { registerformController } = require("./registerform")
+const registerformodal = require("../models/registerform")
 
 
 exports.registerMobileFinder=async(req,res,next)=>{
-    const mobileUser=await registerformController.findByMobile()
+    const registerFormMobileUser=await registerformodal.findOne({mobile})
     res.json({
-        mobileUser
+        registerFormMobileUser
 
     })
 }

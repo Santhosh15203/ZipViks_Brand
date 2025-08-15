@@ -26,21 +26,28 @@ export default function MobileRegisterForm(){
 
     function sendOTP(e){
       e.preventDefault();
-       const generatedOtp = Math.floor(1000 + Math.random() * 9000); // random 4-digit OTP
-       setOtp(generatedOtp); // set OTP in state
-       toast.success(`Your OTP is ${generatedOtp}`)
-      setStep(2)
+       fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerFormMobileFinder`)
+      .then(res=>res.json())
+      .then((res)=>{
+        const userdetails=res.registerFormMobileUser
+        const userFound=userdetails.find(user=>user.mobile!=mobile)
+        if(userFound){
+          const generatedOtp = Math.floor(1000 + Math.random() * 9000); // random 4-digit OTP
+                setOtp(generatedOtp); // set OTP in state
+                toast.success(`Your OTP is ${generatedOtp}`)
+                setStep(2)
+          
+        }
+        else setUserAldreadyFound("User already exist!")
+        
+      })
+
+       
     } 
    
 function verifyOTP(e) {
   e.preventDefault();
-  fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerform`)
-      .then(res=>res.json())
-      .then((res)=>{
-        const userdetails=res.mobileUser
-        const userFound=userdetails.find(userOtp.mobile!=mobile)
-        if(userFound){
-           if (String(otp) === String(userOtp)) {
+   if (String(otp) === String(userOtp)) {
             fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/sendOTP`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -54,10 +61,6 @@ function verifyOTP(e) {
             toast.error("OTP wrong!");
             setUserOtp("")
           }
-        }
-        else setUserAldreadyFound("User already exist!")
-        
-      })
  
 }
 
