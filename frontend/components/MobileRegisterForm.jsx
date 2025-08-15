@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 
 export default function MobileRegisterForm(){
@@ -34,7 +33,6 @@ export default function MobileRegisterForm(){
         const userFound=userdetails.find(user=>user.mobile===mobile)
         if(mobile.length!==10){
           setUserAldreadyFound("Invalid Input!")
-
         }
         else if(!userFound ){
           const generatedOtp = Math.floor(1000 + Math.random() * 9000); // random 4-digit OTP
