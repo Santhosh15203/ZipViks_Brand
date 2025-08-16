@@ -54,7 +54,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                 </div>
                 <ul className="dropdown-menu p-0 rounded mt-2 gap-3"  style={{minWidth:"130px"}} >
                   <li className="dropdown-item small text-center p-2 border-bottom" data-bs-toggle="modal" data-bs-target="#updateRegisterModal"  >Profile Update</li>
-                  <li className="dropdown-item text-danger small text-center p-2 fw-bold" style={{cursor:"pointer"}} onClick={()=>{setLoggedInUser("");toast.success("Logged Out !")}}>  
+                  <li className="dropdown-item text-danger small text-center p-2 fw-bold" style={{cursor:"pointer"}} onClick={()=>{setLoggedInUser("");setUserMobileRegsiterData("");toast.success("Logged Out !")}}>  
                    Log Out
                   </li>
                 </ul>

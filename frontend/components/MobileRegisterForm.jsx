@@ -29,12 +29,19 @@ export default function MobileRegisterForm({setUserMobileRegsiterData}){
         .then(res => res.json())
         .then((res) => {
           const userdetails = res.userlogindata;
-          const userFound = userdetails.find(user => user.mobile === mobile);
+          const userFound = userdetails.find(user => user.mobile !== mobile);
+
+          fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`)
+          .then(res=>res.json())
+          .then((res)=>{
+            const storeData=res.registerMobileData
+            const mobileUserFound=storeData.find(user=>user.mobile!==mobile)
+          })
 
           if (mobile.length !== 10) {
             setUserAldreadyFound("Invalid Input!");
-          } 
-          else if (!userFound) {
+          }  
+          else if (userFound && mobileUserFound) {
             const generatedOtp = Math.floor(1000 + Math.random() * 9000); 
             setOtp(generatedOtp);
             toast.success(`Your OTP is ${generatedOtp}`);
@@ -61,7 +68,6 @@ function verifyOTP(e) {
       
       const modal = bootstrap.Modal.getInstance(document.getElementById('registerMobile'));
       modal?.hide();
-
       fetch(` ${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`)
       .then(res=>res.json())
       .then((res)=>{
