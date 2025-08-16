@@ -41,17 +41,24 @@ export default function RegisterForm(){
     const [zipcode,setZipcode]=useState("")
     const [country,setCountry]=useState("India")
     const [showPassword, setShowPassword] = useState(false);
+    const[mobileAldreadyFound,setMobileAldreadyFound]=useState("")
 
     function handleSubmitRegisterForm(e){
       e.preventDefault()
-
+      try{
       fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`)
       .then(res=>res.json())
       .then((res)=>{
-        const storeData=res.registerMobileData
-        const userFound=storeData.find(user=>user.mobile!==mobile)
-        if(userFound){
-           try{
+        const storeMobileRegisterData=res.registerMobileData
+        const mobileUser=storeMobileRegisterData.find(user=>user.mobile==mobile)
+
+        fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
+       .then(res=>res.json())
+       .then((res)=>{ 
+        const storeRegisterFormData=res.userlogindata
+        const registerUser=storeRegisterFormData.find(user=>user.mobile==mobile)
+       })
+        if(!mobileUser && !registerUser){
          const formData = new FormData();
             formData.append("firstname", firstname);
             formData.append("mobile", mobile);
@@ -76,16 +83,15 @@ export default function RegisterForm(){
                 navigate('/')
                 
             })
-      }
-      catch(error){
-        console.log("error in registerForm",error)
-      }
 
         }
-        else toast.error("Mobile already register!")
+        else { setMobileAldreadyFound("Already Mobile Number Exist!");resetForm();}
       })
-      
-     
+
+      }
+      catch(error){
+        console.log("registerform error",error)
+      }
            
         }
     
@@ -114,6 +120,10 @@ export default function RegisterForm(){
                          <div className="">
                           {/* <label className="">Mobile Number :</label> */}
                           <input type="tel"  className="form-control small-placeholder" name="mobile" maxLength={10} value={mobile} placeholder="(+91) :*" onChange={(e)=>{setMobile(e.target.value)}} required/>
+                          {mobileAldreadyFound && <>
+                           <p className="text-danger small mt-2 text-center">{mobileAldreadyFound}</p>
+                          </>}
+                         
                         </div>
                        
                       </div>
