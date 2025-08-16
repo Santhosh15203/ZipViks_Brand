@@ -44,7 +44,14 @@ export default function RegisterForm(){
 
     function handleSubmitRegisterForm(e){
       e.preventDefault()
-      try{
+
+      fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`)
+      .then(res=>res.json())
+      .then((res)=>{
+        const storeData=res.registerMobileData
+        const userFound=storeData.find(user=>user.mobile!==mobile)
+        if(userFound){
+           try{
          const formData = new FormData();
             formData.append("firstname", firstname);
             formData.append("mobile", mobile);
@@ -73,6 +80,12 @@ export default function RegisterForm(){
       catch(error){
         console.log("error in registerForm",error)
       }
+
+        }
+        else toast.error("Mobile already register!")
+      })
+      
+     
            
         }
     

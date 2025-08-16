@@ -6,16 +6,8 @@ exports.getMobileRegisterData=async(req,res,next)=>{
         res.json({
             registerMobileData
         })
-
     }
     catch(error){
         console.error("Mobile Registeration User Data error:", error);
-
     }
-    
-
-
-
-
-
 }
