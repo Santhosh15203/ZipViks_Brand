@@ -23,36 +23,36 @@ export default function MobileRegisterForm({setUserMobileRegsiterData}){
       }    
     
 
-   function sendOTP(e) {
-      e.preventDefault();
-      fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
-        .then(res => res.json())
-        .then((res) => {
-          const userdetails = res.userlogindata;
-          const userFound = userdetails.find(user => user.mobile === mobile);
+   async function sendOTP(e) {
+  e.preventDefault();
 
-          fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`)
-          .then(res=>res.json())
-          .then((res)=>{
-            const storeData=res.registerMobileData
-            const mobileUserFound=storeData.find(user=>user.mobile===mobile)
-          })
+  try {
+    const userRes = await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`);
+    const { userlogindata } = await userRes.json();
 
-          if (mobile.length !== 10) {
-            setUserAldreadyFound("Invalid Input!"); 
-          }  
-          else if (!userFound && !mobileUserFound) {
-            const generatedOtp = Math.floor(1000 + Math.random() * 9000); 
-            setOtp(generatedOtp);
-            toast.success(`Your OTP is ${generatedOtp}`);
-            setStep(2);
-          } 
-          else {
-            setUserAldreadyFound("User already exists!");
-            setMobile("");
-          }
-        });
+    const regRes = await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`);
+    const { registerMobileData } = await regRes.json();
+
+    const registerForm = userlogindata.find(user => user.mobile === mobile);
+    const mobileRegister = registerMobileData.find(user => user.mobile === mobile);
+
+    if (mobile.length !== 10) {
+      setUserAldreadyFound("Invalid Input!");
+    } else if (!registerForm && !mobileRegister) {
+      const generatedOtp = Math.floor(1000 + Math.random() * 9000);
+      setOtp(generatedOtp);
+      toast.success(`Your OTP is ${generatedOtp}`);
+      setStep(2);
+    } else {
+      setUserAldreadyFound("User already exist!");
+      setMobile("");
     }
+  } catch (err) {
+    console.error("Send OTP error:", err);
+    toast.error("Something went wrong, please try again.");
+  }
+}
+
 
    
 function verifyOTP(e) {

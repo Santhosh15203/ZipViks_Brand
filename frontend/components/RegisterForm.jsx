@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
-export default function RegisterForm(){
+export default function RegisterForm({setLoggedInUser}){
 
     function switchModal(fromId, toId) {
         const fromEle = document.getElementById(fromId);
@@ -43,58 +43,55 @@ export default function RegisterForm(){
     const [showPassword, setShowPassword] = useState(false);
     const[mobileAldreadyFound,setMobileAldreadyFound]=useState("")
 
-    function handleSubmitRegisterForm(e){
-      e.preventDefault()
-      try{
-      fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`)
-      .then(res=>res.json())
-      .then((res)=>{
-        const storeMobileRegisterData=res.registerMobileData
-        const mobileUser=storeMobileRegisterData.find(user=>user.mobile==mobile)
+  async function handleSubmitRegisterForm(e) {
+  e.preventDefault();
+  try {
+    const regRes = await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`);  //registerMobile
+    const { registerMobileData } = await regRes.json();
+    const mobileUser = registerMobileData.find(user => user.mobile === mobile);
 
-        fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
-       .then(res=>res.json())
-       .then((res)=>{ 
-        const storeRegisterFormData=res.userlogindata
-        const registerUser=storeRegisterFormData.find(user=>user.mobile==mobile)
-       })
-        if(!mobileUser && !registerUser){
-         const formData = new FormData();
-            formData.append("firstname", firstname);
-            formData.append("mobile", mobile);
-            formData.append("email", email);
-            formData.append("password", password);
-            formData.append("address", address);
-            formData.append("city", city);
-            formData.append("state", state);
-            formData.append("zipcode", zipcode);
-            formData.append("country", country);
+    const userRes = await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`);  //registerForm
+    const { userlogindata } = await userRes.json();
+    const registerUser = userlogindata.find(user => user.mobile === mobile);
 
-            fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerform`, {
-              method: "POST",
-              body: formData, // no need for headers here
-            })
-            .then(res=>res.json())
-            .then(()=>{
-                toast.success("Registeration Successful");
-                resetForm()
-                const modal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                modal?.hide();
-                navigate('/')
-                
-            })
+    if (mobileUser || registerUser) {
+      setMobileAldreadyFound("Mobile number already exists!");
+      resetForm(""); 
+      return;
+    }
 
-        }
-        else { setMobileAldreadyFound("Already Mobile Number Exist!");resetForm();}
-      })
+    const formData = new FormData();
+    formData.append("firstname", firstname);
+    formData.append("mobile", mobile);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("address", address);
+    formData.append("city", city);
+    formData.append("state", state);
+    formData.append("zipcode", zipcode);
+    formData.append("country", country);
 
-      }
-      catch(error){
-        console.log("registerform error",error)
-      }
-           
-        }
-    
+    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerform`, {
+      method: "POST",
+      body: formData,
+    });
+     const res = await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`);
+    const { userlogindata: updatedUsers } = await res.json();
+    const recentUser = updatedUsers.find(user => user.mobile === mobile);
+
+    setLoggedInUser(recentUser)
+    toast.success("Registration Successful!");
+    resetForm();
+    const modal = bootstrap.Modal.getInstance(document.getElementById("registerModal"));
+    modal?.hide();
+    navigate("/");
+
+  } catch (error) {
+    console.error("registerform error:", error);
+    toast.error("Something went wrong. Please try again.");
+  }
+}
+
 
     return(
         <>

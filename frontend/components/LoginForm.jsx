@@ -12,15 +12,14 @@ export default function  LoginForm({setLoggedInUser}){
         const hideModal = bootstrap.Modal.getInstance(fromEle) || new bootstrap.Modal(fromEle);
         const showModal = bootstrap.Modal.getInstance(toEle) || new bootstrap.Modal(toEle);
         hideModal.hide();
-        setTimeout(() => {
           showModal.show()
-        }, 300);
         }
       }      
 
     const[currentmobile,setCurrentmobile]=useState("")
     const[mobilenumberfound,setmobilenumberfound]=useState("")
     const navigate=useNavigate()
+    
    function handleCheckMobileNumber(e){
     e.preventDefault()
        try{

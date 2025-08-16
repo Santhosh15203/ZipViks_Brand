@@ -80,7 +80,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             <LoginForm  setLoggedInUser={setLoggedInUser}/>
             <EmailForm  setLoggedInUser={setLoggedInUser}/>
             <MobileRegisterForm setUserMobileRegsiterData={setUserMobileRegsiterData}/>
-            <RegisterForm/>
+            <RegisterForm setLoggedInUser={setLoggedInUser}/>
             <UpdateRegisterModal loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>
           </div>
           
