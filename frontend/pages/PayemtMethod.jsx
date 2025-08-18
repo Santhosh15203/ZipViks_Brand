@@ -14,7 +14,7 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
   const[mobileAddress,setMobileAddress]=useState("")
   const[mobileCity,setMobileCity]=useState("")
   const[mobileState,setMobileState]=useState("")
-  const[mobileZipcode,setMobilZipcode]=useState("")
+  const[mobileZipcode,setMobileZipcode]=useState("")
 
   const [showUPI, setShowUPI] = useState(true);
   const [deliveryStatus,setDeliveryStatus]=useState(false)
@@ -39,16 +39,17 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
     return acc + card.custumQuantity * Number(sellingprice);
   }, 0);
 
-async  function hanldeMobileRegisterForm(e){
+async function hanldeMobileRegisterForm(e){
     e.preventDefault()
+    console.log("jbdjfd",mobileName)
     
     try{
       
-      await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/registerMobileForm`,{
+      const response=await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform`,{
       method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify({
-        name: mobileName,
+        fullname: mobileName,
           mobile: mobileMobile,
           address: mobileAddress,
           city: mobileCity,
@@ -57,7 +58,20 @@ async  function hanldeMobileRegisterForm(e){
        }),
        
     })
-    toast.success("Submited")
+    
+    if (!response.ok) throw new Error("Failed to submit",error.message);
+
+    const data = await response.json();
+    console.log("Saved form:", data);
+     setMobileName("");
+    setMobileMobile("");
+    setMobileAddress("");
+    setMobileCity("");
+    setMobileState("");
+    setMobileZipcode("");
+    
+
+    toast.success("Submitted ✅");
 
     }
     catch(error){
@@ -160,7 +174,7 @@ async  function hanldeMobileRegisterForm(e){
                           </div>
                           <div>
                             <label className="fw-bold small">ZipCode :<span className="text-danger">*</span> </label>
-                            <input type="text" className="form-control"  value={mobileZipcode} onChange={(e)=>{setMobilZipcode(e.target.value)}} required  />
+                            <input type="text" className="form-control"  value={mobileZipcode} onChange={(e)=>{setMobileZipcode(e.target.value)}} required  />
                           </div>
                          
                           

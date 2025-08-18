@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
-const postRegisterMobileFormSchema=new mongoose.Schema({
-    name:String,
+const registermobileformschema=new mongoose.Schema({
+    fullname:String,
     mobile:String,
     address:String,
     city:String,
@@ -8,5 +8,5 @@ const postRegisterMobileFormSchema=new mongoose.Schema({
     zipcode:String
 
 })
-const registerMobileFormModal=mongoose.model("registermobileformtable",postRegisterMobileFormSchema)
+const registerMobileFormModal=mongoose.model("registermobileformtable",registermobileformschema)
 module.exports=registerMobileFormModal 

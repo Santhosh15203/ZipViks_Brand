@@ -9,6 +9,7 @@ const { getMobileRegisterData } = require("../controllers/getMobileRegisterData"
 const { registerMobileFormController } = require("../controllers/postRegisterMobileFormController")
 const router=express.Router()
 
+router.post('/mobileform',registerMobileFormController)
 router.get('/product',allproduct)
 router.get('/product/:id',singleproduct)
 router.post('/order',userorders)
@@ -16,7 +17,7 @@ router.post('/registerform',registerformController)
 router.put('/registerform/:id',registerformControllerUpdate)
 router.get('/userlogin',userloginController)
 router.post('/registermobile',registerMobileController)
-router.post('/registerMobileForm',registerMobileFormController)
+
 router.get('/getMobileRegisterData',getMobileRegisterData)
 
 
