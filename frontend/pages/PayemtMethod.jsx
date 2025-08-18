@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import UpdateRegisterMobileForm from "../components/updateRegisterMobileForm";
+import UpdateRegisterModal from "../components/UpdateRegisterModal";
 
 export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,userMobileRegisterData }) {
   const [firstname] = useState(loggedInUser.firstname || "");
@@ -8,7 +10,7 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
   const [city] = useState(loggedInUser.city || "");
   const [state] = useState(loggedInUser.state || "");
   const [zipcode] = useState(loggedInUser.zipcode || "");
-
+ 
   const[mobileName,setMobileName]=useState("")
   const[mobileMobile,setMobileMobile]=useState("")
   const[mobileAddress,setMobileAddress]=useState("")
@@ -18,6 +20,8 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
 
   const [showUPI, setShowUPI] = useState(true);
   const [deliveryStatus,setDeliveryStatus]=useState(false)
+  const [submit,setSubmit]=useState(true)
+  const [showEdit,setShowEdit]=useState(false)
   const [paymentOption, setPaymentOption] = useState("Google Pay");
 
   const totalMrp = cardItems.reduce((acc, card) => {
@@ -39,13 +43,21 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
     return acc + card.custumQuantity * Number(sellingprice);
   }, 0);
 
+  function resetForm(){
+     setMobileName("");
+    setMobileMobile("");
+    setMobileAddress("");
+    setMobileCity("");
+    setMobileState("");
+    setMobileZipcode("");
+  }
+
 async function hanldeMobileRegisterForm(e){
     e.preventDefault()
-    console.log("jbdjfd",mobileName)
     
     try{
       
-      const response=await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform`,{
+      await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform`,{
       method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify({
@@ -58,20 +70,10 @@ async function hanldeMobileRegisterForm(e){
        }),
        
     })
-    
-    if (!response.ok) throw new Error("Failed to submit",error.message);
-
-    const data = await response.json();
-    console.log("Saved form:", data);
-     setMobileName("");
-    setMobileMobile("");
-    setMobileAddress("");
-    setMobileCity("");
-    setMobileState("");
-    setMobileZipcode("");
-    
-
-    toast.success("Submitted ✅");
+    setSubmit(false)
+    setShowEdit(true)
+    // resetForm()
+    toast.success("Submitted !  ");
 
     }
     catch(error){
@@ -139,6 +141,7 @@ async function hanldeMobileRegisterForm(e){
                     Edit profile
                   </p>
                 </div>
+                <UpdateRegisterModal/>
             </>
         }
 
@@ -152,55 +155,65 @@ async function hanldeMobileRegisterForm(e){
                         <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
                           <div className="w-50">
                             <label className="fw-bold small"> Name :<span className="text-danger">*</span></label>
-                            <input type="text" className="form-control"  value={mobileName} onChange={(e)=>{setMobileName(e.target.value)}} required />
+                            <input type="text" className="form-control"  value={mobileName} disabled={showEdit} onChange={(e)=>{setMobileName(e.target.value)}} required />
                           </div>
                           <div className="w-50">
                             <label className="fw-bold small"> Mobile :<span className="text-danger">*</span></label>
-                            <input type="tel" className="form-control" value={mobileMobile} onChange={(e)=>{setMobileMobile(e.target.value)}} required  />
+                            <input type="tel" className="form-control" value={mobileMobile} disabled={showEdit}  onChange={(e)=>{setMobileMobile(e.target.value)}} required  />
                           </div>
                         </div>
                         <div className="text-start">
                           <label className="fw-bold small">Address :<span className="text-danger">*</span> </label>
-                          <input className="form-control p-4"  value={mobileAddress} onChange={(e)=>{setMobileAddress(e.target.value)}}  required  />
+                          <input className="form-control p-4"  value={mobileAddress} disabled={showEdit}  onChange={(e)=>{setMobileAddress(e.target.value)}}  required  />
                         </div>
                         <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
                           <div>
                             <label className="fw-bold small">City :<span className="text-danger">*</span> </label>
-                            <input type="text" className="form-control"   value={mobileCity} onChange={(e)=>{setMobileCity(e.target.value)}} required  />
+                            <input type="text" className="form-control"   value={mobileCity} disabled={showEdit}  onChange={(e)=>{setMobileCity(e.target.value)}} required  />
                           </div>
                           <div>
                             <label className="fw-bold small">State :<span className="text-danger">*</span> </label>
-                            <input type="text" className="form-control" value={mobileState} onChange={(e)=>{setMobileState(e.target.value)}} required />
+                            <input type="text" className="form-control" value={mobileState} disabled={showEdit}  onChange={(e)=>{setMobileState(e.target.value)}} required />
                           </div>
                           <div>
                             <label className="fw-bold small">ZipCode :<span className="text-danger">*</span> </label>
-                            <input type="text" className="form-control"  value={mobileZipcode} onChange={(e)=>{setMobileZipcode(e.target.value)}} required  />
+                            <input type="text" className="form-control"  value={mobileZipcode} disabled={showEdit}  onChange={(e)=>{setMobileZipcode(e.target.value)}} required  />
                           </div>
                          
                           
 
                         </div>
-                         <div className="text-end mt-3 ">
+                        {submit && (
+                           <div className="text-end mt-3 ">
                              <button className="mb-0 btn btn-danger small p-2" type="submit">Submit</button>
                           </div>
+
+                        )}
+                        
                       </div>
 
                       </form>
 
                     </div>
-                    <div className="text-end mt-4 gap-0 small">
-                  <p className="mb-0">
-                    If you want to edit this <span className="fw-bold ">Billing Details</span>, click the link below.
-                  </p>
-                  <p
-                    className="text-danger small text-decoration-underline"
-                    style={{ cursor: "pointer" }}
-                    data-bs-toggle="modal"
-                    data-bs-target="#updateRegisterModal"
-                  >
-                    Edit profile
-                  </p>
-                </div>
+
+                    {showEdit && (
+                      <div className="text-end mt-4 gap-0 small">
+                      <p className="mb-0">
+                        If you want to edit this <span className="fw-bold ">Billing Details</span>, click the link below.
+                      </p>
+                      <p
+                        className="text-danger small text-decoration-underline"
+                        style={{ cursor: "pointer" }}
+                        data-bs-toggle="modal"
+                        data-bs-target="#updateMobileRegisterForm"
+                      >
+                        Edit profile
+                      </p>
+                    </div>
+
+                    )}
+                    <UpdateRegisterMobileForm mobileMobile={mobileMobile}/>
+                    
               </>}
 
 

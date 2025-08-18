@@ -12,9 +12,7 @@ export default function UpdateRegisterModal({loggedInUser,setLoggedInUser}){
         const hideModal = bootstrap.Modal.getInstance(fromEle) || new bootstrap.Modal(fromEle);
         const showModal = bootstrap.Modal.getInstance(toEle) || new bootstrap.Modal(toEle);
         hideModal.hide();
-        setTimeout(() => {
           showModal.show()
-        }, 300);
         }
       }    
 
@@ -123,22 +121,6 @@ export default function UpdateRegisterModal({loggedInUser,setLoggedInUser}){
                                 <input type={showPassword?"text":"password"}   className="form-control small-placeholder" value={password} name="password" onChange={(e)=>{setPassword(e.target.value)}} placeholder="password*" />
                                 <span className="input-group-text" onClick={()=>{setShowPassword(!showPassword)}} style={{cursor:"pointer"}}><i className={`bi ${showPassword?"bi-eye":"bi-eye-slash"}`}></i> </span>
                             </div>
-                      </div>
-                      <div className="d-flex mt-2 mb-2 justify-content-around text-start">
-                         <div className="">
-                          {/* <label className="">Last name :</label> */}
-                          <input type="file" className="form-control snall-placeholder" accept="image/*" name="profile"  onChange={(e)=>{setProfile(e.target.files[0])}} />
-                              
-                        </div>
-                        <div className="d-flex flex-column w-50 ">
-                          {/* <label className="ms-4">Gender :</label> */}
-                          <select name="gender"  className="btn border p-2 mt-1 w-75 mx-auto small-select" value={gender} onChange={(e)=>{setGender(e.target.value)}} >
-                            <option value="">select gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Trans">Transgender</option>
-                          </select>
-                        </div>
                       </div>
                       <div className="text-start">
                           {/* <label className="">Address :</label> */}

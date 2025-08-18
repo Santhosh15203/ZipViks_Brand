@@ -7,6 +7,7 @@ const { registerformControllerUpdate } = require('../controllers/registerformUpd
 const { registerMobileController } = require('../controllers/registerMobileController')
 const { getMobileRegisterData } = require("../controllers/getMobileRegisterData")
 const { registerMobileFormController } = require("../controllers/postRegisterMobileFormController")
+const { getMobileRegisterFormData } = require("../controllers/getMobileRegisterFormData")
 const router=express.Router()
 
 router.post('/mobileform',registerMobileFormController)
@@ -17,8 +18,8 @@ router.post('/registerform',registerformController)
 router.put('/registerform/:id',registerformControllerUpdate)
 router.get('/userlogin',userloginController)
 router.post('/registermobile',registerMobileController)
-
 router.get('/getMobileRegisterData',getMobileRegisterData)
+router.get('/getMobileRegisterFormDataUser',getMobileRegisterFormData)
 
 
 module.exports=router

@@ -8,82 +8,168 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [searchparams] = useSearchParams();
 
-
-  // fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product`)
-  // .then((res) => res.json())
-  //     .then((res) =>{
-  //       setProducts(res.userproducts)
-  //     setLoading(false) })
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-  const controller = new AbortController();
-  const signal = controller.signal;
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-  setLoading(true);
+    setLoading(true);
 
-  fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product?${searchparams.toString()}`, { signal })
+    fetch(
+      `${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product?page=${page}&limit=12&${searchparams.toString()}`,
+      { signal }
+    )
       .then((res) => res.json())
-      .then((res) =>{
-        setProducts(res.userproducts);
-         setLoading(false);
-         
+      .then((res) => {
+        if (page === 1) {
+          setProducts(res.userproducts || []);
+        } else {
+          setProducts((prev) => [...prev, ...(res.userproducts || [])]);
+        }
+
+        setHasMore(res.userproducts?.length === 12);
+        setLoading(false);
       })
-       
-  }, [searchparams]);
+      .catch((err) => {
+        if (err.name === "AbortError") return;
+        console.error("Product fetch error:", err);
+        setLoading(false);
+      });
+
+    return () => controller.abort();
+  }, [searchparams, page]);
 
   return (
     <div className="container">
       <div className="mt-0 row">
-        {loading ? (
-          <div className="" style={{ width: "100%", height: "347px" }}>
-            <div className="d-flex justify-content-center gap-1" style={{ marginTop: "10%" }}>
+        {loading && page === 1 ? (
+         
+          <div style={{ width: "100%", height: "347px" }}>
+            <div
+              className="d-flex justify-content-center gap-1"
+              style={{ marginTop: "10%" }}
+            >
               <i className="bi bi-arrow-clockwise spin"></i>
-              <span className="">Loading ...</span>
+              <span>Loading ...</span>
             </div>
           </div>
         ) : products.length > 0 ? (
           <>
-          <div id="demo" className="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-             <div className="carousel-indicators">
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-          </div>
-            <div className="carousel-inner" >
-              <div className="carousel-item active">
-                <img src="/slide/carousel1.jpg" alt="img" style={{width:"100%",height:"250px",objectFit:"cover"}} />
+          
+            <div
+              id="demo"
+              className="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000"
+            >
+              <div className="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#demo"
+                  data-bs-slide-to="0"
+                  className="active"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#demo"
+                  data-bs-slide-to="1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#demo"
+                  data-bs-slide-to="2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#demo"
+                  data-bs-slide-to="3"
+                ></button>
               </div>
-              <div className="carousel-item ">
-                <img src="/slide/carousel2.jpg" alt="img" style={{width:"100%",height:"250px",objectFit:"cover"}} />
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img
+                    src="/slide/carousel1.jpg"
+                    alt="img"
+                    loading="lazy"
+                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    src="/slide/carousel2.jpg"
+                    alt="img"
+                    loading="lazy"
+                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    src="/slide/carousel3.jpg"
+                    alt="img"
+                    loading="lazy"
+                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    src="/slide/carousel4.jpg"
+                    alt="img"
+                    loading="lazy"
+                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
+                  />
+                </div>
               </div>
-              <div className="carousel-item ">
-                <img src="/slide/carousel3.jpg" alt="img" style={{width:"100%",height:"250px",objectFit:"cover"}} />
+              <div>
+                <button
+                  className="carousel-control-prev"
+                  data-bs-target="#demo"
+                  data-bs-slide="prev"
+                >
+                  <span className="carousel-control-prev-icon"></span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  data-bs-target="#demo"
+                  data-bs-slide="next"
+                >
+                  <span className="carousel-control-next-icon"></span>
+                </button>
               </div>
-              <div className="carousel-item ">
-                <img src="/slide/carousel4.jpg" alt="img" style={{width:"100%",height:"250px",objectFit:"cover"}} />
-              </div>
+            </div>
 
-            </div>
-            <div>
-              <button className="carousel-control-prev" data-bs-target="#demo" data-bs-slide="prev"><span className="carousel-control-prev-icon"></span></button>
-              <button className="carousel-control-next" data-bs-target="#demo" data-bs-slide="next"><span className="carousel-control-next-icon"></span></button>
-            </div>
-          </div>
+            
             <h5 className="text-center mt-3">Latest Products</h5>
             {products.map((product) => (
-              <div className="col-lg-3 col-md-4 col-sm-6 mt-3" key={product._id}>
+              <div
+                className="col-lg-3 col-md-4 col-sm-6 mt-3"
+                key={product._id}
+              >
                 <ProductCard product={product} />
               </div>
-
             ))}
+
+            
+            {hasMore && (
+              <div className="text-center mt-4">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => setPage((prev) => prev + 1)}
+                  disabled={loading}
+                >
+                  {loading ? "Loading..." : "Load More"}
+                </button>
+              </div>
+            )}
           </>
         ) : (
-          <>
-            <div className="" style={{ width: "100%", height: "347px" }}>
-                 <p className="text-center text-dark mt-5">Sorry! No products found.</p>
-            </div>
-          </>
+          
+          <div style={{ width: "100%", height: "347px" }}>
+            <p className="text-center text-dark mt-5">
+              Sorry! No products found.
+            </p>
+          </div>
         )}
       </div>
     </div>
