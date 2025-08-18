@@ -78,6 +78,7 @@ function verifyOTP(e) {
         
       })
       toast.success("Successfully Registered!");
+      navigate("/")
       
     })
     .catch((error) => {

@@ -2,8 +2,6 @@ const registerformodal = require("../models/registerform");
 
 exports.registerformController = async (req, res,next) => {
     try {
-        console.log("Incoming request body:", req.body); // debug log
-
         const { firstname, mobile, email, password, address, city, state, zipcode, country } = req.body;
 
         if (!firstname || !email) {
