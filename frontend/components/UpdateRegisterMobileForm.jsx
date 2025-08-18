@@ -14,7 +14,6 @@ export default function UpdateRegisterMobileForm({mobileMobile}){
       }
 
     },[mobileMobile])
-    console.log("user",user)
 
 
    
