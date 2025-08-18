@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react"
 
 export default function UpdateRegisterMobileForm({mobileMobile}){
-    const [user,setUser]=useState("")
+    const [user,setUser]=useState(null)
 
     useEffect(()=>{
-         fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterFormDataUser`)
+      if(mobileMobile){
+         fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterFormDataUser/${mobileMobile}`)
         .then(res=>res.json())
-        .then((res)=>{
-        const userDetails=res.registermobileformData
-        const userFound=userDetails.find(user=>user.mobile===mobileMobile)
-        setUser(userFound)
+        .then((data)=>{
+        setUser(data)
          .catch(err => console.error("Fetch error:", err))
         }) 
+      }
 
     },[mobileMobile])
     console.log("user",user)
