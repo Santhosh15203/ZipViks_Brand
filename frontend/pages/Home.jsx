@@ -8,6 +8,13 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [searchparams] = useSearchParams();
 
+
+  // fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product`)
+  // .then((res) => res.json())
+  //     .then((res) =>{
+  //       setProducts(res.userproducts)
+  //     setLoading(false) })
+
   useEffect(() => {
   const controller = new AbortController();
   const signal = controller.signal;

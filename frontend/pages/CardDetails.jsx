@@ -114,7 +114,6 @@ function handleAddToCart() {
           {selectsize && ( <>
              <div className="">
                 <p><strong>Available Stocks :</strong> <span className="text-danger fw-bold">{product[selectsize]}</span></p>
-                <p>kndjd</p>
               </div> 
           </>)}
 

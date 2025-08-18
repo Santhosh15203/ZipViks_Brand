@@ -4,8 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 
-export default function PlaceOrder({cardItems,setCardItems,loggedInUser}){
-    const [modifiedMaximumQuantityReached,setModifiedMaximumQuantityReached]=useState("")
+export default function PlaceOrder({cardItems,setCardItems,loggedInUser,userMobileRegisterData}){
+
+    const [modifiedMaximumQuantityReached,setModifiedMaximumQuantityReached]=useState(null)
     const[complete,setComplete]=useState(false)
     const [feedback,setFeedback]=useState("")
     const navigate=useNavigate()
@@ -53,14 +54,15 @@ const handleIncrementQuantity = (id, size) => {
     };                                                                                                                   
 
     
-    function handlePlaceOrderItems(loggedInUser){
-        if(!loggedInUser){
-            navigate("/");
-            toast.error("User must be login !");
-            return 
+    function handlePlaceOrderItems(){
+        if(loggedInUser || userMobileRegisterData ){
+            navigate("/payment");
         }
-        else  navigate("/payment")
+        else  { navigate("/");
+            toast.error("User must be login!");
+            return }
     }
+    
     function handleSubmitFeedback(e){
         e.preventDefault(); 
         if(feedback===""){
@@ -183,7 +185,7 @@ const handleIncrementQuantity = (id, size) => {
                                                                                                             return (acc+(card.custumQuantity*Number(sellingprice)))
                                                                                                             },0)}.00</strong></p>
                                                
-                                                 <button className="btn btn-success " onClick={()=>{handlePlaceOrderItems(loggedInUser)}}>Proceed to Pay</button>
+                                                 <button className="btn btn-success " onClick={handlePlaceOrderItems}>Proceed to Pay</button>
 
                                             </div>
                                                  

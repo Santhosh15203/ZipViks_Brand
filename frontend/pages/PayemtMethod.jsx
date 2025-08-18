@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function PaymentMethod({ cardItems, setCardItems, loggedInUser }) {
+export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,userMobileRegisterData }) {
   const [firstname] = useState(loggedInUser.firstname || "");
   const [mobile] = useState(loggedInUser.mobile || "");
   const [address] = useState(loggedInUser.address || "");
@@ -8,7 +8,15 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser })
   const [state] = useState(loggedInUser.state || "");
   const [zipcode] = useState(loggedInUser.zipcode || "");
 
+  const[mobileName,setMobileName]=useState("")
+  const[mobileMobile,setMobileMobile]=useState("")
+  const[mobileAddress,setMobileAddress]=useState("")
+  const[mobileCity,setMobileCity]=useState("")
+  const[mobileState,setMobileState]=useState("")
+  const[mobileZipcode,setMobilZipcode]=useState("")
+
   const [showUPI, setShowUPI] = useState(false);
+  const [deliveryStatus,setDeliveryStatus]=useState(false)
   const [paymentOption, setPaymentOption] = useState("Google Pay");
 
   const totalMrp = cardItems.reduce((acc, card) => {
@@ -31,13 +39,15 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser })
   }, 0);
 
   return (
+    
     <>
-      <div className="d-flex justify-content-around mb-3 mt-3 gap-5 container">
+    {loggedInUser && <>
+    <div className="d-flex justify-content-around mb-3 mt-3 gap-5 container">
         <div className="d-flex flex-column p-3 w-75">
           <div>
-            <h5 className="text-dark fw-bold text-center mt-2 text-decoration-underline">BILLING DETAILS</h5>
+            <h5 className="text-danger fw-bold text-center mt-2 text-decoration-underline">BILLING DETAILS</h5>
           </div>
-          <div className="rounded shadow p-3 mt-3">
+          <div className="rounded border shadow p-3 mt-3">
             <div>
               <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
                 <div className="w-50">
@@ -71,7 +81,7 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser })
           </div>
           <div className="text-end mt-4 gap-0 small">
             <p className="mb-0">
-              If you want to edit this <span className="fw-bold">Billing Details</span>, click the link below.
+              If you want to edit this <span className="fw-bold ">Billing Details</span>, click the link below.
             </p>
             <p
               className="text-danger small text-decoration-underline"
@@ -160,6 +170,146 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser })
           </div>
         </div>
       </div>
+    </>}
+    {userMobileRegisterData && <>
+    <div className="d-flex justify-content-around mb-3 mt-3 gap-5 container">
+        <div className="d-flex flex-column p-3 w-75">
+          <div>
+            <h5 className=" fw-bold text-center mt-2 text-danger" style={{fontFamily:"sans-serif"}}>BILLING DETAILS</h5>
+          </div>
+          <div className="rounded border shadow p-3 mt-3">
+            <div>
+              <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
+                <div className="w-50">
+                  <label className="fw-bold small"> Name :<span className="text-danger">*</span></label>
+                  <input type="text" className="form-control"  value={mobileName} onChange={(e)=>{setMobileName(e.target.value)}} required />
+                </div>
+                <div className="w-50">
+                  <label className="fw-bold small"> Mobile :<span className="text-danger">*</span></label>
+                  <input type="tel" className="form-control" value={mobileMobile} onChange={(e)=>{setMobileMobile(e.target.value)}} required  />
+                </div>
+              </div>
+              <div className="text-start">
+                <label className="fw-bold small">Address :<span className="text-danger">*</span> </label>
+                <input className="form-control p-4"  value={mobileAddress} onChange={(e)=>{setMobileAddress(e.target.value)}}  required  />
+              </div>
+              <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
+                <div>
+                  <label className="fw-bold small">City :<span className="text-danger">*</span> </label>
+                  <input type="text" className="form-control"   value={mobileCity} onChange={(e)=>{setMobileCity(e.target.value)}} required  />
+                </div>
+                <div>
+                  <label className="fw-bold small">State :<span className="text-danger">*</span> </label>
+                  <input type="text" className="form-control" value={mobileState} onChange={(e)=>{setMobileState(e.target.value)}} required />
+                </div>
+                <div>
+                  <label className="fw-bold small">ZipCode :<span className="text-danger">*</span> </label>
+                  <input type="text" className="form-control"  value={mobileZipcode} onChange={(e)=>{setMobilZipcode(e.target.value)}} required  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-end mt-4 gap-0 small">
+            <p className="mb-0">
+               <span className="fw-bold btn btn-success small">Confirm</span>
+            </p>
+            {/* <p
+              className="text-danger small text-decoration-underline"
+              style={{ cursor: "pointer" }}
+              data-bs-toggle="modal"
+              data-bs-target="#updateRegisterModal"
+            >
+              Edit profile
+            </p> */}
+          </div>
+        </div>
+
+        <div className="shadow border p-4 w-50">
+          <div className="p-1">
+            <h6 className="text-center fw-bold " style={{fontFamily:"sans-serif"}}>
+              PRICE DETAILS{" "}
+              <span className="text-success">
+                ({cardItems.reduce((acc, card) => acc + card.custumQuantity, 0)} items)
+              </span>
+            </h6>
+          </div>
+          <hr />
+          <div className="d-flex justify-content-between gap-5">
+            <p>Total MRP (Inc.all Taxes)</p>
+            <p>₹{totalMrp}.00</p>
+          </div>
+          <div className="d-flex justify-content-between gap-5">
+            <p>Total Discount Amt</p>
+            <p className="text-danger">- ₹{totalDiscountAmt}.00</p>
+          </div>
+          <div className="d-flex justify-content-between gap-5">
+            <p>Delivery</p>
+            <p className="text-success">🛵Free</p>
+          </div>
+          <div className="d-flex justify-content-between gap-5 border-bottom">
+            <h6>Total Payment</h6>
+            <h6>₹{totalPaymentAmt}.00</h6>
+          </div>
+
+          <div className="mt-3">
+            <h6 className="fw-bold text-center " style={{fontFamily:"sans-serif"}}>PAYMENT METHOD</h6>
+
+            <div className="mt-4">
+              <input
+                type="checkbox"
+                onChange={() => {
+                  setShowUPI(!showUPI);
+                }}
+                style={{ cursor: "pointer" }}
+              />{" "}
+              <span>Pay via UPI</span>
+              {showUPI && (
+                <>
+                  <div className="d-flex justify-content-around mt-3 gap-0">
+                    <div onClick={() => setPaymentOption("Google Pay")} style={{ cursor: "pointer" }}>
+                      <img src="./form/gpay.jpeg" alt="gpay" className="shadow rounded" style={{ width: "50px" }} />
+                      <p className="text-center small mt-1">Gpay</p>
+                    </div>
+                    <div onClick={() => setPaymentOption("PhonePe")} style={{ cursor: "pointer" }}>
+                      <img src="./form/phonepe.png" alt="phonepe" className="shadow rounded" style={{ width: "50px" }} />
+                      <p className="text-center small mt-1">PhonePe</p>
+                    </div>
+                    <div onClick={() => setPaymentOption("Paytm")} style={{ cursor: "pointer" }}>
+                      <img src="./form/paytm.png" alt="paytm" className="shadow rounded" style={{ width: "50px" }} />
+                      <p className="text-center small mt-1">Paytm</p>
+                    </div>
+                    <div onClick={() => setPaymentOption("Bhim")} style={{ cursor: "pointer" }}>
+                      <img src="./form/bhim.png" alt="bhim" className="shadow rounded" style={{ width: "50px" }} />
+                      <p className="text-center small mt-1">Bhim</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-warning rounded mt-1">
+                    <a
+                      href={`upi://pay?pa=sandymoo1523-2@okhdfcbank&pn=Santhosh&am=${totalPaymentAmt}&cu=INR`}
+                      className="text-decoration-none"
+                    >
+                      <p className="fw-bold text-dark p-2 text-center">
+                        Pay ₹{totalPaymentAmt}.00 <span className="small ms-1">via {paymentOption}</span>
+                      </p>
+                    </a>
+                  </div>
+                </>
+              )}
+            </div>
+            <div>
+              <input type="checkbox" onChange={()=>{setDeliveryStatus(true)}} /><p>Cash on Delivery </p>
+              {deliveryStatus && (
+                <>
+                <p className="text-success">Coming soon....</p>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>}
+      
     </>
   );
 }

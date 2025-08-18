@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
-export default function  LoginForm({setLoggedInUser}){
+export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
 
     function switchModal(fromId, toId) {
         const fromEle = document.getElementById(fromId);
@@ -20,32 +20,50 @@ export default function  LoginForm({setLoggedInUser}){
     const[mobilenumberfound,setmobilenumberfound]=useState("")
     const navigate=useNavigate()
     
-   function handleCheckMobileNumber(e){
+ async  function handleCheckMobileNumber(e){
     e.preventDefault()
-       try{
-        fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
-       .then(res=>res.json())
-       .then((res)=>{ 
-        const userdetails=res.userlogindata
-        const userFound=userdetails.find(user=>user.mobile==currentmobile)
-       if(userFound) {
-        setLoggedInUser(userFound)
-        const hideModal = document.getElementById("loginModal");
-          if (hideModal) {
-            const modal = bootstrap.Modal.getInstance(hideModal) || new bootstrap.Modal(hideModal);
-            modal.hide();
+     try{
+            const mob=await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterData`);
+            const {registerMobileData}=await mob.json();
+            
+            const form=await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/userlogin`)
+            const {userlogindata}=await form.json()
+
+            const registerMobileFound=registerMobileData.find(user=>user.mobile===currentmobile)    
+            const registerFormFound=userlogindata.find(user=>user.mobile===currentmobile)   
+
+          if(registerFormFound) {
+            setLoggedInUser(registerFormFound)
           }
-        resetForm()
-        toast.success("Successfully Login !")
-        navigate("/") }
-        else setmobilenumberfound("This mobile number is not registered.")
-       })
+          if(registerMobileFound){
+            setUserMobileRegsiterData(registerMobileFound)
+          }         
+          if(registerFormFound || registerMobileFound){
+            const hideModal = document.getElementById("loginModal");
+                  if (hideModal) {
+                    const modal = bootstrap.Modal.getInstance(hideModal) || new bootstrap.Modal(hideModal);
+                    modal.hide();
+                  }
+                resetForm()
+                toast.success("Successfully Login !")
+                navigate("/")
+
+          }
+          else{
+            setmobilenumberfound("This mobile number is not registered.")
+
+          }
+              
+              
        }
        catch(error){
         console.log("error",error)
        }
 
    }
+
+
+
    function resetForm(){
     setCurrentmobile("")
     setmobilenumberfound("");

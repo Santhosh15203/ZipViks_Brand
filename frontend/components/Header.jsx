@@ -8,6 +8,16 @@ import { toast } from "react-toastify";
 import UpdateRegisterModal from "./UpdateRegisterModal";
 import MobileRegisterForm from "./MobileRegisterForm";
 export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInUser,userMobileRegisterData,setUserMobileRegsiterData}) {
+  const navigate=useNavigate()
+
+  function logOut() {
+  setLoggedInUser(null);
+  setCardItems([]);
+  setUserMobileRegsiterData(null);
+  toast.success("Logged Out !");
+  navigate("/");
+}
+
   return (
     <>
     <div className="d-flex flex-column">
@@ -54,7 +64,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                 </div>
                 <ul className="dropdown-menu p-0 rounded mt-2 gap-3"  style={{minWidth:"130px"}} >
                   <li className="dropdown-item small text-center p-2 border-bottom" data-bs-toggle="modal" data-bs-target="#updateRegisterModal"  >Profile Update</li>
-                  <li className="dropdown-item text-danger small text-center p-2 fw-bold" style={{cursor:"pointer"}} onClick={()=>{setLoggedInUser("");setUserMobileRegsiterData("");toast.success("Logged Out !")}}>  
+                  <li className="dropdown-item text-danger small text-center p-2 fw-bold" style={{cursor:"pointer"}} onClick={logOut}>  
                    Log Out
                   </li>
                 </ul>
@@ -77,7 +87,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             </> }
             
              
-            <LoginForm  setLoggedInUser={setLoggedInUser}/>
+            <LoginForm  setLoggedInUser={setLoggedInUser} setUserMobileRegsiterData={setUserMobileRegsiterData}/>
             <EmailForm  setLoggedInUser={setLoggedInUser}/>
             <MobileRegisterForm setUserMobileRegsiterData={setUserMobileRegsiterData}/>
             <RegisterForm setLoggedInUser={setLoggedInUser}/>
