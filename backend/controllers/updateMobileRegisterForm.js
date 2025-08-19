@@ -1,3 +1,5 @@
+const registerMobileFormModal = require("../models/postRegisterMobileFormModel");
+
 exports.updateMobileRegisterForm = async (req, res, next) => {
   try {
     const { mobile } = req.params;   // <--- must be here
