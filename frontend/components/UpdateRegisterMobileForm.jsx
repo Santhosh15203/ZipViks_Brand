@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react"
+import { toast } from "react-toastify";
 
 export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegisterFormData}){
-    const [user,setUser]=useState(null)
+
 
     
-     const [name, setName] = useState("");
+     const [fullname, setFullname] = useState("");
     const [mobile, setMobile] = useState("");
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
-    const [state, setState] = useState("Tamil Nadu");
+    const [state, setState] = useState("");
     const [zipcode, setZipcode] = useState("");
   
   useEffect(() => {
     if (userMobileRegisterFormData) {
-      setName(userMobileRegisterFormData.firstname || "");
+      setFullname(userMobileRegisterFormData.fullname || "");
       setMobile(userMobileRegisterFormData.mobile || "");
       setAddress(userMobileRegisterFormData.address || "");
       setCity(userMobileRegisterFormData.city || "");
@@ -21,6 +22,23 @@ export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegiste
       setZipcode(userMobileRegisterFormData.zipcode || "");
     }
   }, [userMobileRegisterFormData]);
+  console.log("id",userMobileRegisterFormData)
+
+
+  function handleRegisterMobileUpdateForm(e){
+    e.preventDefault()
+    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform/${mobileMobile}`,{
+      method:"PUT",
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify({
+        fullname,mobile,address,city,state,zipcode
+       }),
+    })
+    toast.success("Updated Successfull !")
+    const modal = bootstrap.Modal.getInstance(document.getElementById("updateMobileRegisterForm"));
+    modal?.hide();
+
+  }
 
     return(
         <>
@@ -34,36 +52,36 @@ export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegiste
 
                     {/* Register Mobile form */}
 
-                    <form >
+                    <form onSubmit={handleRegisterMobileUpdateForm}>
 
                     <div className="modal-body">
                         <div>
                     <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
                       <div className="w-50">
                         <label className="fw-bold small"> Name :</label>
-                        <input type="text" className="form-control" value={name} />
+                        <input type="text" className="form-control" value={fullname} onChange={(e)=>setFullname(e.target.value)} />
                       </div>
                       <div className="w-50">
                         <label className="fw-bold small"> Mobile :</label>
-                        <input type="tel" className="form-control" value={mobile} />
+                        <input type="tel" className="form-control" value={mobile} onChange={(e)=>setMobile(e.target.value)} />
                       </div>
                     </div>
                     <div className="text-start">
                       <label className="fw-bold small">Address : </label>
-                      <input className="form-control p-4"  value={address} />
+                      <input className="form-control p-4"  value={address} onChange={(e)=>setAddress(e.target.value)}/>
                     </div>
                     <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
                       <div>
                         <label className="fw-bold small">City : </label>
-                        <input type="text" className="form-control"  value={city} />
+                        <input type="text" className="form-control"  value={city} onChange={(e)=>setCity(e.target.value)} />
                       </div>
                       <div>
                         <label className=" fw-bold small">State : </label>
-                        <input type="text" className="form-control"  value={state}/>
+                        <input type="text" className="form-control"  value={state} onChange={(e)=>setState(e.target.value)}/>
                       </div>
                       <div>
                         <label className="fw-bold small">ZipCode : </label>
-                        <input type="text" className="form-control"  value={zipcode} />
+                        <input type="text" className="form-control"  value={zipcode} onChange={(e)=>setZipcode(e.target.value)}/>
                       </div>
                       
                     </div>
