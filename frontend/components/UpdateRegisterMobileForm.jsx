@@ -9,14 +9,13 @@ export default function UpdateRegisterMobileForm({mobileMobile}){
         .then(res=>res.json())
         .then((data)=>{
         setUser(data)
-         .catch(err => console.error("Fetch error:", err))
+         console.log("userdata",data)
         }) 
+        .catch(err => console.error("Fetch error:", err))
       }
 
     },[mobileMobile])
-
-
-   
+    console.log("user",user)
 
     return(
         <>
@@ -37,7 +36,7 @@ export default function UpdateRegisterMobileForm({mobileMobile}){
                     <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
                       <div className="w-50">
                         <label className="fw-bold small"> Name :</label>
-                        <input type="text" className="form-control"  />
+                        <input type="text" className="form-control" />
                       </div>
                       <div className="w-50">
                         <label className="fw-bold small"> Mobile :</label>
