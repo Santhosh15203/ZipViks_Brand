@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import UpdateRegisterMobileForm from "../components/updateRegisterMobileForm";
 import UpdateRegisterModal from "../components/UpdateRegisterModal";
 
-export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,userMobileRegisterData }) {
+export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,userMobileRegisterData ,userMobileRegisterFormData,setUserMobileRegsiterFormData}) {
   const [firstname] = useState(loggedInUser.firstname || "");
   const [mobile] = useState(loggedInUser.mobile || "");
   const [address] = useState(loggedInUser.address || "");
@@ -54,22 +54,25 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
 
 async function hanldeMobileRegisterForm(e){
     e.preventDefault()
-    
-    try{
-      
-      await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform`,{
-      method: "POST",
-       headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({
+    const storeData={
         fullname: mobileName,
           mobile: mobileMobile,
           address: mobileAddress,
           city: mobileCity,
           state: mobileState,
           zipcode: mobileZipcode
-       }),
+    }
+       
+    
+    try{
+      
+      await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform`,{
+      method: "POST",
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify(storeData),
        
     })
+    setUserMobileRegsiterFormData(storeData)
     setSubmit(false)
     setShowEdit(true)
     // resetForm()
@@ -212,7 +215,7 @@ async function hanldeMobileRegisterForm(e){
                     </div>
 
                     )}
-                    <UpdateRegisterMobileForm mobileMobile={mobileMobile}/>
+                    <UpdateRegisterMobileForm mobileMobile={mobileMobile} userMobileRegisterFormData={userMobileRegisterFormData} />
                     
               </>}
 

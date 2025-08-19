@@ -74,7 +74,6 @@ function verifyOTP(e) {
         const storeData=res.registerMobileData
         const registerMobileData=storeData.find(user=>user.mobile==mobile)
         setUserMobileRegsiterData(registerMobileData)
-        console.log("regis data",registerMobileData)
         
       })
       toast.success("Successfully Registered!");

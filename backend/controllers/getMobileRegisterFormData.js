@@ -4,6 +4,7 @@ exports.getMobileRegisterFormData=async(req,res,next)=>{
     try{
         const {mobile}=req.params
         const registermobileformData=await registerMobileFormModal.findOne({mobile})
+        
     res.json({
         registermobileformData
     })

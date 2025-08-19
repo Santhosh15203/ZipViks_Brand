@@ -14,6 +14,7 @@ function App() {
   const[cardItems,setCardItems]= useState([])
   const [loggedInUser,setLoggedInUser]=useState("")
   const [userMobileRegisterData,setUserMobileRegsiterData]=useState("")
+  const [userMobileRegisterFormData,setUserMobileRegsiterFormData]=useState("")
 
   return (
     <>
@@ -25,7 +26,7 @@ function App() {
       <Route path="/search" element={<Home/>} />
       <Route path="/product/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems}/>} />
       <Route path="/cart" element={<PlaceOrder cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} userMobileRegisterData={userMobileRegisterData}/>} />
-      <Route path="/payment" element={<PaymentMethod cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} userMobileRegisterData={userMobileRegisterData} setUserMobileRegsiterData={setUserMobileRegsiterData}/>}/>
+      <Route path="/payment" element={<PaymentMethod cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} userMobileRegisterData={userMobileRegisterData} setUserMobileRegsiterData={setUserMobileRegsiterData} userMobileRegisterFormData={userMobileRegisterFormData} setUserMobileRegsiterFormData={setUserMobileRegsiterFormData}/>}/>
 
 
     </Routes>

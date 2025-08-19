@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react"
 
-export default function UpdateRegisterMobileForm({mobileMobile}){
+export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegisterFormData}){
     const [user,setUser]=useState(null)
 
-    useEffect(()=>{
-      if(mobileMobile.length==10){
-         fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterFormDataUser/${mobileMobile}`)
-        .then(res=>res.json())
-        .then((data)=>{
-        setUser(data)
-        console.log("data",data.registermobileformData)
-        }) 
-        .catch(err => console.error("Fetch error:", err))
-      }
-
-    },[mobileMobile])
+    
+     const [name, setName] = useState("");
+    const [mobile, setMobile] = useState("");
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("Tamil Nadu");
+    const [zipcode, setZipcode] = useState("");
+  
+  useEffect(() => {
+    if (userMobileRegisterFormData) {
+      setName(userMobileRegisterFormData.firstname || "");
+      setMobile(userMobileRegisterFormData.mobile || "");
+      setAddress(userMobileRegisterFormData.address || "");
+      setCity(userMobileRegisterFormData.city || "");
+      setState(userMobileRegisterFormData.state || "");
+      setZipcode(userMobileRegisterFormData.zipcode || "");
+    }
+  }, [userMobileRegisterFormData]);
 
     return(
         <>
@@ -35,29 +41,29 @@ export default function UpdateRegisterMobileForm({mobileMobile}){
                     <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
                       <div className="w-50">
                         <label className="fw-bold small"> Name :</label>
-                        <input type="text" className="form-control" value={user?.fullname} />
+                        <input type="text" className="form-control" value={name} />
                       </div>
                       <div className="w-50">
                         <label className="fw-bold small"> Mobile :</label>
-                        <input type="tel" className="form-control" />
+                        <input type="tel" className="form-control" value={mobile} />
                       </div>
                     </div>
                     <div className="text-start">
                       <label className="fw-bold small">Address : </label>
-                      <input className="form-control p-4"  />
+                      <input className="form-control p-4"  value={address} />
                     </div>
                     <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
                       <div>
                         <label className="fw-bold small">City : </label>
-                        <input type="text" className="form-control"  />
+                        <input type="text" className="form-control"  value={city} />
                       </div>
                       <div>
                         <label className=" fw-bold small">State : </label>
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control"  value={state}/>
                       </div>
                       <div>
                         <label className="fw-bold small">ZipCode : </label>
-                        <input type="text" className="form-control"  />
+                        <input type="text" className="form-control"  value={zipcode} />
                       </div>
                       
                     </div>
