@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegisterFormData}){
+export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegisterFormData,setUserMobileRegsiterFormData}){
+  const navigate=useNavigate()
 
 
-
+   
      const [fullname, setFullname] = useState("");
     const [mobile, setMobile] = useState("");
     const [address, setAddress] = useState("");
@@ -25,17 +27,34 @@ export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegiste
   console.log("id",userMobileRegisterFormData)
 
 
-  function handleRegisterMobileUpdateForm(){
-    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform/${mobileMobile}`,{
+async  function handleRegisterMobileUpdateForm(e){
+    e.preventDefault()
+    try{
+      const res=await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform/${mobileMobile}`,{
       method:"PUT",
        headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({
-        fullname,mobile,address,city,state,zipcode
-       }),
+       body: JSON.stringify({fullname,mobile,address,city,state,zipcode})
     })
-    toast.success("Updated Successfull !")
-    const modal = bootstrap.Modal.getInstance(document.getElementById("updateMobileRegisterForm"));
-    modal?.hide();
+    const userFound=await res.json()
+    if(res.ok){
+       setUserMobileRegsiterFormData(userFound.updateRegisterMobileFormData)
+        toast.success("Updated Successfull !")
+        const modal = bootstrap.Modal.getInstance(document.getElementById("updateMobileRegisterForm"));
+        modal?.hide();
+    }
+    else{
+      toast.error("Updated error!")
+    }
+
+   
+    
+
+
+    }
+    catch(error){
+      console.log("update register form data error",error.message)
+    }
+   
 
   }
 

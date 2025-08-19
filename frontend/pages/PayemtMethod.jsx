@@ -216,7 +216,7 @@ async function hanldeMobileRegisterForm(e){
                     </div>
 
                     )}
-                    <UpdateRegisterMobileForm mobileMobile={mobileMobile} userMobileRegisterFormData={userMobileRegisterFormData} />
+                    <UpdateRegisterMobileForm mobileMobile={mobileMobile} userMobileRegisterFormData={userMobileRegisterFormData} setUserMobileRegsiterFormData={setUserMobileRegsiterFormData} />
                     
               </>}
 
