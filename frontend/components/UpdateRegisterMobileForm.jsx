@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegisterFormData}){
 
 
-    
+
      const [fullname, setFullname] = useState("");
     const [mobile, setMobile] = useState("");
     const [address, setAddress] = useState("");
@@ -25,8 +25,7 @@ export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegiste
   console.log("id",userMobileRegisterFormData)
 
 
-  function handleRegisterMobileUpdateForm(e){
-    e.preventDefault()
+  function handleRegisterMobileUpdateForm(){
     fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform/${mobileMobile}`,{
       method:"PUT",
        headers: { "Content-Type": "application/json" },

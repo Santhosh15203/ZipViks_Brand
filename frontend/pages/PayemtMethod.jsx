@@ -73,6 +73,7 @@ async function hanldeMobileRegisterForm(e){
        
     })
     setUserMobileRegsiterFormData(storeData)
+    
     setSubmit(false)
     setShowEdit(true)
     // resetForm()
