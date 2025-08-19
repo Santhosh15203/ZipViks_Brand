@@ -3,7 +3,7 @@ const registerMobileFormModal = require("../models/postRegisterMobileFormModel")
 exports.getMobileRegisterFormData=async(req,res,next)=>{
     try{
         const {mobile}=req.params
-        const registermobileformData=registerMobileFormModal.findOne({mobile})
+        const registermobileformData=await registerMobileFormModal.findOne({mobile})
     res.json({
         registermobileformData
     })
