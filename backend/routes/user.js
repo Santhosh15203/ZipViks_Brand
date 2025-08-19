@@ -16,10 +16,9 @@ router.get('/product/:id',singleproduct)
 router.post('/order',userorders)
 router.post('/registerform',registerformController)
 router.put('/registerform/:id',registerformControllerUpdate)
-router.put('/mobileform/:mobile',updateMobileRegisterForm)
 router.get('/userlogin',userloginController)
 router.post('/registermobile',registerMobileController)
 router.get('/getMobileRegisterData',getMobileRegisterData)
-
+router.put('/mobileform/:mobile',updateMobileRegisterForm)
 
 module.exports=router

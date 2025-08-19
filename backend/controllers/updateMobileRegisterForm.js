@@ -15,7 +15,7 @@ exports.updateMobileRegisterForm=async(req,res,next)=>{
     }
     const updateRegisterMobileFormData=await registerMobileFormModal.findOneAndUpdate({mobile:mobileMobile},updateData,{new:true})
     res.json(
-        updateRegisterMobileFormData
+        {updateRegisterMobileFormData}
 
     )
 
