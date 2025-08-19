@@ -8,8 +8,7 @@ export default function UpdateRegisterMobileForm({mobileMobile}){
          fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/getMobileRegisterFormDataUser/${mobileMobile}`)
         .then(res=>res.json())
         .then((data)=>{
-          const userFound=data.registermobileformData
-        setUser(userFound)
+        setUser(data)
         console.log("data",data)
         }) 
         .catch(err => console.error("Fetch error:", err))
@@ -36,7 +35,7 @@ export default function UpdateRegisterMobileForm({mobileMobile}){
                     <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
                       <div className="w-50">
                         <label className="fw-bold small"> Name :</label>
-                        <input type="text" className="form-control" value={user.fullname}/>
+                        <input type="text" className="form-control"  />
                       </div>
                       <div className="w-50">
                         <label className="fw-bold small"> Mobile :</label>
@@ -45,7 +44,7 @@ export default function UpdateRegisterMobileForm({mobileMobile}){
                     </div>
                     <div className="text-start">
                       <label className="fw-bold small">Address : </label>
-                      <input className="form-control p-4" style={{ cursor: "none" }}  />
+                      <input className="form-control p-4"  />
                     </div>
                     <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
                       <div>
