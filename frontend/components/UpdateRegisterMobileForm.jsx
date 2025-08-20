@@ -34,7 +34,7 @@ async  function handleRegisterMobileUpdateForm(e){
     })
     const userFound=await res.json()
     if(res.ok){
-        const updated = userFound.updateRegisterMobileFormData;
+        const updated = userFound;
       setUserMobileRegsiterFormData(updated);
 
         toast.success("Updated Successfull !")
