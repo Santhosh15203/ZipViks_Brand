@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegisterFormData,setUserMobileRegsiterFormData}){
  
-
+   const navigate=useNavigate()
      const [fullname, setFullname] = useState("");
     const [mobile, setMobile] = useState("");
     const [address, setAddress] = useState("");
@@ -39,6 +40,7 @@ async  function handleRegisterMobileUpdateForm(e){
         toast.success("Updated Successfull !")
         const modal = bootstrap.Modal.getInstance(document.getElementById("updateMobileRegisterForm"));
         modal?.hide();
+        navigate("/payment")
     }
     else{
       toast.error("Updated error!")
