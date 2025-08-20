@@ -2,15 +2,15 @@ const registerMobileFormModal = require("../models/postRegisterMobileFormModel")
 
 exports.updateMobileRegisterForm = async (req, res, next) => {
   try {
-    const { mobile } = req.params;  
-    const { fullname, mobile: newMobile, address, city, state, zipcode } = req.body;
+    const { id } = req.params;  
+    const { fullname, mobile, address, city, state, zipcode } = req.body;
 
-    console.log("Params mobile:", mobile);
+    console.log("Params mobile:", id);
     console.log("Body data:", req.body);
 
-    const updateData = { fullname, mobile: newMobile, address, city, state, zipcode };
+    const updateData = { fullname, mobile, address, city, state, zipcode };
 
-    const updateRegisterMobileFormData = await registerMobileFormModal.findOneAndUpdate({ mobile },updateData,{ new: true }
+    const updateRegisterMobileFormData = await registerMobileFormModal.findOneAndUpdate(id,updateData,{ new: true }
     );
     res.json({ updateRegisterMobileFormData });
 

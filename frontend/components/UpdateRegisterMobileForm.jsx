@@ -27,7 +27,7 @@ export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegiste
 async  function handleRegisterMobileUpdateForm(e){
     e.preventDefault()
     try{
-      const res=await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform/${mobileMobile}`,{
+      const res=await fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/mobileform/${userMobileRegisterFormData._id}`,{
       method:"PUT",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify({fullname,mobile,address,city,state,zipcode})
