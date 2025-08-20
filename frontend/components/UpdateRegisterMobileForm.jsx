@@ -45,9 +45,6 @@ async  function handleRegisterMobileUpdateForm(e){
       toast.error("Updated error!")
     }
 
-   
-    
-
 
     }
     catch(error){

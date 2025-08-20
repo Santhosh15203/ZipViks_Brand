@@ -10,7 +10,7 @@ exports.updateMobileRegisterForm = async (req, res, next) => {
 
     const updateData = { fullname, mobile, address, city, state, zipcode };
 
-    const updateRegisterMobileFormData = await registerMobileFormModal.findOneAndUpdate(id,updateData,{ new: true }
+    const updateRegisterMobileFormData = await registerMobileFormModal.findByIdAndUpdate(id,updateData,{ new: true }
     );
     res.json({ updateRegisterMobileFormData });
 
