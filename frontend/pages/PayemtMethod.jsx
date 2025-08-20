@@ -78,6 +78,7 @@ async function hanldeMobileRegisterForm(e){
     setShowEdit(true)
     // resetForm()
     toast.success("Submitted !  ");
+    
 
     }
     catch(error){
@@ -87,6 +88,7 @@ async function hanldeMobileRegisterForm(e){
    
 
   }
+  console.log("user",userMobileRegisterFormData)
 
   return (
     
