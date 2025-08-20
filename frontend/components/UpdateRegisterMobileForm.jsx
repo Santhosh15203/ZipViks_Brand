@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegisterFormData,setUserMobileRegsiterFormData}){
-  const navigate=useNavigate()
+ 
 
-
-   
      const [fullname, setFullname] = useState("");
     const [mobile, setMobile] = useState("");
     const [address, setAddress] = useState("");
@@ -37,7 +34,18 @@ async  function handleRegisterMobileUpdateForm(e){
     })
     const userFound=await res.json()
     if(res.ok){
-       setUserMobileRegsiterFormData(userFound.updateRegisterMobileFormData)
+        const updated = userFound.updateRegisterMobileFormData;
+
+      // update parent state with fresh object
+      setUserMobileRegsiterFormData({ ...updated });
+
+      // immediately update local form values
+      setFullname(updated.fullname || "");
+      setMobile(updated.mobile || "");
+      setAddress(updated.address || "");
+      setCity(updated.city || "");
+      setState(updated.state || "");
+      setZipcode(updated.zipcode || "");
         toast.success("Updated Successfull !")
         const modal = bootstrap.Modal.getInstance(document.getElementById("updateMobileRegisterForm"));
         modal?.hide();
