@@ -11,12 +11,12 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
   const [state] = useState(loggedInUser.state || "");
   const [zipcode] = useState(loggedInUser.zipcode || "");
  
-  const[mobileName,setMobileName]=useState("")
-  const[mobileMobile,setMobileMobile]=useState("")
-  const[mobileAddress,setMobileAddress]=useState("")
-  const[mobileCity,setMobileCity]=useState("")
-  const[mobileState,setMobileState]=useState("")
-  const[mobileZipcode,setMobileZipcode]=useState("")
+  const[mobileName,setMobileName]=useState(userMobileRegisterFormData.fullname||"")
+  const[mobileMobile,setMobileMobile]=useState(userMobileRegisterFormData.mobile||"")
+  const[mobileAddress,setMobileAddress]=useState(userMobileRegisterFormData.address||"")
+  const[mobileCity,setMobileCity]=useState(userMobileRegisterFormData.city||"")
+  const[mobileState,setMobileState]=useState(userMobileRegisterFormData.state||"")
+  const[mobileZipcode,setMobileZipcode]=useState(userMobileRegisterFormData.zipcode||"")
 
   const [showUPI, setShowUPI] = useState(true);
   const [deliveryStatus,setDeliveryStatus]=useState(false)

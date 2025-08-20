@@ -35,17 +35,8 @@ async  function handleRegisterMobileUpdateForm(e){
     const userFound=await res.json()
     if(res.ok){
         const updated = userFound.updateRegisterMobileFormData;
+      setUserMobileRegsiterFormData(updated);
 
-      // update parent state with fresh object
-      setUserMobileRegsiterFormData({ ...updated });
-
-      // immediately update local form values
-      setFullname(updated.fullname || "");
-      setMobile(updated.mobile || "");
-      setAddress(updated.address || "");
-      setCity(updated.city || "");
-      setState(updated.state || "");
-      setZipcode(updated.zipcode || "");
         toast.success("Updated Successfull !")
         const modal = bootstrap.Modal.getInstance(document.getElementById("updateMobileRegisterForm"));
         modal?.hide();
