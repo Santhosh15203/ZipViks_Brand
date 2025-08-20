@@ -52,9 +52,7 @@ export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,us
     setMobileZipcode("");
   }
 
-async function hanldeMobileRegisterForm(e){
-    e.preventDefault()
-    const storeData={
+   const storeData={
         fullname: mobileName,
           mobile: mobileMobile,
           address: mobileAddress,
@@ -62,6 +60,11 @@ async function hanldeMobileRegisterForm(e){
           state: mobileState,
           zipcode: mobileZipcode
     }
+
+async function hanldeMobileRegisterForm(e){
+    e.preventDefault()
+    console.log("userform",userMobileRegisterFormData)
+   
        
     
     try{

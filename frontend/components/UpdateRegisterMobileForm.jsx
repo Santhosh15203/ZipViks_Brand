@@ -32,10 +32,9 @@ async  function handleRegisterMobileUpdateForm(e){
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify({fullname,mobile,address,city,state,zipcode})
     })
-    const userFound=await res.json()
+    const {updateRegisterMobileFormData}=await res.json()
     if(res.ok){
-        const updated = userFound;
-      setUserMobileRegsiterFormData(updated);
+      setUserMobileRegsiterFormData(updateRegisterMobileFormData);
 
         toast.success("Updated Successfull !")
         const modal = bootstrap.Modal.getInstance(document.getElementById("updateMobileRegisterForm"));
