@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import UpdateRegisterMobileForm from "../components/updateRegisterMobileForm";
 import UpdateRegisterModal from "../components/UpdateRegisterModal";
+import UpdateRegisterMobileForm from "../components/UpdateRegisterMobileForm";
 
 export default function PaymentMethod({ cardItems, setCardItems, loggedInUser,userMobileRegisterData ,userMobileRegisterFormData,setUserMobileRegsiterFormData}) {
   const [firstname] = useState(loggedInUser.firstname || "");
