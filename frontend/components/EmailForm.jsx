@@ -74,7 +74,7 @@ export default function EmailForm({setLoggedInUser}){
                     <form onSubmit={handleCheckEmailPassword}>
                          <div className="modal-header">
                             <h5 className="modal-title text-dark fw-bold text-decoration-underline " >E-mail Login</h5>
-                            <button className="btn-close bg-danger" onClick={()=>resetForm()} data-bs-dismiss="modal"></button>
+                            <button className="btn-close " onClick={()=>resetForm()} data-bs-dismiss="modal"></button>
                         </div>
                         <div className="modal-body">
                             <img src="./form/emailLogo.jpg" alt="img" style={{width:"100%",objectFit:"cover"}} />

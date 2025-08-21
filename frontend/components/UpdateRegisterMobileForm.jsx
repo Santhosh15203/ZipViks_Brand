@@ -22,9 +22,6 @@ export default function UpdateRegisterMobileForm({mobileMobile,userMobileRegiste
       setZipcode(userMobileRegisterFormData.zipcode || "");
     }
   }, [userMobileRegisterFormData]);
-  console.log("id",userMobileRegisterFormData)
-
-
 async  function handleRegisterMobileUpdateForm(e){
     e.preventDefault()
     try{
@@ -45,9 +42,6 @@ async  function handleRegisterMobileUpdateForm(e){
     else{
       toast.error("Updated error!")
     }
-
-   
-    
 
 
     }

@@ -29,7 +29,7 @@ export default function CardDetails({cardItems,setCardItems}) {
   const fixedprice=Number(String(product.fixedprice).replace(/,/g,""))
   const discount=Number(product.discount)
   const sellingprice=Number(fixedprice-(fixedprice*discount/100)).toFixed(0)
-   const TotalNumberOfQuantityInAllSize=sizes.reduce((acc,size)=>acc+Number(product[size]),0)
+   const TotalNumberOfQuantityInAllSize=sizes.reduce((acc,size)=>acc+Number(product[size] || 0),0)
    
   function handleIncrementQuantity(){
     const TotalSizeQuantity=product[selectsize]
@@ -65,16 +65,22 @@ function handleAddToCart() {
 
   return (
     <>
-       <div className=" mb-2 d-flex gap-3">
+       <div className="container mb-2 d-flex flex-column bg-success flex-lg-row gap-3 align-items-center justify-content-center ">
         
-        <div>
-          <img src={product.image} alt="image"  style={{width:"850px",objectFit:"cover",height:"555px"}}/>
-        </div>
-        <div className=" d-flex flex-column text-center align-items-center" style={{width:"520px"}}>
-          <div className="mt-1 d-flex flex-column justify-content-center">
-            <h3 className="mb-1"><strong> {product.name}</strong></h3>
-            <p><small>product id : #<span className="text-danger">{product._id}</span></small></p>
-             <div className="fw-bold"> <StarDisplay rating={product.ratings} /></div>
+        <div className="col-12 col-lg-6 mt-0  d-flex justify-content-center">
+            <img 
+              src={product.image} 
+              alt="image" 
+              className="img-fluid" 
+              style={{  objectFit: "cover",maxHeight: "500px",width:"100%" }} 
+            />
+          </div>
+
+        <div className="col-12 col-lg-6 d-flex flex-column text-center align-items-center ">
+          <div className=" d-flex flex-column justify-content-center">
+            <h3 className=""><strong > {product.name}</strong></h3>
+            <p className="mb-1"><small>product id : #<span className="text-danger">{product._id}</span></small></p>
+             <div className="fw-bold mt-0 "> <StarDisplay rating={product.ratings} /></div>
             
           </div>
         
@@ -85,8 +91,8 @@ function handleAddToCart() {
           </div>
 
 
-          <div className="required">                                                                    
-            <ul className="list-unstyled d-flex gap-2">
+          <div className="required ">                                                                    
+            <ul className="list-unstyled d-flex gap-2 mb-1">
               {sizes.map((size) => {
                 const isOutOfStock = Number(product[size]) === 0;
                 const isSelected = selectsize === size;
@@ -121,7 +127,7 @@ function handleAddToCart() {
             <div className="">
                  <ul className="list-unstyled d-flex gap-3 justify-content-center  m-0">
                   <li><button className="btn border border-dark" onClick={handleDecrementQuantity} disabled={custumQuantity <=1||TotalNumberOfQuantityInAllSize==0}>-</button></li>
-                  <li><p className="mt-1" disabled={TotalNumberOfQuantityInAllSize==0}><strong>{TotalNumberOfQuantityInAllSize==0?"0":custumQuantity}</strong></p></li>
+                  <li><p className="" disabled={TotalNumberOfQuantityInAllSize==0}><strong>{TotalNumberOfQuantityInAllSize==0?"0":custumQuantity}</strong></p></li>
                   <li><button className="btn border border-dark" onClick={handleIncrementQuantity} disabled={custumQuantity > product[selectsize]  || TotalNumberOfQuantityInAllSize==0}>+</button></li>
                 </ul>
                 
@@ -132,19 +138,16 @@ function handleAddToCart() {
           
           </div>
           
-            <button onClick={handleAddToCart} className="btn btn-success ps-5 pe-5 mt-3" disabled={TotalNumberOfQuantityInAllSize==0}>Add to cart</button>
+            <button onClick={handleAddToCart} className="btn btn-success ps-5 pe-5 mt-2" disabled={TotalNumberOfQuantityInAllSize==0}>Add to cart</button>
 
-
-            <hr />
-           
-            <div>
-              <p><strong>Status : </strong><span className={TotalNumberOfQuantityInAllSize>=1?"text-success":"text-danger"} > <strong>{TotalNumberOfQuantityInAllSize>=1 ?"' In Stock '":"' Out Of Stock '"}</strong> </span> </p>
+            <div >
+              <p className="mb-1 mt-1"><strong>Status : </strong><span className={TotalNumberOfQuantityInAllSize>0?"text-success":"text-danger"} > <strong>{TotalNumberOfQuantityInAllSize>0 ?"' In Stock '":"' Out Of Stock '"}</strong> </span> </p>
             </div>
             <div className=" ms-0 descripton " style={{width:"450px",wordBreak: "break-word"}}>
               <p className="lh-md"><strong >Description : </strong> {product.description}</p>  
             </div> 
-            <div className="bg-dark w-100 lh-sm mt-2 mb-2 border border-secondary"> </div>
-            <p className="mt-3"><strong>Sold by :</strong> {product.soldby}</p>           
+            <div className="bg-dark w-50 text-center mb-1  border border-secondary"> </div>
+            <p className=""><strong>Sold by :</strong> {product.soldby}</p>           
         </div>
 
 

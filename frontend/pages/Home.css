@@ -16,6 +16,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  
 }
 .display{
   animation: display 35s linear infinite;
@@ -40,3 +41,6 @@
 .small-select{
   font-size: 14px;
 }
+
+
+

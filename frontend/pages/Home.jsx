@@ -141,14 +141,15 @@ export default function Home() {
 
             
             <h5 className="text-center mt-3">Latest Products</h5>
-            {products.map((product) => (
-              <div
-                className="col-lg-3 col-md-4 col-sm-6 mt-3"
-                key={product._id}
-              >
-                <ProductCard product={product} />
+            <div className="row mx-auto">
+              {products.map((product) => (
+              <div className="col-lg-3 col-md-4 col-6 mt-3 "key={product._id}>
+                <ProductCard  product={product} />
               </div>
             ))}
+
+            </div>
+            
 
             
             {hasMore && (

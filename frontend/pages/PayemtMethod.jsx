@@ -109,7 +109,7 @@ async function hanldeMobileRegisterForm(e){
     <>
   
     <div className="d-flex justify-content-around mb-3 mt-3 gap-5 container">
-        <div className="d-flex flex-column p-3 w-75">  
+        <div className="d-flex flex-column p-3 w-100">  
 
         {loggedInUser && 
              <>

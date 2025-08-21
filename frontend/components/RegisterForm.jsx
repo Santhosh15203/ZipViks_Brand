@@ -100,7 +100,7 @@ export default function RegisterForm({setLoggedInUser}){
                 <div className="modal-content "style={{width:"100%"}}>
                   <div className="modal-header">
                     <h5 className="modal-title text-dark fw-bold text-decoration-underline " >User Registeration</h5>
-                    <button className="btn-close bg-danger" data-bs-dismiss="modal" onClick={()=>{resetForm()}}></button>
+                    <button className="btn-close " data-bs-dismiss="modal" onClick={()=>{resetForm()}}></button>
                   </div>
                   
                 <form className="d-flex flex-column" onSubmit={handleSubmitRegisterForm}>  
