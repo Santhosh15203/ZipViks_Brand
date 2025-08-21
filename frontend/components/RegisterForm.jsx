@@ -92,7 +92,6 @@ export default function RegisterForm({setLoggedInUser}){
   }
 }
 
-
     return(
         <>
           <div className="modal fade" id="registerModal" aria-hidden="true">
