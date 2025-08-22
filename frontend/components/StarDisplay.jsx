@@ -3,7 +3,7 @@ export default function StarDisplay({ rating }) {
   const filledPercentage = (rating / maxStars) * 100;
 
   return (
-    <div style={{ position: "relative", display: "inline-block", fontSize: "24px", lineHeight: "1" }}>
+    <div style={{ position: "relative", display: "inline-block", fontSize: "18px", lineHeight: "1" }}>
       <span style={{ color: "#ccc" }}>★★★★★</span>
       <div style={{
         position: "absolute",

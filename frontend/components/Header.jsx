@@ -176,12 +176,12 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
           <div className="d-flex gap-3 text-center  align-items-center" >  {/*cart and user */}
              <div className="text-dark d-flex d-lg-none" style={{cursor:"pointer"}} >
-                <i className="bi  bi-search fs-6" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+                <i className="bi  bi-search fs-6 dark" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
               </div>
 
              <Link to={"/cart"} className="text-white text-decoration-none d-flex ">
-              <i className="bi bi-heart fs-6" style={{ color: "black",fontWeight: "bold" }}>
-                <sup className="text-danger fs-6 ms-1">{cardItems?cardItems.length:0}</sup>
+              <i className="bi bi-heart  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
+                <sup className="text-danger fs-6 ms-1 ">{cardItems?cardItems.length:0}</sup>
               </i>
             </Link>
              <Link to={"/cart"} className="text-white text-decoration-none d-flex ">

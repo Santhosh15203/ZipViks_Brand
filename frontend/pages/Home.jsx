@@ -47,93 +47,40 @@ export default function Home() {
         {loading && page === 1 ? (
          
           <div style={{ width: "100%", height: "347px" }}>
-            <div
-              className="d-flex justify-content-center gap-1"
-              style={{ marginTop: "10%" }}
+            <div className="d-flex justify-content-center gap-1" style={{ marginTop: "10%" }}
             >
-              <i className="bi bi-arrow-clockwise spin"></i>
-              <span>Loading ...</span>
+              <i className="bi bi-arrow-clockwise spin"></i> <span>Loading ...</span>
             </div>
           </div>
         ) : products.length > 0 ? (
           <>
           
-            <div
-              id="demo"
-              className="carousel slide"
-              data-bs-ride="carousel"
-              data-bs-interval="10000"
-            >
+            <div id="demo" className="carousel slide"  data-bs-ride="carousel" data-bs-interval="10000" >
               <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="0"
-                  className="active"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="3"
-                ></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1" ></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2" ></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img
-                    src="/slide/carousel1.jpg"
-                    alt="img"
-                    loading="lazy"
-                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
-                  />
+                  <img src="/slide/carousel1.jpg" alt="img" style={{ width: "100%", height: "250px", objectFit: "cover" }} />
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src="/slide/carousel2.jpg"
-                    alt="img"
-                    loading="lazy"
-                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
-                  />
+                  <img src="/slide/carousel2.jpg" alt="img"style={{ width: "100%", height: "250px", objectFit: "cover" }} />
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src="/slide/carousel3.jpg"
-                    alt="img"
-                    loading="lazy"
-                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
-                  />
+                  <img src="/slide/carousel3.jpg"alt="img" style={{ width: "100%", height: "250px", objectFit: "cover" }}/>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src="/slide/carousel4.jpg"
-                    alt="img"
-                    loading="lazy"
-                    style={{ width: "100%", height: "250px", objectFit: "cover" }}
-                  />
+                  <img src="/slide/carousel4.jpg" alt="img" style={{ width: "100%", height: "250px", objectFit: "cover" }} />
                 </div>
               </div>
               <div>
-                <button
-                  className="carousel-control-prev"
-                  data-bs-target="#demo"
-                  data-bs-slide="prev"
-                >
+                <button className="carousel-control-prev" data-bs-target="#demo" data-bs-slide="prev">
                   <span className="carousel-control-prev-icon"></span>
                 </button>
-                <button
-                  className="carousel-control-next"
-                  data-bs-target="#demo"
-                  data-bs-slide="next"
-                >
+                <button className="carousel-control-next"data-bs-target="#demo"data-bs-slide="next">
                   <span className="carousel-control-next-icon"></span>
                 </button>
               </div>
@@ -141,24 +88,19 @@ export default function Home() {
 
             
             <h5 className="text-center mt-3">Latest Products</h5>
-            <div className="row mx-auto">
+            <div className=" row  mx-auto p-0">
               {products.map((product) => (
-              <div className="col-lg-3 col-md-4 col-6 mt-3 "key={product._id}>
+              <div className="p-0 col-lg-3 col-md-4 col-6 mt-3 "key={product._id}>
                 <ProductCard  product={product} />
               </div>
             ))}
 
             </div>
             
-
             
             {hasMore && (
               <div className="text-center mt-4">
-                <button
-                  className="btn btn-primary"
-                  onClick={() => setPage((prev) => prev + 1)}
-                  disabled={loading}
-                >
+                <button className="btn btn-primary" onClick={() => setPage((prev) => prev + 1)} disabled={loading} >
                   {loading ? "Loading..." : "Load More"}
                 </button>
               </div>
@@ -167,9 +109,7 @@ export default function Home() {
         ) : (
           
           <div style={{ width: "100%", height: "347px" }}>
-            <p className="text-center text-dark mt-5">
-              Sorry! No products found.
-            </p>
+            <p className="text-center text-dark mt-5">Sorry! No products found.</p>
           </div>
         )}
       </div>
