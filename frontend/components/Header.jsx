@@ -55,7 +55,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
     <div className="container-fluid  bg-dark ">
       <div className="container d-flex align-items-center justify-content-between ps-2 pe-2 " style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>
             <div className=" p-2">
-                <ul className="list-unstyled d-flex align-items-center gap-3 mb-0   ">
+                <ul className="list-unstyled d-flex align-items-center gap-1 gap-lg-3 mb-0   ">
               
                       <li><a href="#" className="text-decoration-none text-white  small"><i className="bi bi-whatsapp  fs-6"></i> Whatsapp</a></li>
                       <li><a href="#" className="text-decoration-none text-white small "><i className="bi bi-instagram fs-6 "></i> Instagram</a></li>
@@ -130,7 +130,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
           <div className="offcanvas offcanvas-start d-lg-none" id="listItems" style={{ fontFamily: "'Nunito Rounded', sans-serif"}} >
             <div className="offcanvas-header">
-              <h5 className="fw-bold text-decoration-underline ">Zipvikz Product Menu :</h5>
+              <h5 className="fw-bold text-decoration-none ">Zipvikz Product Menu :</h5>
               <button className="btn-close " data-bs-dismiss="offcanvas" ></button>
 
             </div>
