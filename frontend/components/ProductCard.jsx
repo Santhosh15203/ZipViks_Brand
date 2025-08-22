@@ -11,8 +11,8 @@ export default function ProductCard({product}){
         <div className="card border border-shadow d-flex  flex-column p-0  "  style={{ width: "100%", height: "300px" }}>
                 <img src={product.image} className="card-top-img " alt={product.name} style={{ width: "100%", height: "50%", objectFit: "cover" }} />
                 
-                <div className="card-body small d-flex flex-column justify-content-center ps-1 pt-1 pb-0 p-0 ">
-                    <div className="">
+                <div className="card-body small d-flex flex-column justify-content-center  pt-1 pb-0 p-0 ">
+                    <div className="ps-1">
                         <h6 className="mb-0">{product.name}</h6>
                         <p className=" mb-0">{product.description}</p>
                         <div className="mb-0 small">
@@ -20,17 +20,20 @@ export default function ProductCard({product}){
                         </div>
                     </div>
 
-                    <div className="mb-0">
-                        <div className="d-flex gap-2 align-items-center">
+                    <div className="mb-0 ">
+                        <div className="d-flex gap-2 align-items-center ps-1">
                             <p className="fw-bold mb-0">₹{sellingprice}.00</p>
                             <p className="small text-decoration-line-through mb-0">₹{product.fixedprice}</p>
                             <p className="text-danger mb-0">
                             <span>{product.discount}</span>% off
                             </p>
                         </div>
-                        <Link to={"/product/" + product._id} className="btn btn-danger btn-sm mt-2 w-100 mb-0"> View Details </Link>
+                        <Link to={"/product/" + product._id} className="btn btn-danger btn-sm mt-2 w-100 mb-0 ps-0"> View Details </Link>
                     </div>
                 </div>
+
+
+
                 </div>
 
             
