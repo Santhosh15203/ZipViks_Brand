@@ -54,7 +54,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
     <div className="container-fluid  bg-dark ">
       <div className="container d-flex align-items-center justify-content-between ps-2 pe-2 " style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>
-            <div className=" p-2">
+            <div className="">
                 <ul className="list-unstyled d-flex align-items-center gap-1 gap-lg-3 mb-0   ">
               
                       <li><a href="#" className="text-decoration-none text-white  small"><i className="bi bi-whatsapp  fs-6"></i> Whatsapp</a></li>
@@ -66,7 +66,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
                     {loggedInUser || userMobileRegisterData ? 
                     <>
-                    <div className="text-white text-decoration-none d-flex align-items-center gap-0 p-2 mb-0">
+                    <div className="text-white text-decoration-none d-flex align-items-center gap-0  mb-0">
                       <div className="gap-3 d-flex dropdown text-decoration-none" style={{cursor:"pointer"}}>
                         <div className="small" data-bs-toggle="dropdown">
                           <img src="/logo/zipVikz-brand-logo.png" className="rounded-circle" style={{ width: "20px", height: "20px", objectFit: "cover" }} />
@@ -83,7 +83,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                     </div>
                     </> :
                     
-                    <>  <div className="text-white small p-2 " style={{ cursor: "pointer" }}>
+                    <>  <div className="text-white small" style={{ cursor: "pointer" }}>
                           
                             <ul className="list-unstyled d-flex align-items-center gap-2 mb-0" >
                               <li className="" data-bs-toggle="modal" data-bs-target="#loginModal" >Login</li>

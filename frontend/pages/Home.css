@@ -19,7 +19,7 @@
   
 }
 .display{
-  animation: display 35s linear infinite;
+  animation: display 20s linear infinite;
   font-size: smaller;
 }
 .display:hover {
