@@ -144,6 +144,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👗 CHUDI</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🦵 LEGGINS</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🥻 SAREE</a> </li>
+              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👘 NIGHT WEAR</a> </li>
 
             </ul>
 
@@ -167,7 +168,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                         <button
                           onClick={handleSearchBarlg}
                           type="button"
-                          className="btn bg-danger text-white"
+                          className="btn bg-dark text-white"
                         >
                           <i className="bi bi-search"></i>
                         </button>
@@ -216,6 +217,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👗 CHUDI</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🦵 LEGGINS</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🥻 SAREE</a> </li>
+                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👘 NIGHT WEAR</a> </li>
 
             </ul>
         </div>
