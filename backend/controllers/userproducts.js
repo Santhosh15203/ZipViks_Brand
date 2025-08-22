@@ -9,10 +9,18 @@ exports.allproduct=async(req,res,next)=>{
                       { description: { $regex: req.query.keyword, $options: "i" } }
                   ]
               }:{}
-            const userproducts=await userproductmodel.find(query)    //use await to receive all data 
+
+
+             const page = parseInt(req.query.page) || 1;   // default page = 1
+            const limit = parseInt(req.query.limit) || 12; // default limit = 12
+            const skip = (page - 1) * limit;
+             const total = await userproductmodel.countDocuments(query); //total quaery count
+
+            const userproducts=await userproductmodel.find(query).skip(skip).limit(limit)    //use await to receive all data 
             res.json({
                 message:"all product here",
-                userproducts
+                userproducts,
+                pages: Math.ceil(total / limit)
             })
     }catch(error){
        res.json({

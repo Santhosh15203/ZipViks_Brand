@@ -29,7 +29,7 @@ export default function Home() {
           setProducts((prev) => [...prev, ...(res.userproducts || [])]);
         }
 
-        setHasMore(res.userproducts?.length === 12);
+        setHasMore(page<res.pages);
         setLoading(false);
       })
       .catch((err) => {
