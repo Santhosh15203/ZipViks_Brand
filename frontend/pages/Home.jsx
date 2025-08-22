@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import "./Home.css";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -42,20 +42,8 @@ export default function Home() {
   }, [searchparams, page]);
 
   return (
-    <div className="container">
-      <div className="mt-0 row">
-        {loading && page === 1 ? (
-         
-          <div style={{ width: "100%", height: "347px" }}>
-            <div className="d-flex justify-content-center gap-1" style={{ marginTop: "10%" }}
-            >
-              <i className="bi bi-arrow-clockwise spin"></i> <span>Loading ...</span>
-            </div>
-          </div>
-        ) : products.length > 0 ? (
-          <>
-          
-            <div id="demo" className="carousel slide"  data-bs-ride="carousel" data-bs-interval="10000" >
+    <>
+     <div id="demo" className="carousel slide container-fluid"  data-bs-ride="carousel" data-bs-interval="10000" >
               <div className="carousel-indicators">
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="1" ></button>
@@ -86,11 +74,26 @@ export default function Home() {
               </div>
             </div>
 
+
+
+
+            <div className="container" >
+      <div className=" mt-0 row">
+        {loading && page === 1 ? (
+         
+          <div style={{ width: "100%", height: "347px" }}>
+            <div className="d-flex justify-content-center gap-1" style={{ marginTop: "10%" }}>
+              <i className="bi bi-arrow-clockwise spin"></i> <span>Loading ...</span>
+            </div>
+          </div>
+        ) : products.length > 0 ? (
+          <>
+          
+            <h5 className="text-center mt-3 fw-bold" style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>Latest Products</h5>
             
-            <h5 className="text-center mt-3">Latest Products</h5>
-            <div className=" row  mx-auto p-0">
+            <div className="container row  p-0 mx-auto  ">
               {products.map((product) => (
-              <div className="p-0 col-lg-3 col-md-4 col-6 mt-3 "key={product._id}>
+              <div className="  p-1 gap-1 col-lg-3 col-md-4  col-6 mt-3 ps-lg-3 pe-lg-3"key={product._id}>
                 <ProductCard  product={product} />
               </div>
             ))}
@@ -99,7 +102,7 @@ export default function Home() {
             
             
             {hasMore && (
-              <div className="text-center mt-4">
+              <div className="text-center mt-3 mb-2">
                 <button className="btn btn-primary" onClick={() => setPage((prev) => prev + 1)} disabled={loading} >
                   {loading ? "Loading..." : "Load More"}
                 </button>
@@ -110,9 +113,14 @@ export default function Home() {
           
           <div style={{ width: "100%", height: "347px" }}>
             <p className="text-center text-dark mt-5">Sorry! No products found.</p>
+             <p className="text-center"> <Link to={'/'} className="btn  btn-outline-dark small">Back to Home</Link></p>
           </div>
         )}
       </div>
     </div>
+
+    </>
+    
+    
   );
 }

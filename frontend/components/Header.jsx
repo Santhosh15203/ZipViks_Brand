@@ -14,8 +14,8 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
    const handleSearchBarlg = () => {
       
-    if (userinput.trim()) {
-      navigate("/search?keyword=" + userinput2);
+    if (userinput2.trim()) {
+      navigate("/search?keyword=" + userinput2); resetForm()
      
     }
     if (userinput2.trim()==="") navigate("/")
@@ -142,6 +142,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👖 TRACK PANT</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🩳 SHORTS</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👗 CHUDI</a> </li>
+              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🦵 LEGGINS</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🥻 SAREE</a> </li>
 
             </ul>
@@ -176,16 +177,16 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
           <div className="d-flex gap-3 text-center  align-items-center" >  {/*cart and user */}
              <div className="text-dark d-flex d-lg-none" style={{cursor:"pointer"}} >
-                <i className="bi  bi-search fs-6 dark" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+                <i className="bi  bi-search-heart fs-6 dark" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
               </div>
 
              <Link to={"/cart"} className="text-white text-decoration-none d-flex ">
-              <i className="bi bi-heart  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
+              <i className="bi bi-heart-fill  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
                 <sup className="text-danger fs-6 ms-1 ">{cardItems?cardItems.length:0}</sup>
               </i>
             </Link>
              <Link to={"/cart"} className="text-white text-decoration-none d-flex ">
-              <i className="bi bi-cart-dash fs-6" style={{ color: "black",fontWeight: "bold" }}>
+              <i className="bi bi-cart-plus-fill fs-6" style={{ color: "black",fontWeight: "bold" }}>
                 <sup className="text-danger fs-6 ms-1">{cardItems?cardItems.length:0}</sup>
               </i>
             </Link>
@@ -203,9 +204,9 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
     </div>
     <SearchBar/>   {/*search bar */}
 
-     <nav className="navbar navbar-light border navbar-expand-lg bg-white d-none d-lg-flex flex-column  mb-0 p-sm-0  " style={{ fontFamily: "'Nunito Rounded', sans-serif",position:"sticky",top:65,zIndex:1000 }}>
+     <nav className="navbar navbar-light  navbar-expand-lg bg-white d-none d-lg-flex flex-column  mb-0 p-sm-0 " style={{ fontFamily: "'Nunito Rounded', sans-serif",position:"sticky",top:65,zIndex:1000 }}>
               
-              <div className="container  justify-content-center align-items-center ">
+              <div className="container  justify-content-center align-items-center p-2">
               <ul className=" navbar-nav  list-unstyled   gap-5 justify-content-center align-items-center  small  my-auto" >
                       <li className="nav-item "><a href="" className=" nav-link fw-bold text-dark">🏠 HOME</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👕 T SHIRTS</a></li>
@@ -213,6 +214,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👖 TRACK PANT</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🩳 SHORTS</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👗 CHUDI</a> </li>
+                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🦵 LEGGINS</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🥻 SAREE</a> </li>
 
             </ul>

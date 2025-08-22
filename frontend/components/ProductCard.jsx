@@ -8,12 +8,12 @@ export default function ProductCard({product}){
 
     return(
         <>
-        <div className="card border border-shadow d-flex  flex-column p-0  "  style={{ width: "100%", height: "300px" }}>
-                <img src={product.image} className="card-top-img " alt={product.name} style={{ width: "100%", height: "50%", objectFit: "cover" }} />
+        <div className="card border border-shadow d-flex  flex-column p-0  "  style={{ width: "100%", height: "400px" }}>
+                <img src={product.image} className="card-top-img " alt={product.name} style={{ width: "100%", height: "75%", objectFit: "cover" }} />
                 
                 <div className="card-body small d-flex flex-column justify-content-center  pt-1 pb-0 p-0 ">
                     <div className="ps-1">
-                        <h6 className="mb-0">{product.name}</h6>
+                        <h6 className="mb-1">{product.name}</h6>
                         <p className=" mb-0">{product.description}</p>
                         <div className="mb-0 small">
                             {product.ratings} <StarDisplay rating={product.ratings} />
