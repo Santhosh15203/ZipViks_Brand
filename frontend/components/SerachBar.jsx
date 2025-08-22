@@ -7,8 +7,6 @@ export default function SearchBar(){
     const [userinput,setUserinput]=useState("")
     const navigate=useNavigate()
 
-   
-    
 
     const handleSearchBar = () => {
       
@@ -35,7 +33,7 @@ export default function SearchBar(){
               <div className="modal-content">
                 <div className="modal-header " data-bs-dismiss="modal">
                   <h5 className="fmodal-title text-dark fw-bold text-decoration-underline">Explore Products</h5>
-                  <button className="btn btn-close bg-danger"></button>
+                  <button className="btn btn-close "></button>
 
                 </div>
 

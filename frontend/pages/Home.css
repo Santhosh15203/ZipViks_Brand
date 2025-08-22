@@ -41,6 +41,6 @@
 .small-select{
   font-size: 14px;
 }
-
-
-
+.navbar .nav-link:hover {
+  text-decoration: underline; 
+}
