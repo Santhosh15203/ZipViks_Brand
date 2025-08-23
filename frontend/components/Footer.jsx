@@ -22,26 +22,26 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline  d-flex justify-content-center text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled  d-flex justify-content-center flex-lg-column  ">
-                    <li><a href="#" className="text-decoration-none  text-white p-1">TShirts</a></li>
-                    <li><a href="#" className="text-decoration-none text-white p-1">Hoodies</a></li>
-                    <li><a href="#" className="text-decoration-none  text-white p-1">TrackPant</a></li>
-                    <li><a href="#" className="text-decoration-none text-white p-1">Shorts</a></li>
-                    <li><a href="#" className="text-decoration-none  text-white p-1">Chudi</a></li>
-                    <li><a href="#" className="text-decoration-none text-white p-1">Leggins</a></li>
-                    <li><a href="#" className="text-decoration-none text-white p-1">Saree</a></li>
-                    <li><a href="#" className="text-decoration-none text-white p-1">NightWear</a></li>
+                   <ul className="list-unstyled gap-1 d-flex justify-content-center flex-lg-column  ">
+                    <li><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
+                    <li><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
+                    <li><a href="#" className="text-decoration-none  text-white ">TrackPant</a></li>
+                    <li><a href="#" className="text-decoration-none text-white ">Shorts</a></li>
+                    <li><a href="#" className="text-decoration-none  text-white ">Chudi</a></li>
+                    <li><a href="#" className="text-decoration-none text-white">Leggins</a></li>
+                    <li><a href="#" className="text-decoration-none text-white ">Saree</a></li>
+                    <li><a href="#" className="text-decoration-none text-white ">NightWear</a></li>
                   </ul>
                   
               </div>
 
                <div className="" >
                   <p className="text-decoration-underline  d-flex justify-content-center text-white mb-0">CUSTOMER POLICY</p>
-                   <ul className="list-unstyled  d-flex justify-content-center flex-lg-column  ">
-                    <li><a href="#" className="text-decoration-none  text-white p-1">Privacy Policy</a></li>
-                    <li><a href="#" className="text-decoration-none text-white p-1">Terms and Condition</a></li>
-                    <li><a href="#" className="text-decoration-none  text-white p-1">Return & Refund</a></li>
-                    <li><a href="#" className="text-decoration-none text-white p-1">Shipping Policy</a></li>
+                   <ul className="list-unstyled gap-1 d-flex justify-content-center flex-lg-column  ">
+                    <li><a href="#" className="text-decoration-none  text-white ">Privacy Policy</a></li>
+                    <li><a href="#" className="text-decoration-none text-white ">Terms and Condition</a></li>
+                    <li><a href="#" className="text-decoration-none  text-white ">Return & Refund</a></li>
+                    <li><a href="#" className="text-decoration-none text-white ">Shipping Policy</a></li>
                   </ul>
               </div>
 
