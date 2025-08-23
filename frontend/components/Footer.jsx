@@ -22,7 +22,7 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled gap-1 d-flex flex-wrap flex-lg-column  ">
+                   <ul className="list-unstyled gap-2 gap-lg-1 d-flex flex-wrap flex-lg-column  ">
                     <li><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
                     <li><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
                     <li><a href="#" className="text-decoration-none  text-white ">TrackPant</a></li>
@@ -37,7 +37,7 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">CUSTOMER POLICY</p>
-                   <ul className="list-unstyled gap-1 d-flex flex-wrap flex-lg-column  ">
+                   <ul className="list-unstyled gap-2 gap-lg-1 d-flex flex-wrap flex-lg-column  ">
                     <li><a href="#" className="text-decoration-none  text-white ">Privacy Policy</a></li>
                     <li><a href="#" className="text-decoration-none text-white ">Terms and Condition</a></li>
                     <li><a href="#" className="text-decoration-none  text-white ">Return & Refund</a></li>
@@ -56,16 +56,16 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">CONTACT US</p>
+                  <p className="text-decoration-underline justify-content-center  d-flex m-0 p-0  text-white mb-0">CONTACT US</p>
 
-                   <div className="list-unstyled  d-flex  flex-lg-column gap-3 gap-lg-0 ">
+                   <div className="list-unstyled  d-flex  flex-lg-column gap-2 gap-lg-0 ">
                     <div className="">
                       <p className="mb-1 m-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
                       <p className="mb-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
                     <div>
-                      <p className="mb-1 m-0 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan Nagar, Kovil<br/> Street,Tirupur-641 602.</p>
+                      <p className="mb-1 m-0 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan Nagar,<br/> Kovil Street,Tirupur-641 602.</p>
                       <p className="m-0 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
