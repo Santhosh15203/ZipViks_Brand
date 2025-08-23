@@ -7,7 +7,7 @@ export default function Footer() {
 
           
 
-            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px"}} >
+            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"13px"}} >
 
               <div className=" text-center ">
                  <p className="text-center mb-0"> <strong >  <img src="/logo/zipVikz-brand-logo.png" alt="logo" className="" style={{width:"35px",height:"35px"}} />
@@ -79,7 +79,7 @@ export default function Footer() {
 
 
             
-            <div className=" d-flex justify-content-around p-2 pb-2 mt-1 text-white bg-dark "  style={{ fontFamily:" Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px" }}>
+            <div className=" d-flex justify-content-around p-2 pb-2 mt-1 text-white bg-dark "  style={{ fontFamily:" Open Sans', Arial, Helvetica, sans-serif",fontSize:"13px" }}>
 
               <div className="d-none d-lg-flex ">
                 <img src="/logo/zipVikz-brand-logo.png" alt="brand-logo" style={{width:"25px",height:"25px"}} className="bg-dark"/>
