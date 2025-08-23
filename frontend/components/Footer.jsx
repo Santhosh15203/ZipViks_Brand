@@ -7,9 +7,9 @@ export default function Footer() {
 
           
 
-            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif"}} >
+            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px"}} >
 
-              <div className="small text-center ">
+              <div className=" text-center ">
                  <p className="text-center mb-0"> <strong >  <img src="/logo/zipVikz-brand-logo.png" alt="logo" className="" style={{width:"35px",height:"35px"}} />
                   <span className="fs-5">ZїpѵїКz</span></strong></p>
                 
@@ -21,8 +21,8 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <h4 className="text-decoration-underline small d-flex justify-content-center text-white ">PRODUCTS</h4>
-                   <ul className="list-unstyled small d-flex justify-content-center flex-lg-column  ">
+                  <p className="text-decoration-underline  d-flex justify-content-center text-white mb-0">PRODUCTS</p>
+                   <ul className="list-unstyled  d-flex justify-content-center flex-lg-column  ">
                     <li><a href="#" className="text-decoration-none  text-white p-1">TShirts</a></li>
                     <li><a href="#" className="text-decoration-none text-white p-1">Hoodies</a></li>
                     <li><a href="#" className="text-decoration-none  text-white p-1">TrackPant</a></li>
@@ -36,8 +36,8 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <h5 className="text-decoration-underline small d-flex justify-content-center text-white ">CUSTOMER POLICY</h5>
-                   <ul className="list-unstyled small d-flex justify-content-center flex-lg-column  ">
+                  <p className="text-decoration-underline  d-flex justify-content-center text-white mb-0">CUSTOMER POLICY</p>
+                   <ul className="list-unstyled  d-flex justify-content-center flex-lg-column  ">
                     <li><a href="#" className="text-decoration-none  text-white p-1">Privacy Policy</a></li>
                     <li><a href="#" className="text-decoration-none text-white p-1">Terms and Condition</a></li>
                     <li><a href="#" className="text-decoration-none  text-white p-1">Return & Refund</a></li>
@@ -46,8 +46,8 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <h5 className="text-decoration-underline small d-flex justify-content-center text-white ">SOCIAL</h5>
-                   <ul className="list-unstyled small d-flex justify-content-center flex-lg-column  ">
+                  <p className="text-decoration-underline  d-flex justify-content-center text-white mb-0">SOCIAL</p>
+                   <ul className="list-unstyled  d-flex justify-content-center flex-lg-column  ">
                     <li><a href="#" className="text-decoration-none  text-white p-2"><i class="bi bi-whatsapp"></i></a></li>
                     <li><a href="#" className="text-decoration-none text-white p-2"><i class="bi bi-instagram"></i></a></li>
                     <li><a href="#" className="text-decoration-none  text-white p-2"><i class="bi bi-youtube"></i></a></li>
@@ -56,9 +56,9 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <h5 className="text-decoration-underline small d-flex justify-content-center text-white ">CONTACT US</h5>
+                  <p className="text-decoration-underline  d-flex justify-content-center text-white mb-0">CONTACT US</p>
 
-                   <div className="list-unstyled small d-flex justify-content-around flex-lg-column  ">
+                   <div className="list-unstyled  d-flex justify-content-center flex-lg-column gap-3 gap-lg-0 ">
                     <div className="">
                       <p className="mb-1 " ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
                       <p className="mb-1"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
@@ -75,23 +75,31 @@ export default function Footer() {
 
             </div>
 
-            <div className="bg-dark mt-1 text-white small " style={{ fontFamily: "'Nunito Rounded', sans-serif" }}>
-              
-                <ul className="list-unstyled text-center small align-items-center d-flex justify-content-around ">
-                  <li>
-                    <div > <a href="/" className="text-decoration-none gap-2 d-flex mt-2 text-white">
-                         <img src="/logo/zipVikz-brand-logo.png" alt="brand-logo" style={{width:"25px",height:"25px"}} />
-                        <p className="small mt-2">Seller Hub</p> </a>
-                    </div> </li>
-                  <li>&copy; 2026 ZipViks. All Rights Reserved. Developed by <span ><Link to={"https://santhosh15203.github.io/Portfolio/"} className="text-danger "><strong>Santhosh Moorthi</strong> </Link></span></li>
 
-                  <li>
-                    <div  className="d-flex gap-3 d-none d-lg-flex"> 
-                      <a href="#" className="text-decoration-none  text-white">Privacy Policy</a>
-                      <a href="#" className="text-decoration-none text-white">Terms of Use</a>
-                    </div>
-                  </li>
+
+
+            
+            <div className=" d-flex justify-content-around p-1 pb-2 mt-1 text-white bg-dark "  style={{ fontFamily:" Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px" }}>
+
+              <div className="d-none d-lg-flex ">
+                <img src="/logo/zipVikz-brand-logo.png" alt="brand-logo" style={{width:"25px",height:"25px"}} className="bg-dark"/>
+                <p className=" m-0 p-0">Zipvikz</p>
+
+              </div>
+              <div className=" ">
+                <p className="m-0 p-0">&copy; 2026 ZipViks. All Rights Reserved. Developed by <Link to={"https://santhosh15203.github.io/Portfolio/"} className="text-danger "><strong>Santhosh Moorthi</strong> </Link></p>
+
+              </div>
+
+              <div  className="d-none d-lg-flex "> 
+                <ul className="d-flex list-unstyled m-0 p-0 gap-0 gap-lg-3">
+                  <li><a href="#" className="text-decoration-none   text-white">Privacy Policy</a></li>
+                  <li><a href="#" className="text-decoration-none  text-white">Terms of Use</a></li>
                 </ul>
+ 
+                      
+              </div>
+
             </div>
 
 
