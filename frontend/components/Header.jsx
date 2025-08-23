@@ -180,7 +180,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                 <i className="bi  bi-search-heart fs-6 dark" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
               </div>
 
-             <Link to={"/cart"} className="text-white text-decoration-none d-flex ">
+             <Link to={"/cart"} className="text-white text-decoration-none d-lg-flex d-none ">
               <i className="bi bi-heart-fill  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
                 <sup className="text-danger fs-6 ms-1 ">{cardItems?cardItems.length:0}</sup>
               </i>
