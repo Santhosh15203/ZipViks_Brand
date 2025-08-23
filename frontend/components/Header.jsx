@@ -122,8 +122,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                 <strong style={{ fontFamily: "'Open Sans', Arial, Helvetica, sans-serif" }}>ZїpѵїКz</strong>
               </h4>
               <p className="text-dark  small mb-0 mt-0">
-                <strong className="text-danger ">Glow</strong> with Us
-              </p>
+                <strong className="text-danger ">Decide it!</strong> Own it!              </p>
             </Link>
           
           </div>
