@@ -23,14 +23,14 @@ export default function Footer() {
                <div className="" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
                    <ul className="list-unstyled gap-2 gap-lg-1 justify-content-center d-flex flex-wrap flex-lg-column mb-1 ">
-                    <li><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
-                    <li><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
-                    <li><a href="#" className="text-decoration-none  text-white ">TrackPant</a></li>
-                    <li><a href="#" className="text-decoration-none text-white ">Shorts</a></li>
-                    <li><a href="#" className="text-decoration-none  text-white ">Chudi</a></li>
-                    <li><a href="#" className="text-decoration-none text-white">Leggins</a></li>
-                    <li><a href="#" className="text-decoration-none text-white ">Saree</a></li>
-                    <li><a href="#" className="text-decoration-none text-white ">NightWear</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0  text-white">TShirts</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0 text-white ">Hoodies</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0 text-white ">TrackPant</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0 text-white ">Shorts</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0 text-white ">Chudi</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0 text-white">Leggins</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0 text-white ">Saree</a></li>
+                    <li><a href="#" className="text-decoration-none mb-0 text-white ">NightWear</a></li>
                   </ul>
                   
               </div>
@@ -61,7 +61,7 @@ export default function Footer() {
                    <div className="list-unstyled  d-flex justify-content-center flex-lg-column gap-2 gap-lg-0 ">
                     <div className="">
                       <p className="mb-1 m-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
-                      <p className="mb-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
+                      <p className="m-0 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
                     <div>
