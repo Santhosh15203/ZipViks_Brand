@@ -7,7 +7,7 @@ export default function Footer() {
 
           
 
-            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"13px"}} >
+            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px"}} >
 
               <div className=" text-center ">
                  <p className="text-center mb-0"> <strong >  <img src="/logo/zipVikz-brand-logo.png" alt="logo" className="" style={{width:"35px",height:"35px"}} />
@@ -22,7 +22,7 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled gap-1 d-flex  flex-lg-column  ">
+                   <ul className="list-unstyled gap-1 d-flex flex-wrap flex-lg-column  ">
                     <li><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
                     <li><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
                     <li><a href="#" className="text-decoration-none  text-white ">TrackPant</a></li>
@@ -37,7 +37,7 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">CUSTOMER POLICY</p>
-                   <ul className="list-unstyled gap-1 d-flex  flex-lg-column  ">
+                   <ul className="list-unstyled gap-1 d-flex flex-wrap flex-lg-column  ">
                     <li><a href="#" className="text-decoration-none  text-white ">Privacy Policy</a></li>
                     <li><a href="#" className="text-decoration-none text-white ">Terms and Condition</a></li>
                     <li><a href="#" className="text-decoration-none  text-white ">Return & Refund</a></li>
@@ -60,13 +60,13 @@ export default function Footer() {
 
                    <div className="list-unstyled  d-flex  flex-lg-column gap-3 gap-lg-0 ">
                     <div className="">
-                      <p className="mb-1 " ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
-                      <p className="mb-1"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
+                      <p className="mb-1 m-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
+                      <p className="mb-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
                     <div>
-                      <p className="mb-1" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan Nagar, Kovil<br/> Street,Tirupur-641 602.</p>
-                      <p><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
+                      <p className="mb-1 m-0 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan Nagar, Kovil<br/> Street,Tirupur-641 602.</p>
+                      <p className="m-0 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
                     
@@ -79,7 +79,7 @@ export default function Footer() {
 
 
             
-            <div className=" d-flex justify-content-around p-2 pb-2 mt-1 text-white bg-dark "  style={{ fontFamily:" Open Sans', Arial, Helvetica, sans-serif",fontSize:"13px" }}>
+            <div className=" d-flex justify-content-around p-2 pb-2 mt-1 text-white bg-dark "  style={{ fontFamily:" Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px" }}>
 
               <div className="d-none d-lg-flex ">
                 <img src="/logo/zipVikz-brand-logo.png" alt="brand-logo" style={{width:"25px",height:"25px"}} className="bg-dark"/>
