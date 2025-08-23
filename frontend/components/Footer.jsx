@@ -7,13 +7,13 @@ export default function Footer() {
 
           
 
-            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px"}} >
+            <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-1 p-lg-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px"}} >
 
-              <div className=" text-center ">
+              <div className=" text-center pt-1 ">
                  <p className="text-center mb-0"> <strong >  <img src="/logo/zipVikz-brand-logo.png" alt="logo" className="" style={{width:"35px",height:"35px"}} />
                   <span className="fs-5">ZїpѵїКz</span></strong></p>
                 
-                <p className=""><span className="text-danger fw-bold">Shop</span> the latest fashion at prices that suit every pocket.<br/>
+                <p className="mb-1"><span className="text-danger fw-bold">Shop</span> the latest fashion at prices that suit every pocket.<br/>
                 <span className="text-danger fw-bold">From</span>  trendy styles for men, women, and kids, everything you need is just a click away.<br/>
                  <span className="text-danger fw-bold">Enjoy</span>  fast delivery, secure payments, and hassle-free returns for a seamless experience.<br/>
                   <span className="text-danger fw-bold">Explore</span>  endless choices that match every mood, occasion, and style.<br/>
@@ -22,7 +22,7 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled gap-2 gap-lg-1 d-flex flex-wrap flex-lg-column  ">
+                   <ul className="list-unstyled gap-2 gap-lg-1 justify-content-center d-flex flex-wrap flex-lg-column mb-1 ">
                     <li><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
                     <li><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
                     <li><a href="#" className="text-decoration-none  text-white ">TrackPant</a></li>
@@ -37,7 +37,7 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">CUSTOMER POLICY</p>
-                   <ul className="list-unstyled gap-2 gap-lg-1 d-flex flex-wrap flex-lg-column  ">
+                   <ul className="list-unstyled gap-1 justify-content-center  d-flex flex-wrap flex-lg-column mb-1 ">
                     <li><a href="#" className="text-decoration-none  text-white ">Privacy Policy</a></li>
                     <li><a href="#" className="text-decoration-none text-white ">Terms and Condition</a></li>
                     <li><a href="#" className="text-decoration-none  text-white ">Return & Refund</a></li>
@@ -47,7 +47,7 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">SOCIAL</p>
-                   <ul className="list-unstyled  d-flex justify-content-center flex-lg-column  ">
+                   <ul className="list-unstyled  d-flex justify-content-center flex-lg-column mb-1 ">
                     <li><a href="#" className="text-decoration-none  text-white p-2"><i class="bi bi-whatsapp"></i></a></li>
                     <li><a href="#" className="text-decoration-none text-white p-2"><i class="bi bi-instagram"></i></a></li>
                     <li><a href="#" className="text-decoration-none  text-white p-2"><i class="bi bi-youtube"></i></a></li>
@@ -58,7 +58,7 @@ export default function Footer() {
                <div className="" >
                   <p className="text-decoration-underline justify-content-center  d-flex m-0 p-0  text-white mb-0">CONTACT US</p>
 
-                   <div className="list-unstyled  d-flex  flex-lg-column gap-2 gap-lg-0 ">
+                   <div className="list-unstyled  d-flex justify-content-center flex-lg-column gap-2 gap-lg-0 ">
                     <div className="">
                       <p className="mb-1 m-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
                       <p className="mb-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
