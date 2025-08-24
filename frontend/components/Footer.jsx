@@ -9,11 +9,11 @@ export default function Footer() {
 
             <div className="d-flex flex-column flex-lg-row bg-dark text-white justify-content-around p-1 p-lg-3 pb-0" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",fontSize:"14px"}} >
 
-              <div className=" text-center pt-1 ">
+              <div className=" text-center">
                  <p className="text-center mb-0"> <strong >  <img src="/logo/zipVikz-brand-logo.png" alt="logo" className="" style={{width:"35px",height:"35px"}} />
                   <span className="fs-5">ZїpѵїКz</span></strong></p>
                 
-                <p className="mb-1"><span className="text-danger fw-bold">Shop</span> the latest fashion at prices that suit every pocket.<br/>
+                <p className="mb-1 fs-6"><span className="text-danger fw-bold">Shop</span> the latest fashion at prices that suit every pocket.<br/>
                 <span className="text-danger fw-bold">From</span>  trendy styles for men, women, and kids, everything you need is just a click away.<br/>
                  <span className="text-danger fw-bold">Enjoy</span>  fast delivery, secure payments, and hassle-free returns for a seamless experience.<br/>
                   <span className="text-danger fw-bold">Explore</span>  endless choices that match every mood, occasion, and style.<br/>
@@ -21,7 +21,7 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
+                  <p className="text-decoration-none justify-content-center d-flex  text-danger fw-bold mb-0">PRODUCTS</p>
                    <ul className="list-unstyled gap-1 justify-content-center d-flex flex-wrap flex-lg-column mb-1">
                     <li className=""><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
                     <li className="mb-0"><a href="#" className="text-decoration-none  text-white ">Hoodies</a></li>
@@ -35,7 +35,7 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">CUSTOMER POLICY</p>
+                  <p className="text-decoration-none justify-content-center  d-flex text-danger fw-bold  mb-0">CUSTOMER POLICY</p>
                    <ul className="list-unstyled gap-1 justify-content-center  d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 ">
                     <li><a href="#" className="text-decoration-none  text-white ">Privacy Policy</a></li>
                     <li><a href="#" className="text-decoration-none text-white d-none d-lg-inline">Terms and Condition </a><a href="" className="text-decoration-none text-white d-inline d-lg-none">T&C</a></li>
@@ -45,7 +45,7 @@ export default function Footer() {
               </div>
 
                <div className="" >
-                  <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">SOCIAL</p>
+                  <p className="text-decoration-none justify-content-center  d-flex text-danger fw-bold  mb-0">SOCIAL</p>
                    <ul className="list-unstyled  d-flex justify-content-center flex-lg-column mb-1 ">
                     <li><a href="#" className="text-decoration-none  text-white p-2"><i class="bi bi-whatsapp"></i></a></li>
                     <li><a href="#" className="text-decoration-none text-white p-2"><i class="bi bi-instagram"></i></a></li>
@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
 
                <div className=" " >
-                  <p className="text-decoration-underline justify-content-center  d-flex m-0 p-0  text-white mb-0">CONTACT US</p>
+                  <p className="text-decoration-none justify-content-center  d-flex text-danger fw-bold  mb-0">CONTACT US</p>
 
                    <div className="list-unstyled flex-wrap d-flex  flex-lg-column gap-1 gap-lg-0 ">
                     <div className=" ">
