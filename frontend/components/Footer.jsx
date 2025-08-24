@@ -22,15 +22,14 @@ export default function Footer() {
 
                <div className="" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled gap-1 justify-content-center bg-secondary d-flex flex-wrap flex-lg-column mb-0 mb-lg-1">
-                    <li className=""><a href="#" className="text-decoration-none bg-success text-white">TShirts</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white ">Hoodies</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white ">TrackPant</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white ">Shorts</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success  text-white ">Chudi</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white">Leggins</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none  bg-success text-white ">Saree</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none  bg-success text-white ">NightWear</a></li>
+                   <ul className="list-unstyled gap-1 justify-content-center d-flex flex-wrap flex-lg-column mb-1">
+                    <li className=""><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white ">Hoodies</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white ">TrackPant</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white ">Shorts</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none   text-white ">Chudi</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white">Leggins</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none   text-white ">Saree</a></li>
                   </ul>
                   
               </div>
