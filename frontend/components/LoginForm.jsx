@@ -101,7 +101,7 @@ export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
 
                   <div className="modal-footer d-flex justify-content-between">
                     <p className="text-decoration-none" onClick={()=>{resetForm()}} style={{cursor:"pointer"}}  >Reset</p>
-                    <p>Create an account? <span className="text-danger text-decoration-none"  onClick={()=>{switchModal('loginModal','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
+                    <p>Create an account? <span className="text-danger text-decoration-underline"  onClick={()=>{switchModal('loginModal','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
 
                   </div>
 

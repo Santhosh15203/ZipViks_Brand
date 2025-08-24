@@ -156,8 +156,8 @@ function verifyOTP(e) {
                                   </button>
                                 </form>
                                 <div className="d-flex justify-content-between">
-                                  <p  className="mt-0 text-decoration-underline  " style={{ cursor: "pointer"}} onClick={resetCode}>Resend Code</p>
-                                  <p  className="mt-0 text-decoration-underline  " style={{ cursor: "pointer"}} onClick={() => setStep(1)}>Back</p>
+                                  <p  className="m-0 text-decoration-underline  " style={{ cursor: "pointer"}} onClick={resetCode}>Resend Code</p>
+                                  <p  className="m-0 text-decoration-underline  " style={{ cursor: "pointer"}} onClick={() => setStep(1)}>Back</p>
                                  
 
                                 </div>
@@ -165,12 +165,8 @@ function verifyOTP(e) {
                             )}
 
                           <div>
-                            <p className=" mb-0 text-center" style={{fontSize:"17px"}}>By continuing, you agree to our</p>
-                            <ul className="list-unstyled d-flex gap-3 mb-0 mt-0 justify-content-center ">
-                              <li><a href="" className="text-dark ">Terms of Service</a></li>
-                              <li><a href="" className="text-dark ">Privacy Policy</a></li>
-                              <li><a href="" className="text-dark ">Content Policy</a></li>
-                            </ul>
+                            <p className=" mb-0 text-center" style={{fontSize:"17px"}}>By continuing, you agree to our <a href="" className="text-primary text-decoration-none ">Terms of Service.</a></p>
+                            
 
                           </div>
                             
@@ -178,7 +174,7 @@ function verifyOTP(e) {
 
                   <div className="modal-footer d-flex justify-content-between ">
                     <p className="text-decoration-none" onClick={()=>{resetForm()}} style={{cursor:"pointer"}}  >Reset</p>
-                    <p>Create am account? <span className="text-danger text-decoration-none"  onClick={()=>{switchModal('registerMobile','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
+                    <p>Create an account? <span className="text-danger text-decoration-underline"  onClick={()=>{switchModal('registerMobile','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
                   </div>
                 </div>
               </div>
