@@ -60,7 +60,7 @@ export default function Footer() {
 
                    <div className="list-unstyled flex-wrap d-flex bg-secondary justify-content-around flex-lg-column gap-1 gap-lg-0 ">
                     <div className="bg-danger ">
-                      <p className="m-1 p-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
+                      <p className="m-1 p-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  buyzipvikz@gmail.com</a></p>
                       <p className="m-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
