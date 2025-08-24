@@ -65,7 +65,7 @@ export default function Footer() {
 
                     </div>
                     <div className="bg-primary">
-                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan Nagar,<br/> Kovil Street,Tirupur-641 602.</p>
+                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan<br/>Nagar, Kovil Street,<br/>Tirupur-641 602.</p>
                       <p className="m-1 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
