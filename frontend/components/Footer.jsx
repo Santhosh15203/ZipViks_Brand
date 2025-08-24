@@ -58,7 +58,7 @@ export default function Footer() {
                <div className="" >
                   <p className="text-decoration-underline justify-content-center  d-flex m-0 p-0  text-white mb-0">CONTACT US</p>
 
-                   <div className="list-unstyled  d-flex justify-content-center flex-lg-column gap-2 gap-lg-0 ">
+                   <div className="list-unstyled flex-wrap d-flex justify-content-between flex-lg-column gap-1 gap-lg-0 ">
                     <div className="">
                       <p className="mb-1 m-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
                       <p className="m-0 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
