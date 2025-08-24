@@ -58,7 +58,7 @@ export default function Footer() {
                <div className="bg-success " >
                   <p className="text-decoration-underline justify-content-center  d-flex m-0 p-0  text-white mb-0">CONTACT US</p>
 
-                   <div className="list-unstyled flex-wrap d-flex bg-secondary justify-content-center flex-lg-column gap-1 gap-lg-0 ">
+                   <div className="list-unstyled flex-wrap d-flex bg-secondary justify-content-around flex-lg-column gap-1 gap-lg-0 ">
                     <div className="bg-danger ">
                       <p className="m-1 p-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
                       <p className="m-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
