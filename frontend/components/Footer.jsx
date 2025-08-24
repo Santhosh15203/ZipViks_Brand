@@ -38,7 +38,7 @@ export default function Footer() {
                   <p className="text-decoration-underline justify-content-center  d-flex  text-white mb-0">CUSTOMER POLICY</p>
                    <ul className="list-unstyled gap-1 justify-content-center  d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 ">
                     <li><a href="#" className="text-decoration-none  text-white ">Privacy Policy</a></li>
-                    <li><a href="#" className="text-decoration-none text-white ">Terms and Condition</a></li>
+                    <li><a href="#" className="text-decoration-none text-white d-none d-lg-inline">Terms and Condition </a><a href="" className="text-decoration-none text-white d-inline d-lg-none">T&C</a></li>
                     <li><a href="#" className="text-decoration-none  text-white ">Return & Refund</a></li>
                     <li><a href="#" className="text-decoration-none text-white ">Shipping Policy</a></li>
                   </ul>
@@ -64,7 +64,7 @@ export default function Footer() {
 
                     </div>
                     <div className="">
-                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, Pandiyan<br/> Nagar, Tirupur <br/>-641 602.</p>
+                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, Pandiyan<br/> Nagar, Neripperichal<br/>Tirupur-641 602.</p>
                       <p className="m-1 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
