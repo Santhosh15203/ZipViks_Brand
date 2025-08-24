@@ -22,7 +22,7 @@ export default function Footer() {
 
                <div className="bg-success" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled gap-1 gap-lg-1 justify-content-center d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 m-0 p-0">
+                   <ul className="list-unstyled gap-1 gap-lg-1 justify-content-center d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 mt-0 mt-lg-1 m-0 p-0">
                     <li className=""><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
                     <li className="mb-0"><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
                     <li className="mb-0"><a href="#" className="text-decoration-none text-white ">TrackPant</a></li>
@@ -55,18 +55,18 @@ export default function Footer() {
                   </ul>
               </div>
 
-               <div className="" >
+               <div className="bg-success " >
                   <p className="text-decoration-underline justify-content-center  d-flex m-0 p-0  text-white mb-0">CONTACT US</p>
 
-                   <div className="list-unstyled flex-wrap d-flex justify-content-center flex-lg-column gap-1 gap-lg-0 ">
-                    <div className="">
-                      <p className="mb-1 m-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
-                      <p className="m-0 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
+                   <div className="list-unstyled flex-wrap d-flex bg-secondary justify-content-center flex-lg-column gap-1 gap-lg-0 ">
+                    <div className="bg-danger ">
+                      <p className="m-1 p-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  zipvikzshoppy@gmail.com</a></p>
+                      <p className="m-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
-                    <div>
-                      <p className="mb-1 m-0 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan Nagar,<br/> Kovil Street,Tirupur-641 602.</p>
-                      <p className="m-0 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
+                    <div className="bg-primary">
+                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan Nagar,<br/> Kovil Street,Tirupur-641 602.</p>
+                      <p className="m-1 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
                     
