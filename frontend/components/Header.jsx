@@ -181,7 +181,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
               </div>
 
              <Link to={"/cart"} className="text-white text-decoration-none d-lg-flex d-none ">
-              <i className="bi bi-heart-fill  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
+              <i className="bi bi-heart  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
                 <sup className="text-danger fs-6 ms-1 ">{cardItems?cardItems.length:0}</sup>
               </i>
             </Link>
