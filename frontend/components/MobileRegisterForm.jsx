@@ -100,18 +100,18 @@ function verifyOTP(e) {
     }
     return(
         <>                                                                  
-           <div className="modal fade" id="registerMobile" aria-hidden="true">
-              <div className="modal-dialog p-5 pt-0">
+           <div className="modal fade bg-success" id="registerMobile" aria-hidden="true">
+              <div className="modal-dialog ">
                 <div className="modal-content ">
 
                   <div className="modal-header">
                     <h5 className="modal-title text-dark fw-bold text-decoration-underline " >Mobile Registeration</h5>
-                    <button className="btn-close bg-danger" data-bs-dismiss="modal"></button>
+                    <button className="btn-close " data-bs-dismiss="modal"></button>
                   </div>
 
           
                      <div className="modal-body d-flex flex-column gap-2">
-                        <img src="./form/mobileRegisterLogo.jpg" alt="mobile logo"  style={{width:"100%",objectFit:"cover"}} className="rounded"/>
+                        <img src="./form/mobileRegisterLogo.jpg" alt="mobile logo"  style={{width:"100%",height:"75%",objectFit:"cover"}} className="rounded"/>
                           
                           {step==1 && (
                             <>
@@ -123,7 +123,7 @@ function verifyOTP(e) {
                                                                                                            
                             </div>
                                {userAldreadyFound && <>
-                                    <p className="text-danger mt-1 mb-0 small">{userAldreadyFound}</p>
+                                    <p className="text-danger mt-1 mb-0 ">{userAldreadyFound}</p>
                                 </>}
                         
                             <button className="btn btn-danger fs-7 mb-2 w-100 mt-3" type="submit">Send OTP</button>
@@ -148,34 +148,37 @@ function verifyOTP(e) {
                                     />
                                   </div>
                                   {wrongOtp && <>
-                                  <p className="text-danger mb-0 small mt-2">{wrongOtp}</p>
+                                  <p className="text-danger mb-0  mt-2">{wrongOtp}</p>
                                       
                                   </>}
-                                  <button className="btn btn-success small mt-3 w-100" type="submit">
+                                  <button className="btn btn-success  mt-3 w-100" type="submit">
                                     Verify OTP
                                   </button>
                                 </form>
                                 <div className="d-flex justify-content-between">
-                                  <p  className="mt-0 text-decoration-underline small " style={{ cursor: "pointer"}} onClick={resetCode}>Resend Code</p>
-                                  <p  className="mt-0 text-decoration-underline small " style={{ cursor: "pointer"}} onClick={() => setStep(1)}>Back</p>
+                                  <p  className="mt-0 text-decoration-underline  " style={{ cursor: "pointer"}} onClick={resetCode}>Resend Code</p>
+                                  <p  className="mt-0 text-decoration-underline  " style={{ cursor: "pointer"}} onClick={() => setStep(1)}>Back</p>
                                  
 
                                 </div>
                               </>
                             )}
 
-
-                            <p className=" mb-0" style={{fontSize:"13px"}}>By continuing, you agree to our</p>
-                            <ul className="list-unstyled d-flex gap-2 mb-0 small mt-0 justify-content-center ">
-                              <li><a href="" className="text-dark small">Terms of Service</a></li>
-                              <li><a href="" className="text-dark small">Privacy Policy</a></li>
-                              <li><a href="" className="text-dark small">Content Policy</a></li>
+                          <div>
+                            <p className=" mb-0 text-center" style={{fontSize:"17px"}}>By continuing, you agree to our</p>
+                            <ul className="list-unstyled d-flex gap-3 mb-0 mt-0 justify-content-center ">
+                              <li><a href="" className="text-dark ">Terms of Service</a></li>
+                              <li><a href="" className="text-dark ">Privacy Policy</a></li>
+                              <li><a href="" className="text-dark ">Content Policy</a></li>
                             </ul>
+
+                          </div>
+                            
                     </div>
 
-                  <div className="modal-footer small d-flex justify-content-between">
-                    <p className="text-decoration-underline" onClick={()=>{resetForm()}} style={{cursor:"pointer"}}  >Reset</p>
-                    <p>Don't have an account? <span className="text-danger text-decoration-underline"  onClick={()=>{switchModal('registerMobile','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
+                  <div className="modal-footer d-flex justify-content-between ">
+                    <p className="text-decoration-none" onClick={()=>{resetForm()}} style={{cursor:"pointer"}}  >Reset</p>
+                    <p>Create am account? <span className="text-danger text-decoration-none"  onClick={()=>{switchModal('registerMobile','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
                   </div>
                 </div>
               </div>

@@ -71,7 +71,7 @@ export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
 
     return(
         <>
-          <div className="modal fade bg-success mt-5" id="loginModal" aria-hidden="true">
+          <div className="modal fade mt-1" id="loginModal" aria-hidden="true">
               <div className="modal-dialog  pt-0">
                 <div className="modal-content ">
 
@@ -81,8 +81,8 @@ export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
                   </div>
 
                   <form onSubmit={handleCheckMobileNumber}>
-                     <div className="modal-body">
-                        <img src="./form/loginLogo.jpg" alt="img" style={{width:"100%",objectFit:"cover"}} />
+                     <div className="modal-body ">
+                        <img src="./form/loginLogo.jpg" alt="img"  style={{width:"100%",objectFit:"cover"}} />
                         <div className="d-flex flex-column gap-2 mt-4" >
                             <label  className=" text-start">Enter Mobile Number :</label>
                             <input type="text"  className="form-control small-placeholder" value={currentmobile} onChange={(e)=>{setCurrentmobile(e.target.value)}}  maxLength={10} pattern="[0-9]{10}"  placeholder="(+91)" required autoFocus/>
