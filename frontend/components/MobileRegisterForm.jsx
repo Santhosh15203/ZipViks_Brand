@@ -100,7 +100,7 @@ function verifyOTP(e) {
     }
     return(
         <>                                                                  
-           <div className="modal fade bg-success" id="registerMobile" aria-hidden="true">
+           <div className="modal fade " id="registerMobile" aria-hidden="true">
               <div className="modal-dialog ">
                 <div className="modal-content ">
 
