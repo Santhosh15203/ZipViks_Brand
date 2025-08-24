@@ -28,7 +28,7 @@ export default function SearchBar(){
 
     return(
         <>
-          <div className=" modal fade   input-group search-bar-container small-search" id="searchModal">
+          <div className=" modal fade mt-5 input-group search-bar-container small-search" id="searchModal">
             <div className="modal-dialog ">
               <div className="modal-content">
                 <div className="modal-header " data-bs-dismiss="modal">

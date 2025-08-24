@@ -71,11 +71,11 @@ export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
 
     return(
         <>
-          <div className="modal fade" id="loginModal" aria-hidden="true">
-              <div className="modal-dialog p-5 pt-0">
+          <div className="modal fade bg-success mt-5" id="loginModal" aria-hidden="true">
+              <div className="modal-dialog  pt-0">
                 <div className="modal-content ">
 
-                  <div className="modal-header">
+                  <div className="modal-header ">
                     <h5 className="modal-title text-dark fw-bold text-decoration-underline " >Sign In</h5>
                     <button className="btn-close " data-bs-dismiss="modal"></button>
                   </div>
@@ -84,12 +84,12 @@ export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
                      <div className="modal-body">
                         <img src="./form/loginLogo.jpg" alt="img" style={{width:"100%",objectFit:"cover"}} />
                         <div className="d-flex flex-column gap-2 mt-4" >
-                            <label  className="small text-start">Enter Mobile Number :</label>
+                            <label  className=" text-start">Enter Mobile Number :</label>
                             <input type="text"  className="form-control small-placeholder" value={currentmobile} onChange={(e)=>{setCurrentmobile(e.target.value)}}  maxLength={10} pattern="[0-9]{10}"  placeholder="(+91)" required autoFocus/>
                             { mobilenumberfound && <> <p className="text-danger small text-start">{mobilenumberfound}</p></>}
 
                         </div>
-                        <div className=" mt-2 gap-2 small">
+                        <div className=" mt-2 gap-2 ">
                             <p className="">or continue with <span className="text-decoration-underline text-success" style={{cursor:"pointer"}}  data-bs-toggle="modal"  data-bs-target="#emailModal" onClick={()=>{switchModal('loginModal','emailModal')}} data-bs-dismiss="#loginModal"><i>e-mail</i></span>.</p>
                             <button className="btn btn-success w-100" type="submit">Login</button>
                         </div>
@@ -99,9 +99,9 @@ export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
                  
 
 
-                  <div className="modal-footer small d-flex justify-content-between">
-                    <p className="text-decoration-underline" onClick={()=>{resetForm()}} style={{cursor:"pointer"}}  >Reset</p>
-                    <p>Don't have an account? <span className="text-danger text-decoration-underline"  onClick={()=>{switchModal('loginModal','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
+                  <div className="modal-footer d-flex justify-content-between">
+                    <p className="text-decoration-none" onClick={()=>{resetForm()}} style={{cursor:"pointer"}}  >Reset</p>
+                    <p>Create an account? <span className="text-danger text-decoration-none"  onClick={()=>{switchModal('loginModal','registerModal')}} style={{cursor:"pointer"}}>Sign Up</span></p>
 
                   </div>
 

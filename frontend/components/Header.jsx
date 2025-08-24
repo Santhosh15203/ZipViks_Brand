@@ -67,14 +67,14 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                     {loggedInUser || userMobileRegisterData ? 
                     <>
                     <div className="text-white text-decoration-none d-flex align-items-center gap-0 p-1 mb-0">
-                      <div className="gap-3 d-flex dropdown text-decoration-none" style={{cursor:"pointer"}}>
-                        <div className="small" data-bs-toggle="dropdown">
+                      <div className="gap-3 d-flex dropdown text-decoration-none" style={{cursor:"pointer",fontFamily: "'Nunito Rounded', sans-serif"}}>
+                        <div className="small dropdown-toggle " data-bs-toggle="dropdown">
                           <img src="/logo/zipVikz-brand-logo.png" className="rounded-circle" style={{ width: "20px", height: "20px", objectFit: "cover" }} />
                           <span className="text-white ms-1">Hi, {loggedInUser.firstname || userMobileRegisterData.mobile}</span>
                         </div>
-                        <ul className="dropdown-menu p-0 rounded mt-2 gap-3"  style={{minWidth:"130px"}} >
-                          <li className="dropdown-item small text-center p-2 border-bottom" data-bs-toggle="modal" data-bs-target="#updateRegisterModal"  >Profile Update</li>
-                          <li className="dropdown-item text-danger small text-center p-2 fw-bold" style={{cursor:"pointer"}} onClick={logOut}>  
+                        <ul className="dropdown-menu p-0 bg-dark  mt-1 "  style={{zIndex:1100}} >
+                          <li className="dropdown-item small bg-dark text-white text-center border-bottom" data-bs-toggle="modal" data-bs-target="#updateRegisterModal"  >Profile Update</li>
+                          <li className="dropdown-item small bg-danger text-white text-center " style={{cursor:"pointer"}} onClick={logOut}>  
                           Log Out
                           </li>
                         </ul>
@@ -129,7 +129,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
           <div className="offcanvas offcanvas-start d-lg-none" id="listItems" style={{ fontFamily: "'Nunito Rounded', sans-serif"}} >
             <div className="offcanvas-header">
-              <h5 className="fw-bold text-decoration-none ">Zipvikz Product Menu :</h5>
+              <h5 className="fw-bold text-decoration-underline ">Zipvikz Product Menu :-</h5>
               <button className="btn-close " data-bs-dismiss="offcanvas" ></button>
 
             </div>
@@ -177,11 +177,11 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
 
           <div className="d-flex gap-3 text-center  align-items-center" >  {/*cart and user */}
              <div className="text-dark d-flex d-lg-none" style={{cursor:"pointer"}} >
-                <i className="bi  bi-search-heart fs-6 dark" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+                <i className="bi  bi-search fs-6 dark" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
               </div>
 
              <Link to={"/cart"} className="text-white text-decoration-none d-lg-flex d-none ">
-              <i className="bi bi-heart  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
+              <i className="bi bi-heart-fill  fs-6" style={{ color: "#000000",fontWeight: "bold" }}>
                 <sup className="text-danger fs-6 ms-1 ">{cardItems?cardItems.length:0}</sup>
               </i>
             </Link>
