@@ -22,8 +22,8 @@ export default function Footer() {
 
                <div className="bg-success" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled gap-2 gap-lg-1 justify-content-center d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 ">
-                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
+                   <ul className="list-unstyled gap-1 gap-lg-1 justify-content-center d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 m-0 p-0">
+                    <li className=""><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
                     <li className="mb-0"><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
                     <li className="mb-0"><a href="#" className="text-decoration-none text-white ">TrackPant</a></li>
                     <li className="mb-0"><a href="#" className="text-decoration-none text-white ">Shorts</a></li>
