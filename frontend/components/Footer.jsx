@@ -55,17 +55,17 @@ export default function Footer() {
                   </ul>
               </div>
 
-               <div className="bg-success " >
+               <div className=" " >
                   <p className="text-decoration-underline justify-content-center  d-flex m-0 p-0  text-white mb-0">CONTACT US</p>
 
-                   <div className="list-unstyled flex-wrap d-flex bg-secondary flex-lg-column gap-1 gap-lg-0 ">
-                    <div className="bg-danger ">
+                   <div className="list-unstyled flex-wrap d-flex  flex-lg-column gap-1 gap-lg-0 ">
+                    <div className=" ">
                       <p className="m-1 p-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  buyzipvikz@gmail.com</a></p>
                       <p className="m-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
-                    <div className="bg-primary">
-                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> N0.32 Pandiyan<br/>Nagar, Kovil Street,<br/>Tirupur-641 602.</p>
+                    <div className="">
+                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, Pandiyan<br/> Nagar, Kovil Street,<br/>Tirupur-641 602.</p>
                       <p className="m-1 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
