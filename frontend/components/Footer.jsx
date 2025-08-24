@@ -17,7 +17,7 @@ export default function Footer() {
                 <span className="text-danger fw-bold">From</span>  trendy styles for men, women, and kids, everything you need is just a click away.<br/>
                  <span className="text-danger fw-bold">Enjoy</span>  fast delivery, secure payments, and hassle-free returns for a seamless experience.<br/>
                   <span className="text-danger fw-bold">Explore</span>  endless choices that match every mood, occasion, and style.<br/>
-                   <span className="text-danger fw-bold">Online</span>  shopping has never been this easy, stylish, and fun.</p>
+                   <span className="text-danger fw-bold">Online</span>  shopping has never b'n this easy, stylish & fun.</p>
               </div>
 
                <div className="" >
@@ -59,12 +59,12 @@ export default function Footer() {
 
                    <div className="list-unstyled flex-wrap d-flex  flex-lg-column gap-1 gap-lg-0 ">
                     <div className=" ">
-                      <p className="m-1 p-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i>  buyzipvikz@gmail.com</a></p>
+                      <p className="m-1 p-0" ><a href="#" className="text-decoration-none  text-white"><i class="bi bi-envelope-at"></i> buyzipvikz@gmail.com</a></p>
                       <p className="m-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
                     <div className="">
-                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, Pandiyan<br/> Nagar, Neripperichal<br/>Tirupur-641 602.</p>
+                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, PN Road,<br/>Tirupur - 641 602.</p>
                       <p className="m-1 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
