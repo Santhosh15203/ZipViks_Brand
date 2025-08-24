@@ -20,17 +20,17 @@ export default function Footer() {
                    <span className="text-danger fw-bold">Online</span>  shopping has never been this easy, stylish, and fun.</p>
               </div>
 
-               <div className="bg-success" >
+               <div className="" >
                   <p className="text-decoration-underline justify-content-center d-flex  text-white mb-0">PRODUCTS</p>
-                   <ul className="list-unstyled gap-1 gap-lg-1 justify-content-center d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 mt-0 mt-lg-1 m-0 p-0">
-                    <li className=""><a href="#" className="text-decoration-none  text-white">TShirts</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none text-white ">Hoodies</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none text-white ">TrackPant</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none text-white ">Shorts</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white ">Chudi</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white">Leggins</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white ">Saree</a></li>
-                    <li className="mb-0"><a href="#" className="text-decoration-none  text-white ">NightWear</a></li>
+                   <ul className="list-unstyled gap-1 gap-lg-1 justify-content-center bg-secondary d-flex flex-wrap flex-lg-column mb-0 mb-lg-1 mt-0 mt-lg-1 m-0 p-0">
+                    <li className=""><a href="#" className="text-decoration-none bg-success text-white">TShirts</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white ">Hoodies</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white ">TrackPant</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white ">Shorts</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success  text-white ">Chudi</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none bg-success text-white">Leggins</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none  bg-success text-white ">Saree</a></li>
+                    <li className="mb-0"><a href="#" className="text-decoration-none  bg-success text-white ">NightWear</a></li>
                   </ul>
                   
               </div>
@@ -65,7 +65,7 @@ export default function Footer() {
 
                     </div>
                     <div className="">
-                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, Pandiyan<br/> Nagar, Kovil Street,<br/>Tirupur-641 602.</p>
+                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, Pandiyan<br/> Nagar, Tirupur <br/>-641 602.</p>
                       <p className="m-1 p-0"><a href="" className="text-decoration-none text-white"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
