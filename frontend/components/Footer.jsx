@@ -13,7 +13,7 @@ export default function Footer() {
                  <p className="text-center mb-0"> <strong >  <img src="/logo/zipVikz-brand-logo.png" alt="logo" className="" style={{width:"35px",height:"35px"}} />
                   <span className="fs-5">ZїpѵїКz</span></strong></p>
                 
-                <p className="mb-1 fs-6"><span className="text-danger fw-bold">Shop</span> the latest fashion at prices that suit every pocket.<br/>
+                <p className="mb-1 "><span className="text-danger fw-bold">Shop</span> the latest fashion at prices that suit every pocket.<br/>
                 <span className="text-danger fw-bold">From</span>  trendy styles for men, women, and kids, everything you need is just a click away.<br/>
                  <span className="text-danger fw-bold">Enjoy</span>  fast delivery, secure payments, and hassle-free returns for a seamless experience.<br/>
                   <span className="text-danger fw-bold">Explore</span>  endless choices that match every mood, occasion, and style.<br/>
