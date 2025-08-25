@@ -59,13 +59,13 @@ export default function Footer() {
 
                    <div className="list-unstyled flex-wrap d-flex  flex-lg-column gap-1 gap-lg-0 ">
                     <div className=" ">
-                      <p className="m-1 p-0" ><a href="#" className="text-decoration-none move text-white"><i class="bi bi-envelope-at"></i> buyzipvikz@gmail.com</a></p>
-                      <p className="m-1 p-0"><i class="bi bi-telephone-outbound"></i> +91 99999 99991</p>
+                      <p className="m-1 p-0" ><a href="#" className="text-decoration-none move text-white"><i className="bi bi-envelope-at"></i> buyzipvikz@gmail.com</a></p>
+                      <p className="m-1 p-0"><i className="bi bi-telephone-outbound"></i> +91 99999 99991</p>
 
                     </div>
                     <div className="">
-                      <p className="m-1 p-0" ><i class="bi bi-geo-alt"></i> 8/1234 A, PN Road,<br/>Tirupur - 641 602.</p>
-                      <p className="m-1 p-0"><a href="" className="text-decoration-none text-white move"><i class="bi bi-chat-left-text"></i>  Send Feedback</a></p>
+                      <p className="m-1 p-0" ><i className="bi bi-geo-alt"></i> 8/1234 A, PN Road,<br/>Tirupur - 641 602.</p>
+                      <p className="m-1 p-0"><a href="" className="text-decoration-none text-white move"><i className="bi bi-chat-left-text"></i>  Send Feedback</a></p>
 
                     </div>
                     

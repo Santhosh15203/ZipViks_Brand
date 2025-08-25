@@ -57,8 +57,8 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             <div className="d-flex  p-1">
                 <ul className="list-unstyled align-items-center d-flex gap-2 gap-lg-3 mb-0   ">
               
-                      <li><a href="#" className="text-decoration-none text-white  small"><i className="bi bi-whatsapp  fs-6"></i> Whatsapp</a></li>
-                      <li><a href="#" className="text-decoration-none text-white small "><i className="bi bi-instagram fs-6 "></i> Instagram</a></li>
+                      <li><a href="#" className="text-decoration-none text-white move small"><i className="bi bi-whatsapp  fs-6"></i> Whatsapp</a></li>
+                      <li><a href="#" className="text-decoration-none text-white move small "><i className="bi bi-instagram fs-6 "></i> Instagram</a></li>
                   </ul>
 
               </div>
@@ -73,7 +73,8 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                           <span className="text-white ms-1">Hi, {loggedInUser.firstname || userMobileRegisterData.mobile}</span>
                         </div>
                         <ul className="dropdown-menu p-0 bg-dark  mt-1 "  style={{zIndex:1100}} >
-                          <li className="dropdown-item small bg-dark text-white text-center border-bottom" data-bs-toggle="modal" data-bs-target="#updateRegisterModal"  >Profile Update</li>
+                          {loggedInUser && (<li className="dropdown-item small bg-dark text-white text-center border-bottom" data-bs-toggle="modal" data-bs-target="#updateRegisterModal"  >Profile Update</li>)}
+                          
                           <li className="dropdown-item small bg-danger text-white text-center " style={{cursor:"pointer"}} onClick={logOut}>  
                           Log Out
                           </li>
@@ -94,11 +95,13 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                         </div> 
                         <LoginForm  setLoggedInUser={setLoggedInUser} setUserMobileRegsiterData={setUserMobileRegsiterData}/>
                     <EmailForm  setLoggedInUser={setLoggedInUser}/>
-                    <MobileRegisterForm setUserMobileRegsiterData={setUserMobileRegsiterData}/>
+                    
                     <RegisterForm setLoggedInUser={setLoggedInUser}/>
-                    <UpdateRegisterModal loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>
+                    
                     
                     </> }
+                    <MobileRegisterForm setUserMobileRegsiterData={setUserMobileRegsiterData}/>
+                    <UpdateRegisterModal loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>
 
               </div>
 

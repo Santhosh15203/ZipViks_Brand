@@ -98,7 +98,7 @@ export default function RegisterForm({setLoggedInUser}){
               <div className="modal-dialog">
                 <div className="modal-content "style={{width:"100%"}}>
                   <div className="modal-header">
-                    <h5 className="modal-title text-dark fw-bold text-decoration-underline " >User Registeration</h5>
+                    <h5 className="modal-title text-dark fw-bold text-decoration-none " >User Registeration</h5>
                     <button className="btn-close " data-bs-dismiss="modal" onClick={()=>{resetForm()}}></button>
                   </div>
                   

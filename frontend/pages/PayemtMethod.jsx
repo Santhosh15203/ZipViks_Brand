@@ -108,47 +108,52 @@ async function hanldeMobileRegisterForm(e){
     
     <>
   
-    <div className="d-flex justify-content-around mb-3 mt-3 gap-5 container">
-        <div className="d-flex flex-column p-3 w-100">  
+    <div className=" container mt-4 mb-3" style={{fontFamily: "'Open Sans', Arial, Helvetica, sans-serif"}}>
+      
+      <div className="row g-3 ">
 
-        {loggedInUser && 
+
+         {loggedInUser && 
              <>
-              <div>
-                  <h5 className="text-danger fw-bold text-center mt-2 text-decoration-underline">BILLING DETAILS</h5>
+             <div className="col-12 col-lg-6">
+                <div className=" border-bottom">
+                  <h5 className="fw-bold text-center text-danger">BILLING DETAILS</h5>
                 </div>
-                <div className="rounded border shadow p-3 mt-3">
-                  <div>
-                    <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
-                      <div className="w-50">
-                        <label className="fw-bold small"> Name :</label>
+                <div className="rounded  mt-3 p-2">
+                  
+                    <div className="row text-start">
+                      <div className="col-6">
+                        <label className="fw-bold "> Name :</label>
                         <input type="text" className="form-control" style={{ cursor: "none" }} value={firstname} readOnly />
                       </div>
-                      <div className="w-50">
-                        <label className="fw-bold small"> Mobile :</label>
+                      <div className="col-6">
+                        <label className="fw-bold "> Mobile :</label>
                         <input type="tel" className="form-control" style={{ cursor: "none" }} value={mobile} readOnly />
                       </div>
                     </div>
-                    <div className="text-start">
-                      <label className="fw-bold small">Address : </label>
+                    <div className="mt-2 text-start">
+                      <label className="fw-bold ">Address : </label>
                       <input className="form-control p-4" style={{ cursor: "none" }} value={address} readOnly />
                     </div>
-                    <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
-                      <div>
-                        <label className="fw-bold small">City : </label>
+                    <div className="row mt-2">
+                      <div className="col-4">
+                        <label className="fw-bold ">City : </label>
                         <input type="text" className="form-control" style={{ cursor: "none" }} value={city} readOnly />
                       </div>
-                      <div>
-                        <label className="fw-bold small">State : </label>
+                      <div className="col-4">
+                        <label className="fw-bold ">State : </label>
                         <input type="text" className="form-control" style={{ cursor: "none" }} value={state} readOnly />
                       </div>
-                      <div>
-                        <label className="fw-bold small">ZipCode : </label>
+                      <div className="col-4">
+                        <label className="fw-bold ">ZipCode : </label>
                         <input type="text" className="form-control" style={{ cursor: "none" }} value={zipcode} readOnly />
                       </div>
                     </div>
-                  </div>
+                  
                 </div>
-                <div className="text-end mt-4 gap-0 small">
+
+
+                <div className="text-end mt-3 gap-0 ">
                   <p className="mb-0">
                     If you want to edit this <span className="fw-bold ">Billing Details</span>, click the link below.
                   </p>
@@ -162,41 +167,48 @@ async function hanldeMobileRegisterForm(e){
                   </p>
                 </div>
                 <UpdateRegisterModal/>
+
+             </div>
+              
             </>
         }
 
          {userMobileRegisterData && <>
-                    <div>
-                      <h5 className=" fw-bold text-center mt-2 text-danger" style={{fontFamily:"sans-serif"}}>BILLING DETAILS</h5>
+                  <div className=" col-12 col-lg-6 ">
+                        
+                    <div className="border-bottom">
+                      <h5 className=" fw-bold text-center text-danger " style={{fontFamily:"sans-serif"}}>BILLING DETAILS</h5>
                     </div>
-                    <div className="rounded border shadow p-3 mt-3">
+                    <div className="rounded  mt-3 p-2">
                       <form onSubmit={hanldeMobileRegisterForm}>
-                          <div>
-                        <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
-                          <div className="w-50">
-                            <label className="fw-bold small"> Name :<span className="text-danger">*</span></label>
+                      
+                        <div className="row text-start">
+                          <div className="col-6">
+                            <label className="fw-bold "> Name<span className="text-danger">*</span></label>
                             <input type="text" className="form-control"  value={mobileName} disabled={showEdit} onChange={(e)=>{setMobileName(e.target.value)}} required />
                           </div>
-                          <div className="w-50">
-                            <label className="fw-bold small"> Mobile :<span className="text-danger">*</span></label>
+                          <div className="col-6">
+                            <label className="fw-bold "> Mobile<span className="text-danger">*</span></label>
                             <input type="tel" className="form-control" value={mobileMobile} disabled={showEdit}  onChange={(e)=>{setMobileMobile(e.target.value)}} required  />
                           </div>
                         </div>
-                        <div className="text-start">
-                          <label className="fw-bold small">Address :<span className="text-danger">*</span> </label>
-                          <input className="form-control p-4"  value={mobileAddress} disabled={showEdit}  onChange={(e)=>{setMobileAddress(e.target.value)}}  required  />
+
+                        <div className=" text-start">
+                          <label className="fw-bold ">Address<span className="text-danger">*</span> </label>
+                          <input className="form-control "  value={mobileAddress} disabled={showEdit}  onChange={(e)=>{setMobileAddress(e.target.value)}}  required  />
                         </div>
-                        <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
-                          <div>
-                            <label className="fw-bold small">City :<span className="text-danger">*</span> </label>
+
+                        <div className="row mt-2  ">
+                          <div className="col-4">
+                            <label className="fw-bold ">City<span className="text-danger">*</span> </label>
                             <input type="text" className="form-control"   value={mobileCity} disabled={showEdit}  onChange={(e)=>{setMobileCity(e.target.value)}} required  />
                           </div>
-                          <div>
-                            <label className="fw-bold small">State :<span className="text-danger">*</span> </label>
+                          <div className="col-4">
+                            <label className="fw-bold ">State<span className="text-danger">*</span> </label>
                             <input type="text" className="form-control" value={mobileState} disabled={showEdit}  onChange={(e)=>{setMobileState(e.target.value)}} required />
                           </div>
-                          <div>
-                            <label className="fw-bold small">ZipCode :<span className="text-danger">*</span> </label>
+                          <div className="col-4">
+                            <label className="fw-bold ">ZipCode<span className="text-danger">*</span> </label>
                             <input type="text" className="form-control"  value={mobileZipcode} disabled={showEdit}  onChange={(e)=>{setMobileZipcode(e.target.value)}} required  />
                           </div>
                          
@@ -205,12 +217,12 @@ async function hanldeMobileRegisterForm(e){
                         </div>
                         {submit && (
                            <div className="text-end mt-3 ">
-                             <button className="mb-0 btn btn-danger small p-2" type="submit">Submit</button>
+                             <button className="mb-0 btn btn-danger small " type="submit">Submit</button>
                           </div>
 
                         )}
                         
-                      </div>
+                      
 
                       </form>
 
@@ -233,71 +245,72 @@ async function hanldeMobileRegisterForm(e){
 
                     )}
                     <UpdateRegisterMobileForm mobileMobile={mobileMobile} userMobileRegisterFormData={userMobileRegisterFormData} setUserMobileRegsiterFormData={setUserMobileRegsiterFormData} />
-                    
+                  
+
+                  </div>
+                      
               </>}
 
 
                                                                      
-        </div>
+      
 
-
-          <div className="shadow border p-4 w-50">
-          <div className="p-1">
-            <h6 className="text-center fw-bold " style={{fontFamily:"sans-serif"}}>
+          <div className=" col-12 col-lg-6 ">
+          <div className="border-bottom p-1 mb-2">
+            <h6 className="text-center fw-bold  " style={{fontFamily:"sans-serif"}}>
               PRICE DETAILS{" "}
               <span className="text-danger">
                 ({cardItems.reduce((acc, card) => acc + card.custumQuantity, 0)} items)
               </span>
             </h6>
           </div>
-          <hr />
-          <div className="d-flex justify-content-between gap-5">
+          <div className="d-flex justify-content-between ">
             <p>Total MRP (Inc.all Taxes)</p>
             <p>₹{totalMrp}.00</p>
           </div>
-          <div className="d-flex justify-content-between gap-5">
+          <div className="d-flex justify-content-between ">
             <p>Total Discount Amt</p>
             <p className="text-danger">- ₹{totalDiscountAmt}.00</p>
           </div>
-          <div className="d-flex justify-content-between gap-5">
+          <div className="d-flex justify-content-between ">
             <p>Delivery</p>
             <p className="text-success">🛵Free</p>
           </div>
-          <div className="d-flex justify-content-between gap-5 border-bottom">
+          <div className="d-flex justify-content-between ">
             <h6>Total Payment</h6>
-            <h6>₹{totalPaymentAmt}.00</h6>
+            <h6 className="fw-bold">₹{totalPaymentAmt}.00</h6>
           </div>
 
-          <div className="mt-3">
-            <h6 className="fw-bold text-center " style={{fontFamily:"sans-serif"}}>PAYMENT METHOD</h6>
+          <div className="">
+            <h6 className="fw-bold text-center border-bottom p-2 " style={{fontFamily:"sans-serif"}}>PAYMENT METHOD</h6>
 
-            <div className="mt-4">
+            <div className=""> 
               <input
                 type="radio"
                 checked={showUPI}
                 onChange={() => {
                   setShowUPI(true)
-                  setDeliveryStatus(false)
+                  setDeliveryStatus(false) 
                 }}
                 style={{ cursor: "pointer" }} 
               />{" "}
               <span>Pay via UPI</span> 
               {showUPI && (
                 <>
-                  <div className="d-flex justify-content-around mt-3 gap-0">
-                    <div onClick={() => setPaymentOption("Google Pay")} style={{ cursor: "pointer" }}>
-                      <img src="./form/gpay.jpeg" alt="gpay" className="shadow rounded" style={{ width: "50px" }} />
+                  <div className="row container text-center mt-2">
+                    <div className="col-3 " onClick={() => setPaymentOption("Google Pay")} style={{ cursor: "pointer" }}>
+                      <img src="./form/gpay.jpeg" alt="gpay"  className="shadow rounded " style={{ width: "50px" }} />
                       <p className="text-center small mt-1">Gpay</p>
                     </div>
-                    <div onClick={() => setPaymentOption("PhonePe")} style={{ cursor: "pointer" }}>
+                    <div className="col-3" onClick={() => setPaymentOption("PhonePe")} style={{ cursor: "pointer" }}>
                       <img src="./form/phonepe.png" alt="phonepe" className="shadow rounded" style={{ width: "50px" }} />
                       <p className="text-center small mt-1">PhonePe</p>
                     </div>
-                    <div onClick={() => setPaymentOption("Paytm")} style={{ cursor: "pointer" }}>
+                    <div className="col-3" onClick={() => setPaymentOption("Paytm")} style={{ cursor: "pointer" }}>
                       <img src="./form/paytm.png" alt="paytm" className="shadow rounded" style={{ width: "50px" }} />
                       <p className="text-center small mt-1">Paytm</p>
                     </div>
-                    <div onClick={() => setPaymentOption("Bhim")} style={{ cursor: "pointer" }}>
+                    <div className="col-3" onClick={() => setPaymentOption("Bhim")} style={{ cursor: "pointer" }}>
                       <img src="./form/bhim.png" alt="bhim" className="shadow rounded" style={{ width: "50px" }} />
                       <p className="text-center small mt-1">Bhim</p>
                     </div>
@@ -326,7 +339,7 @@ async function hanldeMobileRegisterForm(e){
                 }}
                 style={{ cursor: "pointer" }}
               />{" "}
-              <span>Cash on Delivery</span> 
+              <span>💵 Cash on Delivery</span> 
              
               {deliveryStatus && (
                 <>
@@ -341,7 +354,15 @@ async function hanldeMobileRegisterForm(e){
 
 
 
+
+
+
+
+
+
+
       </div>
+    </div>
   
 
 

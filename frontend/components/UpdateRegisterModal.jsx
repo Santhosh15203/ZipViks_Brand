@@ -92,8 +92,8 @@ export default function UpdateRegisterModal({loggedInUser,setLoggedInUser}){
               <div className="modal-dialog">
                 <div className="modal-content "style={{width:"100%"}}>
                   <div className="modal-header">
-                    <h5 className="modal-title text-dark fw-bold text-decoration-underline " >Profile Update</h5>
-                    <button className="btn-close bg-danger" data-bs-dismiss="modal" ></button>
+                    <h5 className="modal-title text-dark fw-bold text-decoration-none " >Profile Update</h5>
+                    <button className="btn-close " data-bs-dismiss="modal" ></button>
                   </div>
                   
                 <form  onSubmit={handleUpdate} >  

@@ -121,26 +121,28 @@ const handleIncrementQuantity = (id, size) => {
                                                 const sellingprice=Number(fixedprice-(fixedprice*discount/100)).toFixed(0)
                                                  
                                                 return(
-                                                    <div className="d-flex justify-content-center  w-100 border" key={`${card.product._id}-${card.selectsize}`}>
-                                                        <div className=" w-25" >
+                                                    <div className="d-flex justify-content-around  row border" key={`${card.product._id}-${card.selectsize}`}>
+                                                        <div className="col-6 col-lg-3 p-0 m-0" >
                                                             <img src={card.product.image} className="m-0 p-0" alt="img" style={{width:"100%",height:"200px",objectFit:"cover"}} />
                                                         </div>
 
-                                                        <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center small w-75" style={{maxHeight:"200px"}}>
+                                                        <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center small col-6 col-lg-9 " style={{maxHeight:"200px"}}>
 
                                                              <div className=" ">
                                                                 
-                                                                <Link to={`/product/${card.product._id}`} className="text-decoration-none"><strong className="text-dark fs-6 text-decoration-underline p-0 p-lg-4" style={{maxWidth:"50px"}}>{card.product.name}</strong></Link>
+                                                                <Link to={`/product/${card.product._id}`} className="text-decoration-none"><strong className="text-dark fs-6 text-decoration-underline p-0 p-lg-1" style={{maxWidth:"50px"}}>{card.product.name}</strong></Link>
                                                             </div>
-                                                            <div className=" p-0 p-lg-4" >
-                                                                <p className="m-0 "> 1pc.<strong> ₹{sellingprice}.00</strong></p>
+                                                            <div className="d-flex gap-2 p-0 p-lg-1 ">
+                                                                <p className="m-0 p-0"><strong><span className="text-success fs-6">₹{sellingprice}.00</span> </strong> </p>
+                                                                <p className="text-decoration-line-through text-muted small m-0 p-0">₹{fixedprice}.00</p>
+                                                                <p className="text-danger fw-bold small m-0 p-0" >({discount}% off )</p>
                                                             </div>
-                                                            <div className=" p-0 p-lg-4" >
-                                                                <p className="m-0">size :<strong> {card.selectsize}</strong></p>
+                                                            <div className=" p-0 p-lg-1" >
+                                                                <p className="m-0">Size :<strong> {card.selectsize}</strong></p>
                                                             </div>
                                                             
                                                                     <div className=" d-flex flex-column text-center bg-white">
-                                                                        <ul className="list-unstyled d-flex m-0 p-0 p-lg-4 gap-2 gap-lg-3">
+                                                                        <ul className="list-unstyled d-flex m-0 p-0 p-lg-1 gap-2 gap-lg-3">
                                                                                 <li><button className="btn border border-dark" onClick={()=>handleDecrementQuantity(card.product._id,card.selectsize)} disabled={card.custumQuantity<=1}>-</button></li>
                                                                                 <li><p className=""><strong>{card.custumQuantity}</strong></p></li>
                                                                                 <li><button className="btn border border-dark" onClick={()=>handleIncrementQuantity(card.product._id,card.selectsize)} disabled={card.custumQuantity>Number(card.product[card.selectsize])}>+</button></li>
@@ -157,10 +159,10 @@ const handleIncrementQuantity = (id, size) => {
                                                                 
                                                             
                                                                 
-                                                            <div className=" p-0 p-lg-4">
+                                                            <div className=" p-0 p-lg-1">
                                                                 <p className="m-0">Tot Amt.<strong className="text-success"> ₹{card.custumQuantity*sellingprice}.00</strong></p>
                                                             </div>
-                                                            <div className=" p-0 p-lg-4">
+                                                            <div className=" p-0 p-lg-1">
                                                                 <button className=" btn-sm border  border-dark" onClick={()=>{handleDeleteItem(card.product._id,card.selectsize)}}><i className="bi bi-trash3-fill text-danger"></i></button>
                                                             </div>
 
@@ -177,21 +179,21 @@ const handleIncrementQuantity = (id, size) => {
                                            
                                         
 
-                                        <div className="d-flex mt-5" >
-                                            <div className="w-75 ">
-                                                <img src="./slide/carousel1.jpg" style={{width:"100%",height:"172px" ,objectFit:"cover"}} alt="offer code" />
+                                        <div className="d-flex mt-4 row border mb-2" >
+                                            <div className="col-6 col-lg-9 m-0 p-0">
+                                                <img src="./slide/carousel1.jpg" style={{width:"100%",height:"150px" ,objectFit:"cover"}} alt="offer code" />
                                             </div>
-                                            <div className=" p-2 w-25 text-center">
-                                                <p className="fw-bold mt-1 text-decoration-underline">Order Summary</p>
-                                                    <p className="mb-2">Total Items : <strong>{cardItems.reduce((acc,card)=>(acc+card.custumQuantity),0)} (Units)</strong></p>
-                                                    <p>Total Amount : <strong>₹{cardItems.reduce((acc,card)=>{
+                                            <div className=" text-center col-6 col-lg-3">
+                                                <p className="fw-bold m-0 p-2 text-decoration-underline">Order Summary</p>
+                                                    <p className="m-0 p-0">Total Items : <strong>{cardItems.reduce((acc,card)=>(acc+card.custumQuantity),0)} (Units)</strong></p>
+                                                    <p className="m-0 p-0">Total Amount : <strong>₹{cardItems.reduce((acc,card)=>{
                                                                                                             const discount=Number(card.product.discount)
                                                                                                             const fixedprice=Number(String(card.product.fixedprice).replace(/,/g,""))
                                                                                                             const sellingprice=Number(fixedprice-(fixedprice*discount/100)).toFixed(0)
                                                                                                             return (acc+(card.custumQuantity*Number(sellingprice)))
                                                                                                             },0)}.00</strong></p>
                                                
-                                                 <button className="btn btn-success " onClick={handlePlaceOrderItems}>Proceed to Pay</button>
+                                                 <button className="btn btn-success m-2" onClick={handlePlaceOrderItems}>Proceed to Pay</button>
 
                                             </div>
                                                  
