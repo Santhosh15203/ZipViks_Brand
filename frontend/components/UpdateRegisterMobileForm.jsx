@@ -58,40 +58,40 @@ async  function handleRegisterMobileUpdateForm(e){
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title text-dark fw-bold text-decoration-underline " >Profile Update</h5>
-                        <button className="btn-close bg-danger" data-bs-dismiss="modal" ></button>
+                        <h5 className="modal-title text-dark fw-bold text-decoration-none " >Profile Update</h5>
+                        <button className="btn-close " data-bs-dismiss="modal" ></button>
                     </div>
 
                     {/* Register Mobile form */}
 
                     <form onSubmit={handleRegisterMobileUpdateForm}>
 
-                    <div className="modal-body">
+                    <div className="modal-body ">
                         <div>
-                    <div className="d-flex justify-content-between mt-3 mb-2 gap-4 text-start">
-                      <div className="w-50">
-                        <label className="fw-bold small"> Name :</label>
+                    <div className="row text-start">
+                      <div className="col-6">
+                        <label className="fw-bold "> Name :</label>
                         <input type="text" className="form-control" value={fullname} onChange={(e)=>setFullname(e.target.value)} />
                       </div>
-                      <div className="w-50">
-                        <label className="fw-bold small"> Mobile :</label>
+                      <div className="col-6">
+                        <label className="fw-bold "> Mobile :</label>
                         <input type="tel" className="form-control" value={mobile} onChange={(e)=>setMobile(e.target.value)} />
                       </div>
                     </div>
-                    <div className="text-start">
-                      <label className="fw-bold small">Address : </label>
-                      <input className="form-control p-4"  value={address} onChange={(e)=>setAddress(e.target.value)}/>
+                    <div className="text-start mt-2">
+                      <label className="fw-bold ">Address : </label>
+                      <input className="form-control "  value={address} onChange={(e)=>setAddress(e.target.value)}/>
                     </div>
-                    <div className="d-flex mt-2 mb-2 justify-content-between gap-3">
-                      <div>
+                    <div className="row text-start mt-2">
+                      <div className="col-4">
                         <label className="fw-bold small">City : </label>
                         <input type="text" className="form-control"  value={city} onChange={(e)=>setCity(e.target.value)} />
                       </div>
-                      <div>
+                      <div className="col-4">
                         <label className=" fw-bold small">State : </label>
                         <input type="text" className="form-control"  value={state} onChange={(e)=>setState(e.target.value)}/>
                       </div>
-                      <div>
+                      <div className="col-4">
                         <label className="fw-bold small">ZipCode : </label>
                         <input type="text" className="form-control"  value={zipcode} onChange={(e)=>setZipcode(e.target.value)}/>
                       </div>

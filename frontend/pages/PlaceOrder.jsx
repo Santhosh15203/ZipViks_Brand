@@ -132,7 +132,7 @@ const handleIncrementQuantity = (id, size) => {
                                                                 
                                                                 <Link to={`/product/${card.product._id}`} className="text-decoration-none"><strong className="text-dark fs-6 text-decoration-underline p-0 p-lg-1" style={{maxWidth:"50px"}}>{card.product.name}</strong></Link>
                                                             </div>
-                                                            <div className="d-flex gap-2 p-0 p-lg-1 ">
+                                                            <div className="d-flex gap-0 gap-lg-2 p-0 p-lg-1 ">
                                                                 <p className="m-0 p-0"><strong><span className="text-success fs-6">₹{sellingprice}.00</span> </strong> </p>
                                                                 <p className="text-decoration-line-through text-muted small m-0 p-0">₹{fixedprice}.00</p>
                                                                 <p className="text-danger fw-bold small m-0 p-0" >({discount}% off )</p>

@@ -97,41 +97,46 @@ export default function UpdateRegisterModal({loggedInUser,setLoggedInUser}){
                   </div>
                   
                 <form  onSubmit={handleUpdate} >  
-                  <div className="modal-body small">
+                  <div className="modal-body ">
                     <img src="./form/updateProfileLogo.jpg" alt="img" className="rounded" style={{width:"100%",height:"170px",objectFit:"cover"}} />
                     <div className=" "> 
-                      <div className="d-flex justify-content-between mt-2 mb-2 text-start">
-                        <div className="">
+                      <div className="row mt-3 text-start">
+                        <div className="col-6">
                           {/* <label className="">First name :</label> */}
                           <input type="text"   className="form-control small-placeholder" placeholder="firstname*" value={firstname} name="firstname" onChange={(e)=>{setFirstname(e.target.value)}} />
                         </div>
-                         <div className="">
+                         <div className="col-6">
                           {/* <label className="">Mobile Number :</label> */}
                           <input type="tel"  className="form-control small-placeholder" name="mobile" maxLength={10} value={mobile} placeholder="(+91) :*" onChange={(e)=>{setMobile(e.target.value)}} />
                         </div>
                        
                       </div>
-                      <div className="d-flex justify-content-between mt-2 mb-2 text-start gap-4">
-                        <div className="w-100">
+                      <div className="row text-start mt-2">
+                        <div className="col-7">
                           {/* <label className="">E-mail :</label> */}
                           <input type="email"  className="form-control small-placeholder" placeholder="email*" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                         </div>
             
-                        <div className="input-group">
-                                <input type={showPassword?"text":"password"}   className="form-control small-placeholder" value={password} name="password" onChange={(e)=>{setPassword(e.target.value)}} placeholder="password*" />
+                        <div className=" col-5">
+                          <div className="input-group">
+                              <input type={showPassword?"text":"password"}   className="form-control small-placeholder " value={password} name="password" onChange={(e)=>{setPassword(e.target.value)}} placeholder="password*" />
                                 <span className="input-group-text" onClick={()=>{setShowPassword(!showPassword)}} style={{cursor:"pointer"}}><i className={`bi ${showPassword?"bi-eye":"bi-eye-slash"}`}></i> </span>
-                            </div>
+                          </div>
+
+                          </div>
+                               
                       </div>
-                      <div className="text-start">
+
+                      <div className="text-start mt-2">
                           {/* <label className="">Address :</label> */}
                         <textarea   placeholder="address..*" name="address" className="form-control" value={address} onChange={(e)=>{setAddress(e.target.value)}}></textarea>
                       </div>
 
-                       <div className="d-flex mt-2 mb-2 justify-content-around ">
-                        <div className="">
+                       <div className="row text-start mt-2">
+                        <div className="col-6">
                           <input type="text"  className="form-control small-placeholder" placeholder="city*" name="city" value={city}  onChange={(e)=>{setCity(e.target.value)}}/>
                         </div>
-                        <div className="w-50 ">
+                        <div className="col-6 ">
                           <select name="state" className="btn border w-75 small-select" value={state}  onChange={(e)=>{setState(e.target.value)}}>
                             <option value="">select state</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -173,11 +178,11 @@ export default function UpdateRegisterModal({loggedInUser,setLoggedInUser}){
                           </select>
                         </div>
                       </div>
-                       <div className="d-flex mt-2 mb-2 justify-content-around ">
-                        <div className="">
+                       <div className="row text-start mt-2">
+                        <div className="col-6">
                           <input type="text" maxLength={6} className="form-control small-placeholder" placeholder="postal / zipcode *" value={zipcode} name="zipcode"  onChange={(e)=>{setZipcode(e.target.value)}}/>
                         </div>
-                        <div className="w-50">
+                        <div className="col-6">
                           <select name="country" className="btn border w-75 small-select" onChange={(e)=>{setCountry(e.target.value)}} value={country} >
                               <option value="">select country</option>
                               <option value="Afghanistan">Afghanistan</option>
@@ -359,14 +364,14 @@ export default function UpdateRegisterModal({loggedInUser,setLoggedInUser}){
                         </select>
                         </div>
                       </div>
-                      <button className="btn btn-success w-100" type="submit" >Update Me</button>
+                      <button className="btn btn-success w-100 mt-2" type="submit" >Update Me</button>
                       
 
                     </div>
                   </div>
                  </form>
 
-                  <div className="modal-footer small d-flex justify-content-end">
+                  <div className="modal-footer  d-flex justify-content-end">
                     <p>Already have an account? <span className="text-primary text-decoration-underline"  onClick={()=>{switchModal('updateRegisterModal','loginModal')}} style={{cursor:"pointer"}}>Login</span></p>
                   </div>
                

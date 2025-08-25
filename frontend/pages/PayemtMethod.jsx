@@ -155,16 +155,15 @@ async function hanldeMobileRegisterForm(e){
 
                 <div className="text-end mt-3 gap-0 ">
                   <p className="mb-0">
-                    If you want to edit this <span className="fw-bold ">Billing Details</span>, click the link below.
-                  </p>
-                  <p
-                    className="text-danger small text-decoration-underline"
+                    If you want to edit this <span className="fw-bold ">Billing Details</span>, 
+                  <a href=""
+                    className="text-danger small text-decoration-underline ms-1"
                     style={{ cursor: "pointer" }}
                     data-bs-toggle="modal"
                     data-bs-target="#updateRegisterModal"
                   >
-                    Edit profile
-                  </p>
+                     Click here.
+                  </a> </p>
                 </div>
                 <UpdateRegisterModal/>
 
@@ -339,7 +338,7 @@ async function hanldeMobileRegisterForm(e){
                 }}
                 style={{ cursor: "pointer" }}
               />{" "}
-              <span>💵 Cash on Delivery</span> 
+              <span>Cash on Delivery 💵</span> 
              
               {deliveryStatus && (
                 <>
