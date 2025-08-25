@@ -121,12 +121,12 @@ const handleIncrementQuantity = (id, size) => {
                                                 const sellingprice=Number(fixedprice-(fixedprice*discount/100)).toFixed(0)
                                                  
                                                 return(
-                                                    <div className="d-flex justify-content-center" key={`${card.product._id}-${card.selectsize}`}>
-                                                        <div className=" ">
-                                                            <img src={card.product.image} alt="img" style={{width:"100%",height:"200px",objectFit:"cover"}} />
+                                                    <div className="d-flex justify-content-center  w-100 border" key={`${card.product._id}-${card.selectsize}`}>
+                                                        <div className=" w-25" >
+                                                            <img src={card.product.image} className="m-0 p-0" alt="img" style={{width:"100%",height:"200px",objectFit:"cover"}} />
                                                         </div>
 
-                                                        <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center  " style={{maxHeight:"200px"}}>
+                                                        <div className="d-flex flex-column flex-lg-row justify-content-around align-items-center small w-75" style={{maxHeight:"200px"}}>
 
                                                              <div className=" ">
                                                                 
@@ -158,7 +158,7 @@ const handleIncrementQuantity = (id, size) => {
                                                             
                                                                 
                                                             <div className=" p-0 p-lg-4">
-                                                                <p className="m-0">Tot amt.<strong className="text-success"> ₹{card.custumQuantity*sellingprice}.00</strong></p>
+                                                                <p className="m-0">Tot Amt.<strong className="text-success"> ₹{card.custumQuantity*sellingprice}.00</strong></p>
                                                             </div>
                                                             <div className=" p-0 p-lg-4">
                                                                 <button className=" btn-sm border  border-dark" onClick={()=>{handleDeleteItem(card.product._id,card.selectsize)}}><i className="bi bi-trash3-fill text-danger"></i></button>
@@ -198,6 +198,8 @@ const handleIncrementQuantity = (id, size) => {
                                             
                                                
                                            </div>
+
+
                                 </div>
 
                             
