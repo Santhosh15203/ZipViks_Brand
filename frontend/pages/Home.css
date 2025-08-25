@@ -44,3 +44,16 @@
 .navbar .nav-link:hover {
   text-decoration: underline; 
 }
+.move{
+  position: relative;
+}
+.move:hover{
+  animation-name: moveforward;
+  animation-duration:0.5s;
+}
+
+@keyframes moveforward{
+  0%{left:0}
+  100%{left: 10px;}
+
+}
