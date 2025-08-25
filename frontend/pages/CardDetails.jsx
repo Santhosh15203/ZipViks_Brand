@@ -66,12 +66,12 @@ function handleAddToCart() {
   return (
     <>
 
-        <div className=" me-5 d-flex d-lg-none justify-content-end">
-            <p className=""><a href="/" className="text-decoration-none text-dark text-end" title="Go to Homepage!">↩️back</a></p>
+        <div className="mt-2  d-flex d-lg-none justify-content-end">
+            <p className="me-2 m-0 p-0"><a href="/" className="text-decoration-none text-danger text-end" title="Go to Homepage!">↩️back</a></p>
           
         </div>
 
-       <div className="container mb-2 d-flex flex-column  flex-lg-row gap-3 align-items-center justify-content-center ">
+       <div className="container mb-0 d-flex flex-column  flex-lg-row gap-3 align-items-center justify-content-center ">
         
         
         <div className="col-12 col-lg-6 mt-0  d-flex justify-content-center">
@@ -84,7 +84,7 @@ function handleAddToCart() {
           </div>
 
         <div className="col-12 col-lg-6 d-flex flex-column text-center align-items-center ">
-          <div className=" d-flex flex-column justify-content-center">
+          <div className=" d-flex flex-column justify-content-center"> 
             <h4 className="mb-0"><strong > {product.name}</strong></h4>
             <p className="mb-1 small"><small>product id : #<span className="text-danger">{product._id}</span></small></p>
              <div className="fw-bold mt-0 "> <StarDisplay rating={product.ratings} /></div>
