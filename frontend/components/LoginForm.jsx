@@ -76,7 +76,7 @@ export default function  LoginForm({setLoggedInUser,setUserMobileRegsiterData}){
                 <div className="modal-content ">
 
                   <div className="modal-header ">
-                    <h5 className="modal-title text-dark fw-bold text-decoration-underline " >Sign In</h5>
+                    <h5 className="modal-title text-dark fw-bold text-decoration-none " >Sign In</h5>
                     <button className="btn-close " data-bs-dismiss="modal"></button>
                   </div>
 

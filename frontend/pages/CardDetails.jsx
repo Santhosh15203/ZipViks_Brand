@@ -65,29 +65,36 @@ function handleAddToCart() {
 
   return (
     <>
-       <div className="container mb-2 d-flex flex-column bg-success flex-lg-row gap-3 align-items-center justify-content-center ">
+
+        <div className=" me-5 d-flex d-lg-none justify-content-end">
+            <p className=""><a href="/" className="text-decoration-none text-dark text-end" title="Go to Homepage!">↩️back</a></p>
+          
+        </div>
+
+       <div className="container mb-2 d-flex flex-column  flex-lg-row gap-3 align-items-center justify-content-center ">
+        
         
         <div className="col-12 col-lg-6 mt-0  d-flex justify-content-center">
             <img 
               src={product.image} 
               alt="image" 
-              className="img-fluid" 
-              style={{  objectFit: "cover",maxHeight: "500px",width:"100%" }} 
+              className="img-fluid bg-success" 
+              style={{ maxHeight: "350px", objectFit: "cover" }} 
             />
           </div>
 
         <div className="col-12 col-lg-6 d-flex flex-column text-center align-items-center ">
           <div className=" d-flex flex-column justify-content-center">
-            <h3 className=""><strong > {product.name}</strong></h3>
-            <p className="mb-1"><small>product id : #<span className="text-danger">{product._id}</span></small></p>
+            <h4 className="mb-0"><strong > {product.name}</strong></h4>
+            <p className="mb-1 small"><small>product id : #<span className="text-danger">{product._id}</span></small></p>
              <div className="fw-bold mt-0 "> <StarDisplay rating={product.ratings} /></div>
             
           </div>
         
-          <div className="d-flex gap-2 ">
-            <p> <strong><span className="text-success fs-6">₹{sellingprice}.00</span> </strong> </p>
-            <p className="text-decoration-line-through text-muted small">₹{fixedprice}.00</p>
-            <p className="text-danger fw-bold small">({discount}% off )</p>
+          <div className="d-flex gap-2 mb-1">
+            <p className="m-0 p-0"> <strong><span className="text-success fs-6">₹{sellingprice}.00</span> </strong> </p>
+            <p className="text-decoration-line-through text-muted small m-0 p-0">₹{fixedprice}.00</p>
+            <p className="text-danger fw-bold small m-0 p-0" >({discount}% off )</p>
           </div>
 
 
@@ -138,16 +145,16 @@ function handleAddToCart() {
           
           </div>
           
-            <button onClick={handleAddToCart} className="btn btn-success ps-5 pe-5 mt-2" disabled={TotalNumberOfQuantityInAllSize==0}>Add to cart</button>
+            <button onClick={handleAddToCart} className="btn btn-success ps-5 pe-5 mt-1" disabled={TotalNumberOfQuantityInAllSize==0}>Add to cart</button>
 
             <div >
-              <p className="mb-1 mt-1"><strong>Status : </strong><span className={TotalNumberOfQuantityInAllSize>0?"text-success":"text-danger"} > <strong>{TotalNumberOfQuantityInAllSize>0 ?"' In Stock '":"' Out Of Stock '"}</strong> </span> </p>
+              <p className="mb-0 mt-1"><strong>Status : </strong><span className={TotalNumberOfQuantityInAllSize>0?"text-success":"text-danger"} > <strong>{TotalNumberOfQuantityInAllSize>0 ?"' In Stock '":"' Out Of Stock '"}</strong> </span> </p>
             </div>
-            <div className=" ms-0 descripton " style={{width:"450px",wordBreak: "break-word"}}>
-              <p className="lh-md"><strong >Description : </strong> {product.description}</p>  
+            <div className="container " style={{wordBreak: "break-word"}}>
+              <p className="lh-sm mb-2"><strong >Description : </strong> {product.description}</p>  
             </div> 
             <div className="bg-dark w-50 text-center mb-1  border border-secondary"> </div>
-            <p className=""><strong>Sold by :</strong> {product.soldby}</p>           
+            <p className=""><strong>Sold by :</strong> {product.soldBy}</p>           
         </div>
 
 

@@ -38,19 +38,18 @@ export default function SearchBar(){
                 </div>
 
 
-                <div className="modal-body d-flex  ">
-                   <input
+                <div className="modal-body input-group d-flex  ">
+                    <input
                         type="text"
-                        id="input-search"
                         value={userinput}
-                        className="form-control border border-secondary p-1 ps-3 search"
+                        className="form-control border border-secondary p-1 ps-3 search input-group"
                         placeholder="Search for Products, Brands and More"
                         onChange={(e) => setUserinput(e.target.value)}
                         onKeyDown={(e) => {
                           if (e.key === "Enter") handleSearchBar();
                         }}
                       />
-                      <span className="input-group-append">
+                      
                         <button
                           onClick={handleSearchBar}
                           type="button"
@@ -58,7 +57,6 @@ export default function SearchBar(){
                         >
                           <i className="bi bi-search"></i>
                         </button>
-                      </span>
 
                 </div>
 

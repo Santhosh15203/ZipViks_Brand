@@ -105,7 +105,7 @@ function verifyOTP(e) {
                 <div className="modal-content ">
 
                   <div className="modal-header">
-                    <h5 className="modal-title text-dark fw-bold text-decoration-underline " >Mobile Registeration</h5>
+                    <h5 className="modal-title text-dark fw-bold text-decoration-none " >Mobile Registeration</h5>
                     <button className="btn-close " data-bs-dismiss="modal"></button>
                   </div>
 
@@ -165,7 +165,7 @@ function verifyOTP(e) {
                             )}
 
                           <div>
-                            <p className=" mb-0 text-center" style={{fontSize:"17px"}}>By continuing, you agree to our <a href="" className="text-primary text-decoration-none ">Terms of Service.</a></p>
+                            <p className=" mb-0 text-center" style={{fontSize:"15px"}}>By continuing, you agree to our <a href="" className="text-primary text-decoration-none ">Terms of Service.</a></p>
                             
 
                           </div>
