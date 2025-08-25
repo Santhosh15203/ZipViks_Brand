@@ -77,7 +77,7 @@ export default function Home() {
 
 
 
-            <div className="container" >
+      <div className="container" >
       <div className=" mt-0 row">
         {loading && page === 1 ? (
          

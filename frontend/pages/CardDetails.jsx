@@ -71,7 +71,7 @@ function handleAddToCart() {
           
         </div>
 
-       <div className="container mb-0 d-flex flex-column  flex-lg-row gap-3 align-items-center justify-content-center ">
+       <div className="container mb-0 d-flex flex-column mt-0 mt-lg-3 flex-lg-row gap-3 align-items-center justify-content-center ">
         
         
         <div className="col-12 col-lg-6 mt-0  d-flex justify-content-center">

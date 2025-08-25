@@ -12,6 +12,7 @@ const router=express.Router()
 
 router.post('/mobileform',registerMobileFormController)
 router.get('/product',allproduct)
+router.get('/hoodie',hoodieproduct)
 router.get('/product/:id',singleproduct)
 router.post('/order',userorders)
 router.post('/registerform',registerformController)

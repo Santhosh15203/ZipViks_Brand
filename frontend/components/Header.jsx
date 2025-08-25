@@ -138,9 +138,9 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             </div>
             <div className="offcanvas-body">
                <ul className=" navbar-nav list-unstyled d-flex  justify-content-start ">
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🏠 HOME</a> </li>
+              <li className="nav-item border border-bottom border-0"><a href="/" className="small fw-bold text-dark nav-link">🏠 HOME</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👕 T SHIRTS</a></li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🧥 HOODIES</a></li>
+              <li className="nav-item border border-bottom border-0"><a href="/hoodie" className="small fw-bold text-dark nav-link">🧥 HOODIES</a></li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👖 TRACK PANT</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🩳 SHORTS</a> </li>
               <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👗 CHUDI</a> </li>
@@ -211,9 +211,9 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
               
               <div className="container  justify-content-center align-items-center p-2">
               <ul className=" navbar-nav  list-unstyled   gap-5 justify-content-center align-items-center  small  my-auto" >
-                      <li className="nav-item "><a href="" className=" nav-link fw-bold text-dark">🏠 HOME</a> </li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👕 T SHIRTS</a></li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🧥 HOODIES</a></li>
+                      <li className="nav-item "><a href="/" className=" nav-link fw-bold text-dark">🏠 HOME</a> </li>
+                      <li className="nav-item"><a href="/" className="nav-link fw-bold text-dark">👕 T SHIRTS</a></li>
+                      <li className="nav-item"><a href="/hoodie" className="nav-link fw-bold text-dark">🧥 HOODIES</a></li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👖 TRACK PANT</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🩳 SHORTS</a> </li>
                       <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👗 CHUDI</a> </li>
