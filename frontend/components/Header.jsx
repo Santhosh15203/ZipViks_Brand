@@ -55,7 +55,7 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
     <div className="container-fluid  bg-dark ">
       <div className="container d-flex align-items-center justify-content-between ps-2 pe-2 " style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>
             <div className="d-flex  p-1">
-                <ul className="list-unstyled align-items-center d-flex gap-2 gap-lg-3 mb-0   ">
+                <ul className="list-unstyled align-items-center d-flex gap-1 gap-lg-3 mb-0   ">
               
                       <li><a href="#" className="text-decoration-none text-white move small"><i className="bi bi-whatsapp  fs-6"></i> Whatsapp</a></li>
                       <li><a href="#" className="text-decoration-none text-white move small "><i className="bi bi-instagram fs-6 "></i> Instagram</a></li>
