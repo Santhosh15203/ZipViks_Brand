@@ -22,14 +22,14 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
       return res.json();
     })
     .then(res => setProduct(
-      // res.singleuserproduct ||
-      // res.singletshirtproduct ||
-      // res.singlehoodieproduct ||
-      // res.singletpantproduct ||
-      // res.singleshortsproduct ||
-      res.singlechudiproduct 
-      // res.singlelegginsproduct ||
-      // res.nightyproduct
+      res.singleuserproduct ||
+      res.singletshirtproduct ||
+      res.singlehoodieproduct ||
+      res.singletpantproduct ||
+      res.singleshortsproduct ||
+      res.singlechudiproduct ||
+      res.singlelegginsproduct ||
+      res.nightyproduct
     ))
     .catch(err => {
       console.error("Fetch error:", err);
