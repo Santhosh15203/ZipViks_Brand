@@ -9,11 +9,11 @@ exports.tpantproducts=async(req,res,next)=>{
     
         const total = await tpantproductmodel.countDocuments(); // total count
     
-        const tshirtproducts = await tpantproductmodel.find().skip(skip).limit(limit);
+        const tpantproducts = await tpantproductmodel.find().skip(skip).limit(limit);
     
         res.json({
           message: "All products ",
-          tshirtproducts,
+          tpantproducts,
           pages: Math.ceil(total / limit) // total number of pages
         });
       } catch (error) {

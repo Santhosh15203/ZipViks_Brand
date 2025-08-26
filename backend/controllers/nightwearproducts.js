@@ -9,11 +9,11 @@ exports.nightwearproducts=async(req,res,next)=>{
     
         const total = await nightwearproductmodel.countDocuments(); // total count
     
-        const tshirtproducts = await nightwearproductmodel.find().skip(skip).limit(limit);
+        const nightwearproducts = await nightwearproductmodel.find().skip(skip).limit(limit);
     
         res.json({
           message: "All products ",
-          tshirtproducts,
+          nightwearproducts,
           pages: Math.ceil(total / limit) // total number of pages
         });
       } catch (error) {

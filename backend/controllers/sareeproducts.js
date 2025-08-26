@@ -10,11 +10,11 @@ exports.sareeproducts=async(req,res,next)=>{
     
         const total = await sareeproductmodel.countDocuments(); // total count
     
-        const tshirtproducts = await sareeproductmodel.find().skip(skip).limit(limit);
+        const sareeproducts = await sareeproductmodel.find().skip(skip).limit(limit);
     
         res.json({
           message: "All products ",
-          tshirtproducts,
+          sareeproducts,
           pages: Math.ceil(total / limit) // total number of pages
         });
       } catch (error) {

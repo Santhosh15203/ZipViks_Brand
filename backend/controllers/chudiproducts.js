@@ -10,11 +10,11 @@ exports.chudiproducts=async(req,res,next)=>{
     
         const total = await chudiproductmodel.countDocuments(); // total count
     
-        const tshirtproducts = await chudiproductmodel.find().skip(skip).limit(limit);
+        const chudiproducts = await chudiproductmodel.find().skip(skip).limit(limit);
     
         res.json({
           message: "All products ",
-          tshirtproducts,
+          chudiproducts,
           pages: Math.ceil(total / limit) // total number of pages
         });
       } catch (error) {
