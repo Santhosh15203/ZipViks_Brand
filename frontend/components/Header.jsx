@@ -217,12 +217,12 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
                       <li className="nav-item "><Link to="/" className=" nav-link fw-bold text-dark">HOME</Link> </li>
                       <li className="nav-item"><Link to="/tshirt" className="nav-link fw-bold text-dark">T SHIRTS</Link></li>
                       <li className="nav-item"><Link to="/hoodie" className="nav-link fw-bold text-dark">HOODIES</Link></li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">TRACK PANT</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">SHORTS</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">CHUDI</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">LEGGINS</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">SAREE</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">NIGHT WEAR</Link> </li>
+                      <li className="nav-item"><Link to="/tpant" className="nav-link fw-bold text-dark">TRACK PANT</Link> </li>
+                      <li className="nav-item"><Link to="/shorts" className="nav-link fw-bold text-dark">SHORTS</Link> </li>
+                      <li className="nav-item"><Link to="/chudi" className="nav-link fw-bold text-dark">CHUDI</Link> </li>
+                      <li className="nav-item"><Link to="/leggins" className="nav-link fw-bold text-dark">LEGGINS</Link> </li>
+                      <li className="nav-item"><Link to="/saree" className="nav-link fw-bold text-dark">SAREE</Link> </li>
+                      <li className="nav-item"><Link to="/nightwear" className="nav-link fw-bold text-dark">NIGHT WEAR</Link> </li>
 
             </ul>
         </div>

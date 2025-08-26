@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 // import "./Home.css";
 import { Link } from "react-router-dom";
 
-export default function Tshirt(){
+export default function Leggins(){
       const [loading, setLoading] = useState(true);
       const [products, setProducts] = useState([]);
     
@@ -17,14 +17,14 @@ export default function Tshirt(){
         setLoading(true);
     
         fetch(
-          `${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/tshirt?page=${page}&limit=12`,{ signal }
+          `${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/leggins?page=${page}&limit=12`,{ signal }
         )
           .then((res) => res.json())
           .then((res) => {
             if (page === 1) {
-              setProducts(res.tshirtproducts || []);
+              setProducts(res.legginsproducts || []);
             } else {
-              setProducts((prev) => [...prev, ...(res.tshirtproducts || [])]);
+              setProducts((prev) => [...prev, ...(res.legginsproducts || [])]);
             }
     
             setHasMore(page<res.pages);

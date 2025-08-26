@@ -10,4 +10,4 @@ const tshirtproductSchema=new mongoose.Schema({
 })
 const tshirtproductmodel=mongoose.model('tshirtproducts',tshirtproductSchema)
 
-module.exports=tshirtproductmodel 
+module.exports=tshirtproductmodel                                                                                                                                                

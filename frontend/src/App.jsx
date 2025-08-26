@@ -10,6 +10,12 @@ import PlaceOrder from "../pages/PlaceOrder"
 import PaymentMethod from "../pages/PayemtMethod"
 import Hoodie from "../components/Hoodie"
 import Tshirt from "../components/Tshirt"
+import Tpant from "../components/Tpant"
+import Shorts from "../components/Shorts"
+import Chudi from "../components/Chudi"
+import Leggins from "../components/Leggins"
+import Saree from "../components/Saree"
+import Nightwear from "../components/Nightwear"
 
 
 function App() {
@@ -32,6 +38,12 @@ function App() {
       
        <Route path="/hoodie" element={<Hoodie/>} />
        <Route path="/tshirt" element={<Tshirt/>} />
+       <Route path="/tpant" element={<Tpant/>} />
+       <Route path="/shorts" element={<Shorts/>} />
+       <Route path="/chudi" element={<Chudi/>} />
+       <Route path="/leggins" element={<Leggins/>} />
+       <Route path="/saree" element={<Saree/>} />
+       <Route path="/nightwear" element={<Nightwear/>} />
 
     </Routes>
 
