@@ -9,11 +9,11 @@ exports.shortsproducts=async(req,res,next)=>{
     
         const total = await shortsproductmodel.countDocuments(); // total count
     
-        const tshirtproducts = await shortsproductmodel.find().skip(skip).limit(limit);
+        const shortsproducts = await shortsproductmodel.find().skip(skip).limit(limit);
     
         res.json({
           message: "All products ",
-          tshirtproducts,
+          shortsproducts,
           pages: Math.ceil(total / limit) // total number of pages
         });
       } catch (error) {
