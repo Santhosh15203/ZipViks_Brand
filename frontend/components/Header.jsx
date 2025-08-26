@@ -139,14 +139,14 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             <div className="offcanvas-body">
                <ul className=" navbar-nav list-unstyled d-flex  justify-content-start ">
               <li className="nav-item border border-bottom border-0"><Link to="/" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🏠 HOME</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👕 T SHIRTS</Link></li>
+              <li className="nav-item border border-bottom border-0"><Link to="/tshirt" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👕 T SHIRTS</Link></li>
               <li className="nav-item border border-bottom border-0"><Link to="/hoodie" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🧥 HOODIES</Link></li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👖 TRACK PANT</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🩳 SHORTS</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👗 CHUDI</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🦵 LEGGINS</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🥻 SAREE</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👘 NIGHT WEAR</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="/tpant" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👖 TRACK PANT</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="/shorts" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🩳 SHORTS</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="/chudi" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👗 CHUDI</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="leggins" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🦵 LEGGINS</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="saree" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🥻 SAREE</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="nightwear" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👘 NIGHT WEAR</Link> </li>
 
             </ul>
 

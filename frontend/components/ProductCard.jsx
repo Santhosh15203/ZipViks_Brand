@@ -8,7 +8,8 @@ export default function ProductCard({product}){
 
     return(
         <>
-        <div className="card border border-shadow d-flex  flex-column p-0  "  style={{ width: "100%", height: "400px" }}>
+        <div className="card border border-shadow d-flex  flex-column p-0  "  style={{ width: "100%"}}> 
+                                                                                                  {/* height:"400px" --to fix default card size*/}
                 <img src={product.image} className="card-top-img " alt={product.name} style={{ width: "100%", height: "75%", objectFit: "cover" }} />
                 
                 <div className="card-body small d-flex flex-column justify-content-center  pt-1 pb-0 p-0 ">
