@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
-import "./Home.css";
 import { Link, useSearchParams } from "react-router-dom";
 
 export default function Hoodie(){
