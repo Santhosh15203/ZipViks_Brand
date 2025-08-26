@@ -21,3 +21,20 @@ exports.hoodieproducts = async (req, res, next) => {
     });
   }
 };
+
+exports.hoodieproduct=async(req,res,next)=>{
+    try{
+        const singlehoodieproduct=await hoodieproductmodel.findById(req.params.id)
+        res.json({
+        message:"single product here",
+        singlehoodieproduct
+    })
+    }
+    catch(error){
+        res.json({
+            message:"Id doesn't match the product ",
+            error_message:error.message
+        })
+    }
+    
+}

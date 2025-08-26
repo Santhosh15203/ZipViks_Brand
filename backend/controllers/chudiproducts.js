@@ -25,3 +25,20 @@ exports.chudiproducts=async(req,res,next)=>{
 
 
 }
+
+exports.chudiproduct=async(req,res,next)=>{
+    try{
+        const singlechudiproduct=await chudiproductmodel.findById(req.params.id)
+        res.json({
+        message:"single product here",
+        singlechudiproduct
+    })
+    }
+    catch(error){
+        res.json({
+            message:"Id doesn't match the product ",
+            error_message:error.message
+        })
+    }
+    
+}

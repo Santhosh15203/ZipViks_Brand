@@ -3,10 +3,11 @@ import ProductCard from "../components/ProductCard";
 import "./Home.css";
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function Home() {
+export default function Home({setItem}) {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [searchparams] = useSearchParams();
+  const[productType,setProductType]=useState("product")
 
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -94,7 +95,7 @@ export default function Home() {
             <div className="container row  p-0 mx-auto  ">
               {products.map((product) => (
               <div className="  p-1 gap-1 col-lg-3 col-md-4  col-6 mt-3 ps-lg-3 pe-lg-3"key={product._id}>
-                <ProductCard  product={product} />
+                <ProductCard  product={product} selectType={productType} setItem={setItem}/>
               </div>
             ))}
 

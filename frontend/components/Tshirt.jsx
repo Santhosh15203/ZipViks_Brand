@@ -3,12 +3,13 @@ import ProductCard from "../components/ProductCard";
 // import "./Home.css";
 import { Link } from "react-router-dom";
 
-export default function Tshirt(){
+export default function Tshirt({setItem}){
       const [loading, setLoading] = useState(true);
       const [products, setProducts] = useState([]);
     
       const [page, setPage] = useState(1);
       const [hasMore, setHasMore] = useState(true);
+      const[productType,setProductType]=useState("tshirt")
     
       useEffect(() => {
         const controller = new AbortController();
@@ -89,7 +90,7 @@ export default function Tshirt(){
                         <div className="container row  p-0 mx-auto  ">
                           {products.map((product) => (
                           <div className="  p-1 gap-1 col-lg-3 col-md-4  col-6 mt-3 ps-lg-3 pe-lg-3"key={product._id}>
-                            <ProductCard  product={product} />
+                            <ProductCard  product={product} selectType={productType} setItem={setItem}/>
                           </div>
                         ))}
             

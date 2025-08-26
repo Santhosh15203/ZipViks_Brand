@@ -36,7 +36,6 @@ exports.singleproduct=async(req,res,next)=>{
         message:"single product here",
         singleuserproduct
     })
-
     }
     catch(error){
         res.json({

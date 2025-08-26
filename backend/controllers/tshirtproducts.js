@@ -24,3 +24,19 @@ exports.tshirtproducts=async(req,res,next)=>{
 
 
 }
+exports.tshirtproduct=async(req,res,next)=>{
+    try{
+        const singleshirtproduct=await legginsproductmodel.findById(req.params.id)
+        res.json({
+        message:"single product here",
+        singleshirtproduct
+    })
+    }
+    catch(error){
+        res.json({
+            message:"Id doesn't match the product ",
+            error_message:error.message
+        })
+    }
+    
+}

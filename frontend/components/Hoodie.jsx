@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function Hoodie(){
+export default function Hoodie({setItem}){
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
+  const[productType,setProductType]=useState("hoodie")
 
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -88,7 +89,7 @@ export default function Hoodie(){
             <div className="container row  p-0 mx-auto  ">
               {products.map((product) => (
               <div className="  p-1 gap-1 col-lg-3 col-md-4  col-6 mt-3 ps-lg-3 pe-lg-3"key={product._id}>
-                <ProductCard  product={product} />
+                <ProductCard  product={product} selectType={productType} setItem={setItem}/>
               </div>
             ))}
 

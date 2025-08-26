@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import StarDisplay from "../components/StarDisplay";
 
 
-export default function CardDetails({cardItems,setCardItems}) {
+export default function CardDetails({cardItems,setCardItems,productType}) {
   const [maximumQuantityReached,setMaximumQuantityReached]=useState("")
   const [userSelectSize,setUserSelectSize]=useState("Please select a size")
   const [selectsize,setSelectsize]=useState("")
@@ -14,11 +14,28 @@ export default function CardDetails({cardItems,setCardItems}) {
   const [custumQuantity,setCustumQuantity]=useState(1)
   const navigate=useNavigate()
   useEffect(()=>{
-    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/product/${id}`)
-    .then(res=>res.json())
-    .then(res=>setProduct(res.singleuserproduct))
-
-  },[id])
+    fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/${productType}/${id}`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`Server returned ${res.status}`);
+      }
+      return res.json();
+    })
+    .then(res => setProduct(
+      // res.singleuserproduct ||
+      // res.singletshirtproduct ||
+      // res.singlehoodieproduct ||
+      // res.singletpantproduct ||
+      // res.singleshortsproduct ||
+      res.singlechudiproduct 
+      // res.singlelegginsproduct ||
+      // res.nightyproduct
+    ))
+    .catch(err => {
+      console.error("Fetch error:", err);
+      setProduct(null); // fallback
+    });
+  },[id,productType])
   if (!product) {
     return <>
              <div style={{ width: "100%", height: "347px" }} className="p-5 d-flex justify-content-center align-items-center"> 

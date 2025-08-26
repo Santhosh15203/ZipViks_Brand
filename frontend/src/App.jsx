@@ -23,6 +23,7 @@ function App() {
   const [loggedInUser,setLoggedInUser]=useState("")
   const [userMobileRegisterData,setUserMobileRegsiterData]=useState("")
   const [userMobileRegisterFormData,setUserMobileRegsiterFormData]=useState("")
+  const [item,setItem]=useState("")
 
   return (
     <>
@@ -30,20 +31,29 @@ function App() {
     <Header cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} userMobileRegisterData={userMobileRegisterData} setUserMobileRegsiterData={setUserMobileRegsiterData} userMobileRegisterFormData={userMobileRegisterFormData}/>
 
     <Routes>
-       <Route path="/" element={<Home/>} />
-      <Route path="/search" element={<Home/>} />
-      <Route path="/product/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems}/>} />
+       <Route path="/" element={<Home setItem={setItem}/>} />
+       <Route path="/hoodie" element={<Hoodie />} />
+       <Route path="/tshirt" element={<Tshirt />} />
+       <Route path="/tpant" element={<Tpant />} />
+       <Route path="/shorts" element={<Shorts />} />
+       <Route path="/chudi" element={<Chudi />} />
+       <Route path="/leggins" element={<Leggins />} />
+       <Route path="/saree" element={<Saree />} />
+       <Route path="/nightwear" element={<Nightwear />} />
+      <Route path="/search" element={<Home />} />
+      <Route path="/product/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="product"/>} />
+      <Route path="/hoodie/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="hoodie"/>} />
+      <Route path="/tshirt/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="tshirt"/>} />
+      <Route path="/tpant/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="tpant"/>} />
+      <Route path="/shorts/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="shorts"/>} />
+      <Route path="/chudi/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="chudi"/>} />
+      <Route path="/leggins/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="leggins"/>} />
+      <Route path="/saree/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems}  productType="saree"/>}/>
+      <Route path="/nightwear/:id" element={<CardDetails cardItems={cardItems} setCardItems={setCardItems} productType="nightwear"/>} />
       <Route path="/cart" element={<PlaceOrder cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} userMobileRegisterData={userMobileRegisterData}/>} />
       <Route path="/payment" element={<PaymentMethod cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} userMobileRegisterData={userMobileRegisterData} setUserMobileRegsiterData={setUserMobileRegsiterData} userMobileRegisterFormData={userMobileRegisterFormData} setUserMobileRegsiterFormData={setUserMobileRegsiterFormData}/>}/>
       
-       <Route path="/hoodie" element={<Hoodie/>} />
-       <Route path="/tshirt" element={<Tshirt/>} />
-       <Route path="/tpant" element={<Tpant/>} />
-       <Route path="/shorts" element={<Shorts/>} />
-       <Route path="/chudi" element={<Chudi/>} />
-       <Route path="/leggins" element={<Leggins/>} />
-       <Route path="/saree" element={<Saree/>} />
-       <Route path="/nightwear" element={<Nightwear/>} />
+       
 
     </Routes>
 

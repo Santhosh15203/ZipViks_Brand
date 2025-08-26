@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import StarDisplay from "./StarDisplay"
 
-export default function ProductCard({product}){
+export default function ProductCard({product,selectType}){
+    const navigate=useNavigate()
     const fixedprice=Number(String(product.fixedprice).replace(/,/g,""))
     const discount=Number(product.discount)
     const sellingprice=Number(fixedprice-(fixedprice*discount/100)).toFixed(0)
+    console.log("product card",selectType,product)
+
 
     return(
         <>
@@ -29,7 +32,7 @@ export default function ProductCard({product}){
                             <span>{product.discount}</span>% off
                             </p>
                         </div>
-                        <Link to={"/product/" + product._id} className="btn btn-danger btn-sm mt-2 w-100 mb-0 ps-0"> View Details </Link>
+                        <Link to={`/${selectType}/${ product._id}`} className="btn btn-danger btn-sm mt-2 w-100 mb-0 ps-0"> View Details </Link>
                     </div>
                 </div>
 
