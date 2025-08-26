@@ -57,8 +57,8 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             <div className="d-flex  p-1">
                 <ul className="list-unstyled align-items-center d-flex gap-1 gap-lg-3 mb-0   ">
               
-                      <li><a href="#" className="text-decoration-none text-white move small"><i className="bi bi-whatsapp  fs-6"></i> Whatsapp</a></li>
-                      <li><a href="#" className="text-decoration-none text-white move small "><i className="bi bi-instagram fs-6 "></i> Instagram</a></li>
+                      <li><Link to="#" className="text-decoration-none text-white move small"><i className="bi bi-whatsapp  fs-6"></i> Whatsapp</Link></li>
+                      <li><Link to="#" className="text-decoration-none text-white move small "><i className="bi bi-instagram fs-6 "></i> Instagram</Link></li>
                   </ul>
 
               </div>
@@ -138,15 +138,15 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             </div>
             <div className="offcanvas-body">
                <ul className=" navbar-nav list-unstyled d-flex  justify-content-start ">
-              <li className="nav-item border border-bottom border-0"><a href="/" className="small fw-bold text-dark nav-link">🏠 HOME</a> </li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👕 T SHIRTS</a></li>
-              <li className="nav-item border border-bottom border-0"><a href="/hoodie" className="small fw-bold text-dark nav-link">🧥 HOODIES</a></li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👖 TRACK PANT</a> </li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🩳 SHORTS</a> </li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👗 CHUDI</a> </li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🦵 LEGGINS</a> </li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">🥻 SAREE</a> </li>
-              <li className="nav-item border border-bottom border-0"><a href="" className="small fw-bold text-dark nav-link">👘 NIGHT WEAR</a> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="/" className="small fw-bold text-dark nav-link">🏠 HOME</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👕 T SHIRTS</Link></li>
+              <li className="nav-item border border-bottom border-0"><Link to="/hoodie" className="small fw-bold text-dark nav-link">🧥 HOODIES</Link></li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👖 TRACK PANT</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">🩳 SHORTS</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👗 CHUDI</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">🦵 LEGGINS</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">🥻 SAREE</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👘 NIGHT WEAR</Link> </li>
 
             </ul>
 
@@ -210,16 +210,23 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
      <nav className="navbar navbar-light  navbar-expand-lg bg-white d-none d-lg-flex flex-column  mb-0 p-sm-0 " style={{ fontFamily: "'Nunito Rounded', sans-serif",position:"sticky",top:65,zIndex:1000 }}>
               
               <div className="container  justify-content-center align-items-center p-2">
+              <ul className=" navbar-nav  list-unstyled   gap-5 justify-content-center align-items-center  small  my-auto" ><nav className="navbar navbar-light  navbar-expand-lg bg-white d-none d-lg-flex flex-column  mb-0 p-sm-0 " style={{ fontFamily: "'Nunito Rounded', sans-serif",position:"sticky",top:65,zIndex:1000 }}>
+              
+              <div className="container  justify-content-center align-items-center p-2">
               <ul className=" navbar-nav  list-unstyled   gap-5 justify-content-center align-items-center  small  my-auto" >
-                      <li className="nav-item "><a href="/" className=" nav-link fw-bold text-dark">🏠 HOME</a> </li>
-                      <li className="nav-item"><a href="/" className="nav-link fw-bold text-dark">👕 T SHIRTS</a></li>
-                      <li className="nav-item"><a href="/hoodie" className="nav-link fw-bold text-dark">🧥 HOODIES</a></li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👖 TRACK PANT</a> </li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🩳 SHORTS</a> </li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👗 CHUDI</a> </li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🦵 LEGGINS</a> </li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">🥻 SAREE</a> </li>
-                      <li className="nav-item"><a href="" className="nav-link fw-bold text-dark">👘 NIGHT WEAR</a> </li>
+                      <li className="nav-item "><Link to="/" className=" nav-link fw-bold text-dark">🏠 HOME</Link> </li>
+                      <li className="nav-item"><Link to="/" className="nav-link fw-bold text-dark">👕 T SHIRTS</Link></li>
+                      <li className="nav-item"><Link to="/hoodie" className="nav-link fw-bold text-dark">🧥 HOODIES</Link></li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">👖 TRACK PANT</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">🩳 SHORTS</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">👗 CHUDI</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">🦵 LEGGINS</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">🥻 SAREE</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">👘 NIGHT WEAR</Link> </li>
+
+            </ul>
+        </div>
+     </nav>
 
             </ul>
         </div>
