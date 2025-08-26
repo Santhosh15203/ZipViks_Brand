@@ -138,15 +138,15 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
             </div>
             <div className="offcanvas-body">
                <ul className=" navbar-nav list-unstyled d-flex  justify-content-start ">
-              <li className="nav-item border border-bottom border-0"><Link to="/" className="small fw-bold text-dark nav-link">🏠 HOME</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👕 T SHIRTS</Link></li>
-              <li className="nav-item border border-bottom border-0"><Link to="/hoodie" className="small fw-bold text-dark nav-link">🧥 HOODIES</Link></li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👖 TRACK PANT</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">🩳 SHORTS</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👗 CHUDI</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">🦵 LEGGINS</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">🥻 SAREE</Link> </li>
-              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link">👘 NIGHT WEAR</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="/" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🏠 HOME</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👕 T SHIRTS</Link></li>
+              <li className="nav-item border border-bottom border-0"><Link to="/hoodie" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🧥 HOODIES</Link></li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👖 TRACK PANT</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🩳 SHORTS</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👗 CHUDI</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🦵 LEGGINS</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">🥻 SAREE</Link> </li>
+              <li className="nav-item border border-bottom border-0"><Link to="" className="small fw-bold text-dark nav-link"  data-bs-dismiss="offcanvas">👘 NIGHT WEAR</Link> </li>
 
             </ul>
 
@@ -213,16 +213,16 @@ export default function Header({cardItems,setCardItems,loggedInUser,setLoggedInU
               <ul className=" navbar-nav  list-unstyled   gap-5 justify-content-center align-items-center  small  my-auto" ><nav className="navbar navbar-light  navbar-expand-lg bg-white d-none d-lg-flex flex-column  mb-0 p-sm-0 " style={{ fontFamily: "'Nunito Rounded', sans-serif",position:"sticky",top:65,zIndex:1000 }}>
               
               <div className="container  justify-content-center align-items-center p-2">
-              <ul className=" navbar-nav  list-unstyled   gap-5 justify-content-center align-items-center  small  my-auto" >
-                      <li className="nav-item "><Link to="/" className=" nav-link fw-bold text-dark">🏠 HOME</Link> </li>
-                      <li className="nav-item"><Link to="/" className="nav-link fw-bold text-dark">👕 T SHIRTS</Link></li>
-                      <li className="nav-item"><Link to="/hoodie" className="nav-link fw-bold text-dark">🧥 HOODIES</Link></li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">👖 TRACK PANT</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">🩳 SHORTS</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">👗 CHUDI</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">🦵 LEGGINS</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">🥻 SAREE</Link> </li>
-                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">👘 NIGHT WEAR</Link> </li>
+              <ul className=" navbar-nav  list-unstyled   gap-5 justify-content-center align-items-center my-auto" >
+                      <li className="nav-item "><Link to="/" className=" nav-link fw-bold text-dark">HOME</Link> </li>
+                      <li className="nav-item"><Link to="/tshirt" className="nav-link fw-bold text-dark">T SHIRTS</Link></li>
+                      <li className="nav-item"><Link to="/hoodie" className="nav-link fw-bold text-dark">HOODIES</Link></li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">TRACK PANT</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">SHORTS</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">CHUDI</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">LEGGINS</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">SAREE</Link> </li>
+                      <li className="nav-item"><Link to="" className="nav-link fw-bold text-dark">NIGHT WEAR</Link> </li>
 
             </ul>
         </div>

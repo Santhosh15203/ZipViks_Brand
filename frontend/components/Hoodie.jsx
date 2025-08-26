@@ -6,7 +6,6 @@ export default function Hoodie(){
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
-  const [searchparams] = useSearchParams();
 
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -18,8 +17,7 @@ export default function Hoodie(){
     setLoading(true);
 
     fetch(
-      `${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/hoodie?page=${page}&limit=12&${searchparams.toString()}`,
-      { signal }
+      `${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/hoodie?page=${page}&limit=12`,{ signal }
     )
       .then((res) => res.json())
       .then((res) => {
@@ -39,7 +37,7 @@ export default function Hoodie(){
       });
 
     return () => controller.abort();
-  }, [searchparams, page]);
+  }, [page]);
     return(
         <>
             <div id="demo" className="carousel slide container-fluid"  data-bs-ride="carousel" data-bs-interval="10000" >
@@ -85,7 +83,7 @@ export default function Hoodie(){
         ) : products.length > 0 ? (
           <>
           
-            <h5 className="text-center mt-3 fw-bold" style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>Latest Products</h5>
+            <h5 className="text-center mt-3 fw-bold" style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>Latest Hoodie Collections</h5>
             
             <div className="container row  p-0 mx-auto  ">
               {products.map((product) => (
@@ -113,7 +111,7 @@ export default function Hoodie(){
           </div>
         )}
       </div>
-    </div>
+            </div>
 
         </>
     )

@@ -89,7 +89,7 @@ export default function Home() {
         ) : products.length > 0 ? (
           <>
           
-            <h5 className="text-center mt-3 fw-bold" style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>Latest Products</h5>
+            <h5 className="text-center mt-3 fw-bold" style={{ fontFamily: "'Nunito Rounded', sans-serif"}}>Latest in All Products</h5>
             
             <div className="container row  p-0 mx-auto  ">
               {products.map((product) => (

@@ -9,11 +9,13 @@ const { getMobileRegisterData } = require("../controllers/getMobileRegisterData"
 const { registerMobileFormController } = require("../controllers/postRegisterMobileFormController")
 const { updateMobileRegisterForm } = require("../controllers/updateMobileRegisterForm")
 const { hoodieproducts } = require("../controllers/hoodieproducts")
+const { tshirtproducts } = require("../controllers/tshirtproducts")
 const router=express.Router()
 
 router.post('/mobileform',registerMobileFormController)
 router.get('/product',allproduct)
 router.get('/hoodie',hoodieproducts)
+router.get('/tshirt',tshirtproducts)
 router.get('/product/:id',singleproduct)
 router.post('/order',userorders)
 router.post('/registerform',registerformController)

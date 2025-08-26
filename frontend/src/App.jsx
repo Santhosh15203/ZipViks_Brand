@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PlaceOrder from "../pages/PlaceOrder"
 import PaymentMethod from "../pages/PayemtMethod"
 import Hoodie from "../components/Hoodie"
+import Tshirt from "../components/Tshirt"
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/payment" element={<PaymentMethod cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} userMobileRegisterData={userMobileRegisterData} setUserMobileRegsiterData={setUserMobileRegsiterData} userMobileRegisterFormData={userMobileRegisterFormData} setUserMobileRegsiterFormData={setUserMobileRegsiterFormData}/>}/>
       
        <Route path="/hoodie" element={<Hoodie/>} />
+       <Route path="/tshirt" element={<Tshirt/>} />
 
     </Routes>
 
