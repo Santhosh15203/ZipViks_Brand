@@ -15,26 +15,41 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
   const navigate=useNavigate()
   useEffect(()=>{
     fetch(`${import.meta.env.VITE_REACT_APP_PRODUCT_URL}/${productType}/${id}`)
-    .then(res => {
-      if (!res.ok) {
-        throw new Error(`Server returned ${res.status}`);
+    .then(res =>res.json())
+    .then(res =>{
+      let data=null
+      switch(productType){
+       case "user":
+            data = res.singleuserproduct;
+            break;
+          case "tshirt":
+            data = res.singletshirtproduct;
+            break;
+          case "hoodie":
+            data = res.singlehoodieproduct;
+            break;
+          case "pant":
+            data = res.singletpantproduct;
+            break;
+          case "shorts":
+            data = res.singleshortsproduct;
+            break;
+          case "chudi":
+            data = res.singlechudiproduct;
+            break;
+          case "leggins":
+            data = res.singlelegginsproduct;
+            break;
+          case "nighty":
+            data = res.nightyproduct;
+            break;
+          default:
+            data = null;
+
       }
-      return res.json();
+      setProduct(data)
     })
-    .then(res => setProduct(
-      res.singleuserproduct ||
-      res.singletshirtproduct ||
-      res.singlehoodieproduct ||
-      res.singletpantproduct ||
-      res.singleshortsproduct ||
-      res.singlechudiproduct ||
-      res.singlelegginsproduct ||
-      res.nightyproduct
-    ))
-    .catch(err => {
-      console.error("Fetch error:", err);
-      setProduct(null); // fallback
-    });
+      
   },[id,productType])
   if (!product) {
     return <>
