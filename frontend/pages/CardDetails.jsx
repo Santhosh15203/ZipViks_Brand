@@ -32,6 +32,9 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
           case "tpant":
             data = res.singletpantproduct;
             break;
+          case "saree":
+            data = res.singlesareeproduct;
+            break;
           case "shorts":
             data = res.singleshortsproduct;
             break;
