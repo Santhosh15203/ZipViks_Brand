@@ -26,10 +26,10 @@ exports.tshirtproducts=async(req,res,next)=>{
 }
 exports.tshirtproduct=async(req,res,next)=>{
     try{
-        const singleshirtproduct=await legginsproductmodel.findById(req.params.id)
+        const singletshirtproduct=await legginsproductmodel.findById(req.params.id)
         res.json({
         message:"single product here",
-        singleshirtproduct
+        singletshirtproduct
     })
     }
     catch(error){

@@ -49,7 +49,7 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
 
       }
       setProduct(data)
-       console.log("productType",product,"data",data)
+       console.log("productType",productType,"data",data)
     })
       
   },[id,productType])

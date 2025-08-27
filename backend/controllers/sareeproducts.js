@@ -28,7 +28,7 @@ exports.sareeproducts=async(req,res,next)=>{
 
 exports.sareeproduct=async(req,res,next)=>{
     try{
-        const singlesareeproduct=await legginsproductmodel.findById(req.params.id)
+        const singlesareeproduct=await sareeproductmodel.findById(req.params.id)
         res.json({
         message:"single product here",
         singlesareeproduct

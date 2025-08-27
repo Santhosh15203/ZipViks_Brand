@@ -26,7 +26,7 @@ exports.nightwearproducts=async(req,res,next)=>{
 }
 exports.nightyproduct=async(req,res,next)=>{
     try{
-        const singlenightyproduct=await legginsproductmodel.findById(req.params.id)
+        const singlenightyproduct=await nightwearproductmodel.findById(req.params.id)
         res.json({
         message:"single product here",
         singlenightyproduct

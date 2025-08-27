@@ -6,7 +6,6 @@ export default function ProductCard({product,selectType}){
     const fixedprice=Number(String(product.fixedprice).replace(/,/g,""))
     const discount=Number(product.discount)
     const sellingprice=Number(fixedprice-(fixedprice*discount/100)).toFixed(0)
-    console.log("product card",selectType,product)
 
 
     return(

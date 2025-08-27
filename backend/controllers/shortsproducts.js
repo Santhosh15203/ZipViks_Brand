@@ -26,7 +26,7 @@ exports.shortsproducts=async(req,res,next)=>{
 }
 exports.shortsproduct=async(req,res,next)=>{
     try{
-        const singleshortsproduct=await legginsproductmodel.findById(req.params.id)
+        const singleshortsproduct=await shortsproductmodel.findById(req.params.id)
         res.json({
         message:"single product here",
         singleshortsproduct
