@@ -19,6 +19,7 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
     .then(res =>{
       let data=null
       switch(productType){
+       
        case "product":
             data = res.singleuserproduct;
             break;
@@ -48,6 +49,7 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
 
       }
       setProduct(data)
+       console.log("productType",product,"data",data)
     })
       
   },[id,productType])
