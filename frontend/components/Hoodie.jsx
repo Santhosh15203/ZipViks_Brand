@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function Hoodie({setItem}){
+export default function Hoodie(){
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
@@ -89,7 +89,7 @@ export default function Hoodie({setItem}){
             <div className="container row  p-0 mx-auto  ">
               {products.map((product) => (
               <div className="  p-1 gap-1 col-lg-3 col-md-4  col-6 mt-3 ps-lg-3 pe-lg-3"key={product._id}>
-                <ProductCard  product={product} selectType={productType} setItem={setItem}/>
+                <ProductCard  product={product} selectType={productType} />
               </div>
             ))}
 

@@ -23,7 +23,6 @@ function App() {
   const [loggedInUser,setLoggedInUser]=useState("")
   const [userMobileRegisterData,setUserMobileRegsiterData]=useState("")
   const [userMobileRegisterFormData,setUserMobileRegsiterFormData]=useState("")
-  const [item,setItem]=useState("")
 
   return (
     <>
@@ -31,7 +30,7 @@ function App() {
     <Header cardItems={cardItems} setCardItems={setCardItems} loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} userMobileRegisterData={userMobileRegisterData} setUserMobileRegsiterData={setUserMobileRegsiterData} userMobileRegisterFormData={userMobileRegisterFormData}/>
 
     <Routes>
-       <Route path="/" element={<Home setItem={setItem}/>} />
+       <Route path="/" element={<Home />} />
        <Route path="/hoodie" element={<Hoodie />} />
        <Route path="/tshirt" element={<Tshirt />} />
        <Route path="/tpant" element={<Tpant />} />

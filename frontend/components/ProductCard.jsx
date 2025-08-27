@@ -32,7 +32,7 @@ export default function ProductCard({product,selectType}){
                             <span>{product.discount}</span>% off
                             </p>
                         </div>
-                        <Link to={`/${selectType}/${ product._id}`} className="btn btn-danger btn-sm mt-2 w-100 mb-0 ps-0"> View Details </Link>
+                        <Link to={`/${selectType}/${product._id}`} className="btn btn-danger btn-sm mt-2 w-100 mb-0 ps-0"> View Details </Link>
                     </div>
                 </div>
 
