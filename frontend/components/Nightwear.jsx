@@ -9,7 +9,7 @@ export default function Nightwear(){
     
       const [page, setPage] = useState(1);
       const [hasMore, setHasMore] = useState(true);
-      const[productType,setProductType]=useState("leggins")
+      const[productType,setProductType]=useState("nightwear")
     
       useEffect(() => {
         const controller = new AbortController();
