@@ -19,7 +19,7 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
     .then(res =>{
       let data=null
       switch(productType){
-       case "user":
+       case "product":
             data = res.singleuserproduct;
             break;
           case "tshirt":
@@ -28,7 +28,7 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
           case "hoodie":
             data = res.singlehoodieproduct;
             break;
-          case "pant":
+          case "tpant":
             data = res.singletpantproduct;
             break;
           case "shorts":
@@ -40,8 +40,8 @@ export default function CardDetails({cardItems,setCardItems,productType}) {
           case "leggins":
             data = res.singlelegginsproduct;
             break;
-          case "nighty":
-            data = res.nightyproduct;
+          case "nightwear":
+            data = res.singlenightyproduct;
             break;
           default:
             data = null;
